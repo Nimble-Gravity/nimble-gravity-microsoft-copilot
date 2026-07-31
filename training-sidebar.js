@@ -3,51 +3,51 @@
 
   var MODULES = [
     {
-      label: 'Workshop 1',
-      subLabel: 'Setup & Foundations',
+      label: 'Module 1',
+      subLabel: 'Foundations & Copilot Chat',
       color: '#4f9990',
       slidesFile: 'module-1-slides.html',
       lessons: [
-        { file: '01-what-is-cowork.html',        title: 'What Is Cowork' },
-        { file: '02-getting-set-up.html',        title: 'Get Set Up' },
-        { file: '03-first-cowork-session.html',  title: 'First Session', exercise: true }
+        { file: '01-the-copilot-landscape.html',  title: 'The Copilot Landscape' },
+        { file: '02-prompt-like-an-analyst.html', title: 'Prompt Like an Analyst' },
+        { file: '03-grounded-chat-lab.html',      title: 'Chat Sprint Lab', exercise: true }
       ]
     },
     {
-      label: 'Workshop 2',
-      subLabel: 'Use Cowork',
+      label: 'Module 2',
+      subLabel: 'Copilot in the Apps',
       color: '#c4b5fd',
       slidesFile: 'module-2-slides.html',
       lessons: [
-        { file: '04-use-cases-by-industry.html',     title: 'By Industry' },
-        { file: '05-working-effectively.html',       title: 'Work Effectively' },
-        { file: '06-folder-access-walkthrough.html', title: 'Folder Access' },
-        { file: '07-use-cowork-lab.html',            title: 'Use Cowork Lab', exercise: true }
+        { file: '04-excel-copilot.html',           title: 'Excel + Copilot' },
+        { file: '05-outlook-teams-copilot.html',   title: 'Outlook & Teams' },
+        { file: '06-word-powerpoint-copilot.html', title: 'Word & PowerPoint' },
+        { file: '07-close-package-lab.html',       title: 'Close-Package Lab', exercise: true }
       ]
     },
     {
-      label: 'Workshop 3',
-      subLabel: 'Build a Skill',
+      label: 'Module 3',
+      subLabel: 'The Researcher Agent',
       color: '#7dd3e8',
       slidesFile: 'module-3-slides.html',
       lessons: [
-        { file: '08-decompose-your-workflow.html', title: 'Decompose' },
-        { file: '09-anatomy-of-a-skill.html',      title: 'Skill Anatomy' },
-        { file: '10-make-it-a-skill.html',         title: 'Make It a Skill' },
-        { file: '11-build-a-skill-lab.html',       title: 'Build a Skill Lab', exercise: true }
+        { file: '08-meet-researcher.html',         title: 'Meet Researcher' },
+        { file: '09-briefing-researcher.html',     title: 'Briefing Researcher' },
+        { file: '10-researcher-for-finance.html',  title: 'Researcher for Finance' },
+        { file: '11-researcher-mission-lab.html',  title: 'Researcher Mission', exercise: true }
       ]
     },
     {
-      label: 'Workshop 4',
-      subLabel: 'Govern & Roll Out',
+      label: 'Module 4',
+      subLabel: 'Analyst & The Close Room',
       color: '#f2c56b',
       slidesFile: 'module-4-slides.html',
       lessons: [
-        { file: '12-skills-to-plugins.html',       title: 'Package as a Plugin' },
-        { file: '13-roles-and-access.html',        title: 'Roles & Access' },
-        { file: '14-set-up-and-govern.html',       title: 'Set Up & Govern' },
-        { file: '15-analytics-and-adoption.html',  title: 'Analytics & Adoption' },
-        { file: '16-the-control-room.html',        title: 'The Control Room', exercise: true }
+        { file: '12-meet-analyst.html',            title: 'Meet Analyst' },
+        { file: '13-analyst-on-finance-data.html', title: 'Analyst on Finance Data' },
+        { file: '14-choosing-your-copilot.html',   title: 'Choosing Your Copilot' },
+        { file: '15-make-it-stick.html',           title: 'Make It Stick' },
+        { file: '16-the-close-room.html',          title: 'The Close Room', exercise: true }
       ]
     }
   ];

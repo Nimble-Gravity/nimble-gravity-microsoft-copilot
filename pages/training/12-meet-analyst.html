@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Meet Analyst — Module 4</title>
+<link rel="stylesheet" href="../../styles/shared.css"/>
+<style>
+/* Page-specific styles go here. This scaffold relies entirely on shared.css. */
+</style>
+</head>
+<body>
+<script src="../../footer.js"></script>
+<script src="../../nav.js"></script>
+<script src="../../training-sidebar.js"></script>
+
+<!-- MODULE PROGRESS -->
+<div class="module-strip">
+  <span class="ms-label">Module</span>
+  <a href="01-the-copilot-landscape.html" class="ms-item done"><span class="ms-num">1</span>Foundations &amp; Chat</a>
+  <span class="ms-arrow">›</span>
+  <a href="04-excel-copilot.html" class="ms-item done"><span class="ms-num">2</span>Copilot in the Apps</a>
+  <span class="ms-arrow">›</span>
+  <a href="08-meet-researcher.html" class="ms-item done"><span class="ms-num">3</span>Researcher</a>
+  <span class="ms-arrow">›</span>
+  <a href="12-meet-analyst.html" class="ms-item active"><span class="ms-num">4</span>Analyst &amp; Close Room</a>
+</div>
+
+<div class="page-header" id="intro">
+  <div class="eyebrow">Module 4 · Lesson 1 of 5</div>
+  <h1 class="title">Meet <em>Analyst</em></h1>
+  <p class="subtitle">Analyst is Researcher's quantitative sibling: a reasoning agent that takes your data files, thinks through the problem step by step, and writes and runs real Python — with the code on screen while it works. Where Researcher hands you a cited report, Analyst hands you computed answers, statistics, forecasts, and charts. This lesson is the spec sheet before you put it on finance data.</p>
+  <div class="header-phase">
+    <div class="header-phase-dot" style="background:var(--amber)"></div>
+    The Analyst Agent &amp; Capstone · ~12 min read
+  </div>
+</div>
+
+<!-- WHAT IT IS -->
+<div class="section" id="what">
+  <div class="sec-eyebrow">01 — What it is</div>
+  <h2 class="sec-title">A data analyst that shows its <em>work</em></h2>
+  <p class="sec-sub">Generally available since June 2025, Analyst is an advanced data-analysis agent built for exactly the questions a chat answer can't be trusted with: computation across files, statistics, and forecasting. It reasons in chain-of-thought, revising its approach over as many steps as the problem needs — and it does the math in code you can watch.</p>
+
+  <div class="insight-grid" style="margin-top:28px;">
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">Chain-of-thought that iterates</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Analyst plans an approach, tries it, inspects the result, and refines — as many steps as it takes. Give it a messy question and you'll see it restate the problem, probe the data's shape, and adjust its method mid-run, like an analyst working a workpaper.</p>
+    </div>
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">It writes and runs Python</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">The computation isn't a language model estimating numbers — Analyst writes Python and executes it, with the code visible in real time. That pane is your audit trail: you can read exactly what was filtered, grouped, and summed before you trust a figure.</p>
+    </div>
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">How you invoke it</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Open the <strong>Agents</strong> list in the Microsoft 365 Copilot app and pick <strong>Analyst</strong>. Attach the files you want analyzed, or reference files already in your OneDrive or SharePoint through Graph — same grounding rules as everything else in this workshop.</p>
+    </div>
+  </div>
+
+  <div class="tip-trick" style="margin-top:32px;">
+    <div class="tip-trick-icon">🧠</div>
+    <div class="tip-trick-copy">
+      <div class="tip-trick-label">What's under the hood — date-stamped</div>
+      <p>At GA (June 2025) Analyst ran on OpenAI's o3-mini reasoning model, tuned for advanced data analysis. The underlying model may have been upgraded since — treat the model name as a dated fact, not a permanent one. What hasn't changed is the design: reasoning first, then executable Python you can inspect.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ANALYST VS COPILOT IN EXCEL -->
+<div class="section section-dark" id="vs">
+  <div class="sec-eyebrow on-dark">02 — Where it sits</div>
+  <h2 class="sec-title on-dark">Analyst vs Copilot in <em>Excel</em></h2>
+  <p class="sec-sub on-dark">You met Copilot in Excel in Module 2, and it also runs Python. The two overlap less than they sound like they do — the split is where the work happens and how many files are on the table.</p>
+
+  <div class="dev-grid-2" style="margin-top:28px;">
+    <div class="dev-card">
+      <div class="dev-kicker">Copilot in Excel</div>
+      <h3>Edits the workbook you have open</h3>
+      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">Native, in-grid work on <strong>one open workbook</strong>: formulas, transformations, Python in the grid — with every Copilot edit attributed in Show Changes. When the deliverable <em>is</em> the workbook and you need cell-level auditability, this is the tool.</p>
+      <div class="dev-quote">Use when: the answer belongs inside this spreadsheet.</div>
+    </div>
+    <div class="dev-card">
+      <div class="dev-kicker">Analyst</div>
+      <h3>Reasons across multiple files</h3>
+      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">A <strong>chat-side agent</strong> that takes several files at once and does the heavier quantitative lifting — trend analysis, statistics, forecasting — outputting analysis, tables, and visuals. It does not edit your workbooks; it hands you findings to carry back into them.</p>
+      <div class="dev-quote">Use when: the answer lives across files, or needs statistics and forecasts.</div>
+    </div>
+  </div>
+
+  <div class="tip-trick tip-trick--dark" style="margin-top:32px;">
+    <div class="tip-trick-icon">🧾</div>
+    <div class="tip-trick-copy">
+      <div class="tip-trick-label">A sibling worth knowing: the Finance agent</div>
+      <p>The Agent Store also carries a role-based <strong>Finance agent</strong> (GA October 2025) built for Excel-based reconciliation and variance analysis with AI summaries — a narrower, close-desk specialist alongside the general-purpose Analyst. Worth a look once this module's habits are in place.</p>
+    </div>
+  </div>
+</div>
+
+<!-- OPERATING FACTS -->
+<div class="section" id="operating">
+  <div class="sec-eyebrow">03 — Operating facts</div>
+  <h2 class="sec-title">The spec sheet, before you <em>brief it</em></h2>
+  <p class="sec-sub">Three facts shape how you'll use Analyst day to day — what it eats, what it costs from your monthly budget, and where your verification lives.</p>
+
+  <div class="bp-grid--light" style="margin-top:28px;">
+    <div class="bp-item">
+      <div class="bp-num">01</div>
+      <div class="bp-title">Feeds on tabular files — plural</div>
+      <div class="bp-body">XLSX, CSV, and common data formats, and <strong>multiple files in one run</strong> — attached directly or referenced from your Graph files. A P&amp;L extract plus a commission statement plus a rec ledger, analyzed together, is the normal case, not the edge case.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">02</div>
+      <div class="bp-title">Shares the 25-query pool</div>
+      <div class="bp-body">Analyst and Researcher draw from one budget: <strong>25 combined queries per user per month</strong>, resetting on the 1st (Microsoft's FAQ, updated March 2026). Every run should be a mission with a named deliverable — Lesson 3 turns that into a spending rule.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">03</div>
+      <div class="bp-title">The Python pane is the review</div>
+      <div class="bp-body">Watch the code as it runs. Did it filter the months you meant? Sum the column you meant? Reading the Python is how a finance professional verifies method, not just output — Lesson 2 makes it a habit.</div>
+    </div>
+  </div>
+</div>
+
+<!-- NEXT -->
+<div class="section" id="next">
+  <div class="sec-eyebrow">Up next</div>
+  <h2 class="sec-title">Lesson 2: Analyst on Finance Data</h2>
+  <p class="sec-sub">Spec sheet done. Next: the prompting pattern that makes Analyst reliable — name the metric, the dimension, and the grain — plus three worked runs on the workshop's synthetic finance files, ready to copy.</p>
+  <a href="13-analyst-on-finance-data.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#3a2a06;text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:600;font-size:15px;margin-top:8px;">Next Lesson →</a>
+</div>
+
+<div class="page-footer"></div>
+</body>
+</html>

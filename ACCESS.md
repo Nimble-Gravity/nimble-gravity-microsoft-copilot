@@ -1,6 +1,6 @@
 # Access & Visibility
 
-**This site is public.** The repository is public on GitHub and is published with GitHub Pages, so the deployed site — and every file served from the repo root, including the lesson HTML, the `skills/` folder, and the context/markdown docs — is reachable by anyone with the URL and indexable by search engines.
+**This site is public.** The repository is public on GitHub and is published with GitHub Pages, so the deployed site — and every file served from the repo root, including the lesson HTML, `assets/lab-data/`, and the context/markdown docs — is reachable by anyone with the URL and indexable by search engines. The current content is the **Brown & Brown** M365 Copilot workshop build: all lab data is synthetic, but the client's name appears throughout — treat this branch per the client-branch guidance below before publishing anywhere public.
 
 ## What "public" means for client engagements
 

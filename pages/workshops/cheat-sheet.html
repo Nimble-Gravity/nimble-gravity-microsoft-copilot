@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Cowork Quick Reference — Axos</title>
+<title>Copilot Quick Reference — Brown &amp; Brown</title>
 <link rel="stylesheet" href="../../styles/shared.css"/>
 <style>
 .syllabus-print{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:var(--teal);color:#fff;border:none;border-radius:8px;font-weight:600;font-size:14px;font-family:inherit;cursor:pointer;}
@@ -23,172 +23,218 @@
 <script src="../../nav.js"></script>
 
 <div class="page-header" id="intro">
-  <div class="eyebrow">Axos · Cowork Program</div>
-  <h1 class="title">Cowork <em>Quick Reference</em></h1>
-  <p class="subtitle">Everything you need to remember on one page — model defaults, permission modes, the five prompt principles, session hygiene, and the /schedule constraint.</p>
+  <div class="eyebrow">Brown &amp; Brown · Copilot Workshop</div>
+  <h1 class="title">Copilot <em>Quick Reference</em></h1>
+  <p class="subtitle">Everything worth remembering on one page — the surface map, the four prompt elements, the Excel moves, how to brief the agents, scheduled prompts, and the data-hygiene rules.</p>
   <div class="header-phase">
     <div class="header-phase-dot"></div>
     Print-friendly · keep it handy
   </div>
 </div>
 
-<!-- PRINT BUTTON -->
-<div class="section" id="models">
+<!-- SURFACES -->
+<div class="section" id="surfaces">
   <div class="syllabus-print-wrap" style="display:flex;justify-content:flex-end;margin-bottom:24px;">
     <button class="syllabus-print" type="button" onclick="printPage()">⎙ Print this page</button>
   </div>
 
-  <div class="sec-eyebrow">01 — Models</div>
-  <h2 class="sec-title">Model &amp; effort <em>defaults</em></h2>
-  <p class="sec-sub">Pick the right model for the job — Opus is powerful but costs more of your usage allowance. Start with Sonnet.</p>
+  <div class="sec-eyebrow">01 — The surface map</div>
+  <h2 class="sec-title">Which Copilot am I <em>on?</em></h2>
+  <p class="sec-sub">One assistant, three surfaces. Advanced use starts with picking the surface deliberately.</p>
   <div class="bp-grid--light" style="margin-top:28px;">
     <div class="bp-item">
       <div class="bp-num">01</div>
-      <div class="bp-title">Sonnet — everyday default</div>
-      <div class="bp-body">Documents, drafts, summaries, analysis. This is your workhorse. Use it for anything that doesn't require edge-case judgment.</div>
+      <div class="bp-title">Copilot Chat — Work scope</div>
+      <div class="bp-body">Grounded in your emails, meetings, chats, and files via Microsoft Graph. Use for anything about our numbers, our files, our people.</div>
     </div>
     <div class="bp-item">
       <div class="bp-num">02</div>
-      <div class="bp-title">Opus — hardest calls only</div>
-      <div class="bp-body">Complex reasoning, edge-case legal or credit decisions. Reserve it — Opus consumes significantly more of your usage allowance.</div>
+      <div class="bp-title">Copilot Chat — Web scope</div>
+      <div class="bp-body">Grounded in live web results. Use for market conditions, carrier news, the rate environment — anything you'd otherwise search for.</div>
     </div>
     <div class="bp-item">
       <div class="bp-num">03</div>
-      <div class="bp-title">Effort levels</div>
-      <div class="bp-body"><code>high</code> is the product default. Step down to <code>medium</code> for routine work to save usage allowance. Use <code>low</code> for quick lookups only.</div>
-    </div>
-  </div>
-</div>
-
-<!-- PERMISSION MODES -->
-<div class="section section--off" id="permissions">
-  <div class="sec-eyebrow">02 — Permission modes</div>
-  <h2 class="sec-title">Permission <em>modes</em></h2>
-  <p class="sec-sub">Permission mode controls whether Cowork pauses to ask before taking action. When in doubt, ask first.</p>
-  <div class="bp-grid--light" style="margin-top:28px;">
-    <div class="bp-item">
-      <div class="bp-num">01</div>
-      <div class="bp-title">Ask before acting</div>
-      <div class="bp-body">Pauses for approval before any file write, delete, or shell command. Use for untrusted content — emails, web pages, uploaded files from outside the bank.</div>
+      <div class="bp-title">Copilot in the apps</div>
+      <div class="bp-body">Inside Excel, Outlook, Word, PowerPoint, Teams — it acts directly in the open document. Use when the deliverable is the file you're already in.</div>
     </div>
     <div class="bp-item">
-      <div class="bp-num">02</div>
-      <div class="bp-title">Act without asking</div>
-      <div class="bp-body">Runs without pausing. Use only for trusted, known files while actively supervising. Riskier — a hidden instruction in a file can redirect the agent.</div>
-    </div>
-    <div class="bp-item">
-      <div class="bp-num">03</div>
-      <div class="bp-title">Default rule</div>
-      <div class="bp-body">Start every new task with "Ask before acting" until you know the files are clean. Switching to act-without-asking is a deliberate choice, not the default.</div>
+      <div class="bp-num">04</div>
+      <div class="bp-title">The agents</div>
+      <div class="bp-body">Researcher and Analyst — brief them like a colleague and check back later. Use when the job is a whole analysis or report, not a single answer.</div>
     </div>
   </div>
 </div>
 
 <!-- PROMPTING -->
-<div class="section" id="prompting">
-  <div class="sec-eyebrow">03 — Prompting</div>
-  <h2 class="sec-title">The five prompt <em>principles</em></h2>
-  <p class="sec-sub">These five moves close the gap between what Cowork produces and what you actually needed.</p>
+<div class="section section--off" id="prompting">
+  <div class="sec-eyebrow">02 — Prompting</div>
+  <h2 class="sec-title">The four <em>elements</em></h2>
+  <p class="sec-sub">Microsoft's official framework. Every serious prompt carries all four — and the three habits below keep them working.</p>
   <div class="bp-grid--light" style="margin-top:28px;">
     <div class="bp-item">
       <div class="bp-num">01</div>
-      <div class="bp-title">Outcome over steps</div>
-      <div class="bp-body">Say what you want, not how to do it. Let Cowork choose the method — that's what it's for.</div>
+      <div class="bp-title">Goal · Context · Expectations · Source</div>
+      <div class="bp-body">What you want, why and for whom, what good output looks like (format, length, tone), and where to look. Miss one and you'll iterate twice as long.</div>
     </div>
     <div class="bp-item">
       <div class="bp-num">02</div>
-      <div class="bp-title">Define done</div>
-      <div class="bp-body">State what good output looks like and what should never appear. "A two-page summary, no raw numbers without context, no customer PII in the subject line."</div>
+      <div class="bp-title">Say do, not don't</div>
+      <div class="bp-body">Positive instructions land better. "Use plain, factual close-package language" beats "don't be flowery."</div>
     </div>
     <div class="bp-item">
       <div class="bp-num">03</div>
-      <div class="bp-title">Flag gaps, don't fill them</div>
-      <div class="bp-body">"If something's missing from the file, say so — don't estimate." Prevents confident-sounding fabrication.</div>
+      <div class="bp-title">One goal per prompt</div>
+      <div class="bp-body">Find, then explain, then draft — three prompts in one thread, not one prompt doing three jobs. Iterate instead of restarting.</div>
     </div>
     <div class="bp-item">
       <div class="bp-num">04</div>
-      <div class="bp-title">Name the reader</div>
-      <div class="bp-body">"Write this for a credit committee unfamiliar with the borrower." Context about the audience shapes tone, length, and what gets explained.</div>
+      <div class="bp-title">Reference with "/"</div>
+      <div class="bp-body">Type "/" to reference specific files, people, and meetings — or attach the file. Grounded beats generic every time.</div>
+    </div>
+  </div>
+</div>
+
+<!-- EXCEL -->
+<div class="section" id="excel">
+  <div class="sec-eyebrow">03 — Excel</div>
+  <h2 class="sec-title">The Excel <em>moves</em></h2>
+  <p class="sec-sub">The deepest Copilot for finance work. Three habits: plan, analyze in Python, verify every touched cell.</p>
+  <div class="bp-grid--light" style="margin-top:28px;">
+    <div class="bp-item">
+      <div class="bp-num">01</div>
+      <div class="bp-title">Plan with Copilot first</div>
+      <div class="bp-body">For multi-step changes, ask Copilot to outline what it intends to do before executing. Review the plan, then approve — same discipline as reviewing a junior's approach.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">02</div>
+      <div class="bp-title">Ask for Python analysis</div>
+      <div class="bp-body">"Analyze [range] with Python: variance by profit center, largest first" — Copilot writes and runs Python in the grid for forecasting, statistics, and heavy transforms.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">03</div>
+      <div class="bp-title">Verify with Show Changes</div>
+      <div class="bp-body">Show Changes attributes every cell Copilot touched. Check it before you trust an edited workbook — that attribution trail is your audit answer.</div>
+    </div>
+  </div>
+</div>
+
+<!-- AGENTS -->
+<div class="section section--off" id="agents">
+  <div class="sec-eyebrow">04 — Agents</div>
+  <h2 class="sec-title">Briefing Researcher &amp; <em>Analyst</em></h2>
+  <p class="sec-sub">They share one budget: 25 combined queries per person per month, resetting on the 1st. One well-briefed run beats three vague ones.</p>
+  <div class="bp-grid--light" style="margin-top:28px;">
+    <div class="bp-item">
+      <div class="bp-num">01</div>
+      <div class="bp-title">Researcher — brief like a memo</div>
+      <div class="bp-body">State who you are, the sources (work files, web, or both), the questions to answer, and the output format. It produces a structured, cited report.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">02</div>
+      <div class="bp-title">Answer the clarifying questions</div>
+      <div class="bp-body">Researcher asks before it runs — engaging with that phase is the #1 best practice. Then walk away: simple runs finish in under 5 minutes, complex ones take 10–45.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">03</div>
+      <div class="bp-title">Commission early</div>
+      <div class="bp-body">Because runs take time, kick off the Researcher run first and keep working. Check back when it's done — never sit and watch it.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">04</div>
+      <div class="bp-title">Analyst — name the shape</div>
+      <div class="bp-body">Name the metric, the dimension, and the time grain ("EBITDAC margin by profit center by month"). Supply clean tabular data — multiple files at once is fine.</div>
     </div>
     <div class="bp-item">
       <div class="bp-num">05</div>
-      <div class="bp-title">Iterate with one sentence</div>
-      <div class="bp-body">Redirect with a single sentence rather than restarting. "Make the executive summary one paragraph and move the detail to an appendix."</div>
+      <div class="bp-title">Read the Python</div>
+      <div class="bp-body">Analyst shows its Python live. Skim it to verify the method — did it filter, sum, and group the way you would have? That pane is your review step.</div>
     </div>
   </div>
 </div>
 
-<!-- SCHEDULE -->
-<div class="section section--off" id="schedule">
-  <div class="sec-eyebrow">04 — Scheduling</div>
-  <h2 class="sec-title">/schedule &amp; its <em>constraints</em></h2>
-  <p class="sec-sub">Recurring tasks are powerful — but /schedule has hard requirements that catch people by surprise.</p>
+<!-- SCHEDULED PROMPTS -->
+<div class="section" id="schedule">
+  <div class="sec-eyebrow">05 — Scheduled prompts</div>
+  <h2 class="sec-title">Put the recurring asks on a <em>schedule</em></h2>
+  <p class="sec-sub">Any prompt can run on a schedule — up to 10 per person — with output landing in your chat history. Works in Copilot Chat, Teams, and Outlook.</p>
   <div class="bp-grid--light" style="margin-top:28px;">
     <div class="bp-item">
       <div class="bp-num">01</div>
-      <div class="bp-title">What /schedule does</div>
-      <div class="bp-body">Sets a recurring task — for example, a daily digest delivered at 7 AM. The agent runs at the configured time and writes output to your folder.</div>
+      <div class="bp-title">Monday digest</div>
+      <div class="bp-body">"Every Monday 8 AM: summarize last week's emails and meetings about [topic], flag anything awaiting my response." Start-of-week triage, done before coffee.</div>
     </div>
     <div class="bp-item">
       <div class="bp-num">02</div>
-      <div class="bp-title">The hard requirement</div>
-      <div class="bp-body">The machine must be awake and Claude Desktop must be open at run time. There is no background daemon — if the app is closed, the run does not happen.</div>
+      <div class="bp-title">Close-week status</div>
+      <div class="bp-body">Daily during close week: "Summarize today's messages in the close channel and list open items by owner." Retire it when close ends.</div>
     </div>
     <div class="bp-item">
       <div class="bp-num">03</div>
-      <div class="bp-title">Missed runs are skipped</div>
-      <div class="bp-body">A missed run is skipped, not queued. It catches up when the app reopens only if you configured a catch-up policy. Otherwise, you lose that run.</div>
+      <div class="bp-title">Commentary refresh</div>
+      <div class="bp-body">Monthly, after the data lands: "Using /[file], draft the variance-commentary paragraph in our standard format." The recurring narrative, pre-drafted.</div>
     </div>
     <div class="bp-item">
       <div class="bp-num">04</div>
-      <div class="bp-title">Verify manually first</div>
-      <div class="bp-body">Verify the first 2–3 runs manually before trusting automation. Confirm the output is in the right folder and looks correct before walking away.</div>
+      <div class="bp-title">Mind the cap</div>
+      <div class="bp-body">Ten scheduled prompts per person. Review yours monthly and retire the ones you've stopped reading — a digest nobody opens is just noise.</div>
     </div>
   </div>
 </div>
 
-<!-- SESSION HYGIENE -->
-<div class="section" id="hygiene">
-  <div class="sec-eyebrow">05 — Session habits</div>
-  <h2 class="sec-title">Session <em>hygiene</em></h2>
-  <p class="sec-sub">Small habits prevent the most common sources of poor output and lost context.</p>
+<!-- DATA HYGIENE -->
+<div class="section section--off" id="hygiene">
+  <div class="sec-eyebrow">06 — Data hygiene</div>
+  <h2 class="sec-title">The rules that keep this <em>safe</em></h2>
+  <p class="sec-sub">Five facts and habits that settle most "is this okay?" questions. Current as of July 2026.</p>
   <div class="bp-grid--light" style="margin-top:28px;">
     <div class="bp-item">
       <div class="bp-num">01</div>
-      <div class="bp-title">One task per session</div>
-      <div class="bp-body">Complex multi-topic sessions degrade — the model's attention spreads across too many threads. Start a new session for a new task.</div>
+      <div class="bp-title">Permissions are the boundary</div>
+      <div class="bp-body">Copilot only sees content you already have access to. It honors identity, sharing, and sensitivity labels — it can't read another team's folder because you asked nicely.</div>
     </div>
     <div class="bp-item">
       <div class="bp-num">02</div>
-      <div class="bp-title">Summary handoff</div>
-      <div class="bp-body">End a long session with: "Summarize what we did and what's still open." Paste the summary into the next session as your first message.</div>
+      <div class="bp-title">No training on our data</div>
+      <div class="bp-body">Prompts, responses, and Graph data are not used to train the foundation models. Your close commentary isn't teaching anyone's model.</div>
     </div>
     <div class="bp-item">
       <div class="bp-num">03</div>
-      <div class="bp-title">Where files land</div>
-      <div class="bp-body">Outputs go into the folder you granted access to. Check there first before assuming the file wasn't created.</div>
+      <div class="bp-title">Save agent outputs to governed files</div>
+      <div class="bp-body">Researcher and Analyst session content is not e-discoverable by default. Anything that matters gets saved into a file in a governed location — that's the record.</div>
     </div>
     <div class="bp-item">
       <div class="bp-num">04</div>
-      <div class="bp-title">Compaction is normal</div>
-      <div class="bp-body">When a session gets long, Cowork compacts older context. This is expected behavior, not a sign something went wrong. Carry forward what matters with a summary.</div>
+      <div class="bp-title">Pick Work vs Web deliberately</div>
+      <div class="bp-body">Check the scope before every serious question. Work for our data, Web for the world outside the tenant — and scope agent runs the same way.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">05</div>
+      <div class="bp-title">Synthetic data only in labs</div>
+      <div class="bp-body">Workshop exercises run on the synthetic files from the resource library. Never put real client, carrier, or deal data into a practice prompt.</div>
     </div>
   </div>
 </div>
 
 <!-- GET HELP -->
-<div class="section section--off" id="help">
-  <div class="sec-eyebrow">06 — Get help</div>
-  <h2 class="sec-title">Who to ask when you're <em>stuck</em></h2>
-  <p class="sec-sub">You're not on your own. Use these channels when a session goes sideways or a question comes up between workshops.</p>
-  <div class="insight-grid" style="margin-top:28px;">
-    <div class="insight-card">
-      <div class="sec-eyebrow" style="margin-bottom:6px;">In the session</div>
-      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Post in the Axos Cowork Teams channel or raise your hand in the room. Your cohort and facilitator are there in real time.</p>
+<div class="section" id="help">
+  <div class="sec-eyebrow">07 — Get help</div>
+  <h2 class="sec-title">Where to go when you're <em>stuck</em></h2>
+  <p class="sec-sub">Bring a real example — "here's what I tried" gets much better help than "it didn't work."</p>
+  <div class="bp-grid--light" style="margin-top:28px;">
+    <div class="bp-item">
+      <div class="bp-num">01</div>
+      <div class="bp-title">This site</div>
+      <div class="bp-body">The <a href="faq.html">FAQ</a> covers the common snags; each module hub carries the depth behind its in-room block. Start there between asks.</div>
     </div>
-    <div class="insight-card">
-      <div class="sec-eyebrow" style="margin-bottom:6px;">Between sessions</div>
-      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Office hours [TBD] and the training microsite at <a href="#">this page</a>. Bring a real example — "here's what I tried" gets much better help than "it didn't work."</p>
+    <div class="bp-item">
+      <div class="bp-num">02</div>
+      <div class="bp-title">The enablement channel</div>
+      <div class="bp-body">Post in [TBD — Brown &amp; Brown enablement channel] — your cohort and facilitator see it, and answered questions help the next teammate.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">03</div>
+      <div class="bp-title">Your facilitator or champion</div>
+      <div class="bp-body">Facilitator / champion contact: [TBD]. Reach out directly for anything involving tenant settings, licensing, or a lab file that won't ground.</div>
     </div>
   </div>
 

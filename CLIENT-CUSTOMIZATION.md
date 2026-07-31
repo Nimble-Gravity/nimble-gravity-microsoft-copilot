@@ -23,34 +23,35 @@ Rules:
 - Keep the generic placeholder content meaningful — the template must read well with no client applied.
 - To find every slot in the repo: `grep -rn 'data-client-slot' .`
 
-### Current slots
+### Current slots (Brown & Brown Copilot build, 2026-07)
 
 | Key | File | What to replace |
 |---|---|---|
-| `industry-usecases-m2` | `pages/training/04-use-cases-by-industry.html` | The 2–3 seed industry use cases, re-cast to the client's verticals. |
-| `canonical-scenario-m2` | `pages/training/07-use-cowork-lab.html` | The canonical lab scenario, set to the client's real workflow. |
-| `adoption-dashboard-m4` | `pages/training/15-analytics-and-adoption.html` | Link to the client's (or NG's) adoption-dashboard reference build. |
-| `gif-*` | folder-access walkthrough & how-to sections | GIF walkthroughs recorded for the client's stack (see `assets/gifs/`). |
+| `policy-status` / `data-classification` / `ground-rules` | `pages/workshops/acceptable-use.html` | The draft banner and OK/Not-OK data rules, replaced by the client's official Copilot policy. |
+| `who-to-ask` | `acceptable-use.html`, `faq.html` (×2) | The client's escalation contact / enablement channel. |
+| `feedback-form-post` / `feedback-form-30day` | `pages/workshops/feedback.html` | Live Microsoft Forms URLs for the two pulses. |
+| `schedule-dates` | `pages/workshops/syllabus.html` | The confirmed session date/location. |
+| `sponsor-message` | `pages/workshops/why-copilot.html` | The executive sponsor's name, title, and message. |
+
+`SCAFFOLD` HTML comments mark tenant-dependent facts to confirm before delivery (Excel skills/connectors enabled, Frontier availability, agent billing policy) — grep for `SCAFFOLD`.
 
 Add new slots as the engagement needs them; record each one in this table.
 
 ## Other swappable assets
 
-- **Skills** (`skills/`): the generic `cowork-cosetup`, `workflow-decomposition`, and `memo-generation` skills can be re-skinned (e.g. memo-generation on client letterhead/format). Keep the generic versions in the template; client variants live on the client branch.
+- **Lab data** (`assets/lab-data/`): the synthetic finance datasets are B&B-shaped but fictional; a different client gets regenerated data. ⚠️ The Variance Vault and Close Room unlock codes are **derived from this data** — re-derive codes and re-run `node tools/generate-hashes.mjs` in `escape-room/` and `control-room/` after any change.
 - **Discovery checklist** (`pages/customization/discovery-checklist.html`): run before the engagement; its answers drive which slots get filled.
-- **Footer kicker / hero copy** (`footer.js`, `index.html`): light brand framing only; usually left generic.
+- **Footer kicker / hero copy** (`footer.js`, `index.html`): light brand framing only.
 
-## Stack-specific setup tracks
+## Adding or renaming a lesson? Update all the manifests
 
-`pages/training/02-getting-set-up.html` encodes connector setup by stack (Microsoft 365 / Google and other shops) using the `dev-grid-2` + `.dev-card` pattern. That two-column pattern is the reusable home for stack variation — to add another stack, add a `.dev-card`; nothing structural changes.
-
-## Adding or renaming a lesson? Update all 5 manifests
-
-This is the one cross-cutting gotcha. The lesson list is duplicated in **five** places and they drift silently:
+This is the one cross-cutting gotcha. The lesson list is duplicated in several places and they drift silently:
 1. `nav.js` → `CRAFTS[n]` (`filePrefix[]` + positionally-zipped `pages[]` / `labels[]`)
 2. `training-sidebar.js` → `MODULES[n].lessons[]`
 3. `pages/training/module-N-slides.html` → `window.SLIDES_CFG.lessons[]`
-4. `footer.js` → stage chips (only if a module *name* changes)
-5. `index.html` → the `.toc-list` **and** the `.module-grid` (the list is hardcoded twice here)
+4. `footer.js` → module chips (only if a module *name* changes)
+5. `index.html` → the `.module-grid` cards
+6. The `module-strip` block at the top of every lesson (first lesson of each module hardcoded)
+7. `pages/workshops/my-progress.html` → the four quiz-lesson links (labs `03/07/11/16`)
 
-New lessons **append** a new numeric prefix (13+) and are inserted at the right index in each array — display order is array order, not filename order. Always add the new prefix to the owning module's `filePrefix[]` in `nav.js`, or the page renders with an empty sub-nav.
+New lessons **append** a new numeric prefix (17+) and are inserted at the right index in each array — display order is array order, not filename order. Always add the new prefix to the owning module's `filePrefix[]` in `nav.js`, or the page renders with an empty sub-nav.

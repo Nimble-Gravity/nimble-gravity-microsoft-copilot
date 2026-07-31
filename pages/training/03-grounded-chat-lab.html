@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The Chat Sprint Lab — Module 1</title>
+<link rel="stylesheet" href="../../styles/shared.css"/>
+<style>
+/* Page-specific styles go here. This scaffold relies entirely on shared.css. */
+</style>
+</head>
+<body>
+<script src="../../footer.js"></script>
+<script src="../../nav.js"></script>
+<script src="../../training-sidebar.js"></script>
+<script src="../../interactive.js"></script>
+
+<!-- MODULE PROGRESS -->
+<div class="module-strip">
+  <span class="ms-label">Module</span>
+  <a href="01-the-copilot-landscape.html" class="ms-item active"><span class="ms-num">1</span>Foundations &amp; Chat</a>
+  <span class="ms-arrow">›</span>
+  <a href="04-excel-copilot.html" class="ms-item upcoming"><span class="ms-num">2</span>Copilot in the Apps</a>
+  <span class="ms-arrow">›</span>
+  <a href="08-meet-researcher.html" class="ms-item upcoming"><span class="ms-num">3</span>Researcher</a>
+  <span class="ms-arrow">›</span>
+  <a href="12-meet-analyst.html" class="ms-item upcoming"><span class="ms-num">4</span>Analyst &amp; Close Room</a>
+</div>
+
+<div class="page-header" id="intro">
+  <div class="eyebrow">Module 1 · Lesson 3 of 3 · Hands-on lab</div>
+  <h1 class="title">The Chat Sprint <em>Lab</em></h1>
+  <p class="subtitle">Ten minutes, laptops open. You'll run three grounded prompts against the workshop's synthetic finance files, judge the output like a reviewer — and commission your first Researcher run so its report is waiting for you in Module 3. Everything here uses fake data shaped like ours; nothing real goes into a prompt today.</p>
+  <div class="header-phase">
+    <div class="header-phase-dot" style="background:var(--teal)"></div>
+    Foundations &amp; Copilot Chat · ~10 min in-room
+  </div>
+</div>
+
+<!-- SETUP -->
+<div class="section" id="setup">
+  <div class="sec-eyebrow">01 — Setup check</div>
+  <h2 class="sec-title">Files in place, Work scope <em>on</em></h2>
+  <p class="sec-sub">You did this in pre-work — take thirty seconds to confirm it stuck. Copilot can only ground in files it can reach, so the lab files need to be in your OneDrive before anything else works.</p>
+
+  <div class="bp-grid--light" style="margin-top:28px;">
+    <div class="bp-item">
+      <div class="bp-num">01</div>
+      <div class="bp-title">Lab files in OneDrive</div>
+      <div class="bp-body">Confirm the <code>Copilot Workshop</code> folder in your OneDrive contains <code>profit-center-pnl.csv</code> and the <code>data-room</code> folder. Missing? Re-download from the <a href="../workshops/resources.html">resource library</a>.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">02</div>
+      <div class="bp-title">Open Copilot Chat, Work scope</div>
+      <div class="bp-body">Open the Microsoft 365 Copilot app, start a new chat, and make sure you're on <strong>Work</strong> grounding — not Web. That's the toggle from Lesson 1.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">03</div>
+      <div class="bp-title">Test the reference</div>
+      <div class="bp-body">Type "/" and start typing <code>profit-center-pnl</code>. If the file appears, you're grounded and ready. (New files can take a few minutes to index — flag a facilitator if it's not there.)</div>
+    </div>
+  </div>
+</div>
+
+<!-- THE SPRINT -->
+<div class="section" id="sprint">
+  <div class="sec-eyebrow">02 — The sprint</div>
+  <h2 class="sec-title">Three prompts, four elements <em>each</em></h2>
+  <p class="sec-sub">Run these in order in one chat. Each one exercises the Goal–Context–Expectations–Source framework on a different finance move: find, explain, draft. Watch how the thread builds — prompt three leans on what came before.</p>
+
+  <div class="code-wrap" style="margin-top:28px;">
+    <div class="code-topbar">
+      <span class="cb-dot" style="background:#ff5f57"></span>
+      <span class="cb-dot" style="background:#febc2e"></span>
+      <span class="cb-dot" style="background:#28c840"></span>
+      <span class="code-label">Prompt 1 — find (reference the file with "/")</span>
+      <button class="copy-btn" onclick="copyBlock('sprint-1', this)">Copy</button>
+    </div>
+    <div class="code-body">
+<pre id="sprint-1">Using /profit-center-pnl.csv, identify the five largest unfavorable variances vs budget in June 2026, across all profit centers and accounts. I'm triaging the month for close commentary. Give me a table: profit center, account, budget, actual, $ variance — largest first. Flag any profit center that appears more than once.</pre>
+    </div>
+  </div>
+
+  <div class="code-wrap" style="margin-top:24px;">
+    <div class="code-topbar">
+      <span class="cb-dot" style="background:#ff5f57"></span>
+      <span class="cb-dot" style="background:#febc2e"></span>
+      <span class="cb-dot" style="background:#28c840"></span>
+      <span class="code-label">Prompt 2 — explain (iterate on the thread)</span>
+      <button class="copy-btn" onclick="copyBlock('sprint-2', this)">Copy</button>
+    </div>
+    <div class="code-body">
+<pre id="sprint-2">Take the largest variance from that table and look at the same profit center and account across January–June. Is this a one-month event or a running trend? Answer in three sentences, neutral tone, and say explicitly which months support your conclusion.</pre>
+    </div>
+  </div>
+
+  <div class="code-wrap" style="margin-top:24px;">
+    <div class="code-topbar">
+      <span class="cb-dot" style="background:#ff5f57"></span>
+      <span class="cb-dot" style="background:#febc2e"></span>
+      <span class="cb-dot" style="background:#28c840"></span>
+      <span class="code-label">Prompt 3 — draft (audience + format)</span>
+      <button class="copy-btn" onclick="copyBlock('sprint-3', this)">Copy</button>
+    </div>
+    <div class="code-body">
+<pre id="sprint-3">Draft the June variance-commentary paragraph for the segment controller covering the top three unfavorable variances from this thread. Format: one short lead sentence on the month overall, then one sentence per variance naming the profit center, the driver, and whether it recurs. Plain, factual close-package language — no adjectives, no speculation.</pre>
+    </div>
+  </div>
+</div>
+
+<!-- RESEARCHER KICKOFF -->
+<div class="section section-dark" id="kickoff">
+  <div class="sec-eyebrow on-dark">03 — Commission your agent</div>
+  <h2 class="sec-title on-dark">Kick off Researcher <em>now</em></h2>
+  <p class="sec-sub on-dark">Researcher runs take 10–45 minutes on complex briefs — so advanced users commission the run early and keep working. Start this now and its report will be ready when we reach Module 3. It will ask clarifying questions first: answer them, that's the point.</p>
+
+  <div class="code-wrap" style="margin-top:28px;">
+    <div class="code-topbar">
+      <span class="cb-dot" style="background:#ff5f57"></span>
+      <span class="cb-dot" style="background:#febc2e"></span>
+      <span class="cb-dot" style="background:#28c840"></span>
+      <span class="code-label">In the Copilot app → Agents → Researcher (or @Researcher in chat)</span>
+      <button class="copy-btn" onclick="copyBlock('kickoff-prompt', this)">Copy</button>
+    </div>
+    <div class="code-body">
+<pre id="kickoff-prompt">I'm on the finance team at a large US insurance brokerage, evaluating an acquisition target. Using the Project Lighthouse files in my OneDrive Copilot Workshop folder (the CIM extract, 3-year financials, carrier contract summary, and earn-out term sheet) AND public web sources on the Florida coastal property insurance market, produce a diligence brief that covers: (1) the quality of the target's revenue growth, separating contingent commissions from core commissions; (2) carrier concentration risk and which single relationship most threatens contingent income; (3) how current Florida coastal property market conditions could affect the proposed earn-out; (4) the five questions finance should ask before close. Structured report with headings and citations; keep it under six pages.</pre>
+    </div>
+  </div>
+
+  <div class="tip-trick tip-trick--dark" style="margin-top:32px;">
+    <div class="tip-trick-icon">⏱️</div>
+    <div class="tip-trick-copy">
+      <div class="tip-trick-label">Answer the clarifying questions, then walk away</div>
+      <p>When Researcher asks about scope, tell it: work files and web, US market focus, finance audience. Then leave it running and return to the session — checking on it is Module 3's opening move. Remember the budget: Researcher and Analyst share 25 queries a month, so one well-briefed run beats three vague ones.</p>
+    </div>
+  </div>
+</div>
+
+<!-- JUDGE THE OUTPUT -->
+<div class="section section--off" id="bar">
+  <div class="sec-eyebrow">04 — The reviewer's bar</div>
+  <h2 class="sec-title">Judge it like you'd <em>sign it</em></h2>
+  <p class="sec-sub">Copilot drafts; you own. Before the sprint counts as done, hold prompt 3's output to the same bar you'd hold a junior analyst's draft.</p>
+
+  <div class="insight-grid" style="margin-top:28px;">
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">Numbers trace</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Every figure in the paragraph should trace to the CSV. Spot-check two against the file. If Copilot rounded or blended, tighten the prompt and rerun.</p>
+    </div>
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">Drivers are claims</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">"Driver" language is an assertion — is it supported by the data, or inferred? Anything inferred gets rewritten as a question for the profit-center lead, not stated as fact.</p>
+    </div>
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">Tone survives review</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Would the segment controller forward this untouched? If you'd edit the tone, tell Copilot what to change — that instruction belongs in your reusable prompt.</p>
+    </div>
+  </div>
+</div>
+
+<!-- KNOWLEDGE CHECK (no h2.sec-title so no slide is generated) -->
+<div class="section">
+  <div class="ix-quiz" data-ix-quiz="m1" data-ix-pass="3"></div>
+</div>
+
+<!-- NEXT -->
+<div class="section" id="next">
+  <div class="sec-eyebrow">Up next</div>
+  <h2 class="sec-title">Module 2: Copilot in the Apps</h2>
+  <p class="sec-sub">Chat mastery unlocked, Researcher humming in the background. Next stop: Excel — where Copilot writes and runs Python against your data, plans its edits before making them, and shows you every cell it touched.</p>
+  <a href="04-excel-copilot.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--teal);color:var(--white);text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:600;font-size:15px;margin-top:8px;">Start Module 2 →</a>
+</div>
+
+<div class="page-footer"></div>
+<script>
+function copyBlock(id, btn) {
+  var pre = document.getElementById(id);
+  if (!pre || !navigator.clipboard) return;
+  navigator.clipboard.writeText(pre.innerText).then(function () {
+    var prev = btn.textContent;
+    btn.textContent = 'Copied!';
+    setTimeout(function () { btn.textContent = prev; }, 2000);
+  });
+}
+</script>
+</body>
+</html>

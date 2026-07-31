@@ -1,0 +1,14 @@
+policy_id,client,carrier,premium_collected_usd,received_date,status,remitted_date,remitted_net_usd
+POL-2026-1000,Pelican Logistics,Old Colony Specialty,128420.0,2026-06-02,Received,2026-06-06,109799.0
+POL-2026-1001,Northlake Schools,Old Colony Specialty,57004.0,2026-06-04,Received,2026-06-08,48738.0
+POL-2026-1002,Lantana Retail Group,Gulfstream Property & Cas.,136233.0,2026-06-06,Received,2026-06-10,116479.0
+POL-2026-1003,Verdant Farms,Sable River Re,129058.0,2026-06-08,Received,2026-06-12,110345.0
+POL-2026-1004,Bayfront Health,Ridgeline Mutual,196976.0,2026-06-10,Received,2026-06-14,168414.0
+POL-2026-1005,Palmetto Builders,Sable River Re,106150.0,2026-06-12,Received,2026-06-16,90758.0
+POL-2026-1006,Kestrel Aviation,Ridgeline Mutual,27391.0,2026-06-14,Received,2026-06-18,23419.0
+POL-2026-1007,Sunrail Partners,Ridgeline Mutual,120065.0,2026-06-16,Received,2026-06-20,102656.0
+POL-2026-1008,Ironwood Storage,Blue Cypress Casualty,209388.0,2026-06-18,Received,2026-06-22,179027.0
+POL-2026-1009,Copper Peak Mining,Old Colony Specialty,113301.0,2026-06-20,Received,,
+POL-2026-1010,Marlin Foods,Old Colony Specialty,175509.0,2026-06-22,Received,,
+POL-2026-1011,Seabreeze Hotels,Old Colony Specialty,82272.0,2026-06-24,Received,,
+POL-2026-0871,Driftwood Marina,Meridian National,31200.0,2026-05-11,Received,2026-05-20,26676.0

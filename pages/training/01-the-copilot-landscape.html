@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The Copilot Landscape — Module 1</title>
+<link rel="stylesheet" href="../../styles/shared.css"/>
+<style>
+/* Page-specific styles go here. This scaffold relies entirely on shared.css. */
+</style>
+</head>
+<body>
+<script src="../../footer.js"></script>
+<script src="../../nav.js"></script>
+<script src="../../training-sidebar.js"></script>
+
+<!-- MODULE PROGRESS -->
+<div class="module-strip">
+  <span class="ms-label">Module</span>
+  <a href="01-the-copilot-landscape.html" class="ms-item active"><span class="ms-num">1</span>Foundations &amp; Chat</a>
+  <span class="ms-arrow">›</span>
+  <a href="04-excel-copilot.html" class="ms-item upcoming"><span class="ms-num">2</span>Copilot in the Apps</a>
+  <span class="ms-arrow">›</span>
+  <a href="08-meet-researcher.html" class="ms-item upcoming"><span class="ms-num">3</span>Researcher</a>
+  <span class="ms-arrow">›</span>
+  <a href="12-meet-analyst.html" class="ms-item upcoming"><span class="ms-num">4</span>Analyst &amp; Close Room</a>
+</div>
+
+<div class="page-header" id="intro">
+  <div class="eyebrow">Module 1 · Lesson 1 of 3</div>
+  <h1 class="title">The Copilot <em>Landscape</em></h1>
+  <p class="subtitle">You already have Copilot — this lesson is the map. One assistant shows up on three surfaces: Copilot Chat, Copilot inside the M365 apps, and the reasoning agents, Researcher and Analyst. Advanced use starts with knowing which surface you're on, what it's grounded in, and what it can actually see.</p>
+  <div class="header-phase">
+    <div class="header-phase-dot" style="background:var(--teal)"></div>
+    Foundations &amp; Copilot Chat · ~15 min read
+  </div>
+</div>
+
+<!-- THREE SURFACES -->
+<div class="section" id="surfaces">
+  <div class="sec-eyebrow">01 — One assistant, three surfaces</div>
+  <h2 class="sec-title">Chat, the apps, and the <em>agents</em></h2>
+  <p class="sec-sub">Everything in this workshop lives on one of three surfaces. They share the same brain and the same data rules — what changes is where the work happens and how much of it you hand over.</p>
+
+  <div class="insight-grid" style="margin-top:28px;">
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">Copilot Chat</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">The conversation surface — in the Microsoft 365 Copilot app, Teams, and Edge. Ask questions, draft, summarize, and reference specific files, people, and meetings. With your license it's grounded in your work data, and it's where the agents live. Module 1 makes you sharp here.</p>
+    </div>
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">Copilot in the apps</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Copilot working inside Excel, Outlook, Word, PowerPoint, and Teams — where finance actually lives. Since April 2026 it takes real multi-step actions in your documents: editing cells, restructuring drafts, building decks. Module 2 goes app by app.</p>
+    </div>
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">The reasoning agents</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Researcher and Analyst — agents you brief like a colleague and check back on. Researcher produces cited, multi-source reports; Analyst runs chain-of-thought data analysis with visible Python. Modules 3 and 4 are theirs.</p>
+    </div>
+  </div>
+
+  <div class="tip-trick" style="margin-top:32px;">
+    <div class="tip-trick-icon">💡</div>
+    <div class="tip-trick-copy">
+      <div class="tip-trick-label">The shift this workshop is about</div>
+      <p>Most people use Copilot like a search box: one question, one answer, copy, paste. Advanced use means grounding it in the right sources, letting it act inside your documents, and delegating whole jobs to agents — then reviewing like the professional whose name goes on the output.</p>
+    </div>
+  </div>
+</div>
+
+<!-- WORK VS WEB -->
+<div class="section section-dark" id="grounding">
+  <div class="sec-eyebrow on-dark">02 — Where answers come from</div>
+  <h2 class="sec-title on-dark">Work vs Web <em>grounding</em></h2>
+  <p class="sec-sub on-dark">Copilot Chat has a toggle that changes everything about an answer: whether it draws on your organization's data or the public web. Advanced users pick deliberately, per question — and scope agents the same way.</p>
+
+  <div class="dev-grid-2" style="margin-top:28px;">
+    <div class="dev-card">
+      <div class="dev-kicker">Work</div>
+      <h3>Grounded in your Microsoft Graph</h3>
+      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">Answers draw on your emails, meetings, chats, and files — plus connected sources — through the Semantic Index. "What did we agree on the close calendar?" only works here. It can only see content you already have permission to open.</p>
+      <div class="dev-quote">Use for: anything about our numbers, our files, our meetings, our people.</div>
+    </div>
+    <div class="dev-card">
+      <div class="dev-kicker">Web</div>
+      <h3>Grounded in the public web</h3>
+      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">Answers draw on live web results. Market conditions, carrier news, rate environment, a competitor's earnings release — this is the scope for questions about the world outside the tenant.</p>
+      <div class="dev-quote">Use for: markets, industry news, anything you'd otherwise search for.</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT IT CAN SEE -->
+<div class="section" id="trust">
+  <div class="sec-eyebrow">03 — The data rules</div>
+  <h2 class="sec-title">What Copilot can — and can't — <em>see</em></h2>
+  <p class="sec-sub">Three facts settle most of the "is this safe?" questions a finance team asks. They're Microsoft's own commitments, current as of July 2026 — and the third one is a nuance most teams miss.</p>
+
+  <div class="bp-grid--light" style="margin-top:28px;">
+    <div class="bp-item">
+      <div class="bp-num">01</div>
+      <div class="bp-title">Your permissions are the boundary</div>
+      <div class="bp-body">Copilot only surfaces content you already have at least view access to. It respects identity, sharing, and Purview sensitivity labels. It cannot read another team's folder just because you asked nicely.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">02</div>
+      <div class="bp-title">No training on our data</div>
+      <div class="bp-body">Prompts, responses, and Graph data are not used to train the foundation models — including the OpenAI and Anthropic models running under the hood. Your close commentary isn't teaching anyone's model.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">03</div>
+      <div class="bp-title">Know the agent-records nuance</div>
+      <div class="bp-body">Copilot chat history is retained and eDiscovery-searchable via Purview. But Researcher and Analyst session content is not e-discoverable by default — so save important agent outputs into files that are governed.</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT THIS UNLOCKS AT B&B -->
+<div class="section section--off" id="finance">
+  <div class="sec-eyebrow">04 — Why this matters here</div>
+  <h2 class="sec-title">The finance workload this <em>absorbs</em></h2>
+  <p class="sec-sub">Brown &amp; Brown's finance org consolidates hundreds of decentralized profit centers into two segments, closes the books through the biggest integration in company history, and supports a deal engine that signed 43 acquisitions in 2025. That's exactly the document-heavy, deadline-driven work these tools are built for.</p>
+
+  <div class="insight-grid" style="margin-top:28px;">
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">Close &amp; consolidation</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Variance narratives across profit centers, budget-vs-actuals commentary, fiduciary cash rec exceptions, organic-revenue schedules — repetitive analysis that ends in a written explanation, every month.</p>
+    </div>
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">The deal engine</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Data-room review, target research, earn-out modeling, purchase-accounting workpapers, integration questions — research-heavy work where Researcher and Analyst carry the first draft.</p>
+    </div>
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">Carrier economics</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Contingent-commission estimates that hinge on carrier loss ratios, supplemental tracking, float income analysis — estimate-driven numbers that need a documented story behind them.</p>
+    </div>
+  </div>
+</div>
+
+<!-- NEXT -->
+<div class="section" id="next">
+  <div class="sec-eyebrow">Up next</div>
+  <h2 class="sec-title">Lesson 2: Prompt Like an Analyst</h2>
+  <p class="sec-sub">The surface map is set. Next: Microsoft's four-element prompt framework — Goal, Context, Expectations, Source — and the grounding moves that make Copilot answer from the right files, every time.</p>
+  <a href="02-prompt-like-an-analyst.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--teal);color:var(--white);text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:600;font-size:15px;margin-top:8px;">Next Lesson →</a>
+</div>
+
+<div class="page-footer"></div>
+</body>
+</html>

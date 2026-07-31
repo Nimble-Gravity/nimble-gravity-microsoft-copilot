@@ -45,14 +45,14 @@
     footer.removeAttribute('style');
     footer.innerHTML =
       '<div class="nav-footer-copy">' +
-        '<div class="nav-footer-kicker">Nimble Gravity · Cowork Enablement</div>' +
-        '<div class="nav-footer-title">Cowork Workshop · Claude Cowork</div>' +
-        '<div class="nav-footer-text">A four-workshop enablement program that gets knowledge workers productive with Cowork — getting set up, real use cases by industry, building your first skill, then plugins, team deployment, and governance.</div>' +
-        '<div class="nav-footer-stages" aria-label="Workshops">' +
-          '<span class="nav-footer-stage">Workshop 1 · Setup &amp; Foundations</span>' +
-          '<span class="nav-footer-stage">Workshop 2 · Use Cowork</span>' +
-          '<span class="nav-footer-stage">Workshop 3 · Build a Skill</span>' +
-          '<span class="nav-footer-stage">Workshop 4 · Govern &amp; Roll Out</span>' +
+        '<div class="nav-footer-kicker">Nimble Gravity · Copilot Enablement</div>' +
+        '<div class="nav-footer-title">M365 Copilot Advanced Workshop · Brown &amp; Brown Finance</div>' +
+        '<div class="nav-footer-text">A four-module, hands-on workshop that takes the Brown &amp; Brown finance team deep into Microsoft 365 Copilot — mastering Copilot Chat, Copilot in Excel, Outlook, Word, and PowerPoint, then the Researcher and Analyst reasoning agents on real finance workflows.</div>' +
+        '<div class="nav-footer-stages" aria-label="Modules">' +
+          '<span class="nav-footer-stage">Module 1 · Foundations &amp; Copilot Chat</span>' +
+          '<span class="nav-footer-stage">Module 2 · Copilot in the Apps</span>' +
+          '<span class="nav-footer-stage">Module 3 · The Researcher Agent</span>' +
+          '<span class="nav-footer-stage">Module 4 · Analyst &amp; The Close Room</span>' +
         '</div>' +
       '</div>' +
       '<a href="https://nimblegravity.com/" class="brand-link" target="_blank" rel="noopener noreferrer" aria-label="Nimble Gravity">' +

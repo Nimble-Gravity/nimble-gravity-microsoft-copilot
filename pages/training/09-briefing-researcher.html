@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Briefing Researcher — Module 3</title>
+<link rel="stylesheet" href="../../styles/shared.css"/>
+<style>
+/* Page-specific styles go here. This scaffold relies entirely on shared.css. */
+</style>
+</head>
+<body>
+<script src="../../footer.js"></script>
+<script src="../../nav.js"></script>
+<script src="../../training-sidebar.js"></script>
+
+<!-- MODULE PROGRESS -->
+<div class="module-strip">
+  <span class="ms-label">Module</span>
+  <a href="01-the-copilot-landscape.html" class="ms-item done"><span class="ms-num">1</span>Foundations &amp; Chat</a>
+  <span class="ms-arrow">›</span>
+  <a href="04-excel-copilot.html" class="ms-item done"><span class="ms-num">2</span>Copilot in the Apps</a>
+  <span class="ms-arrow">›</span>
+  <a href="08-meet-researcher.html" class="ms-item active"><span class="ms-num">3</span>Researcher</a>
+  <span class="ms-arrow">›</span>
+  <a href="12-meet-analyst.html" class="ms-item upcoming"><span class="ms-num">4</span>Analyst &amp; Close Room</a>
+</div>
+
+<div class="page-header" id="intro">
+  <div class="eyebrow">Module 3 · Lesson 2 of 4</div>
+  <h1 class="title"><em>Briefing</em> Researcher</h1>
+  <p class="subtitle">With an agent that works alone for 45 minutes, the brief is where your skill lives. A vague mission returns a vague report — and costs the same query. This lesson is the briefing craft: structure the mission like a memo to a sharp new hire, engage seriously with the clarifying questions, and handle the report like a reviewer, not a reader.</p>
+  <div class="header-phase">
+    <div class="header-phase-dot" style="background:var(--blueD)"></div>
+    The Researcher Agent · ~15 min read
+  </div>
+</div>
+
+<!-- THE BRIEF IS THE SKILL -->
+<div class="section" id="brief">
+  <div class="sec-eyebrow">01 — The brief is the skill</div>
+  <h2 class="sec-title">Write it like a memo to a sharp <em>new hire</em></h2>
+  <p class="sec-sub">A good Researcher brief reads like the note you'd leave a talented analyst on their first day: capable of anything, but knowing nothing about your context. Four things belong in every mission — and they'll look familiar from the Module 1 prompt framework.</p>
+
+  <div class="bp-grid--light" style="margin-top:28px;">
+    <div class="bp-item">
+      <div class="bp-num">01</div>
+      <div class="bp-title">Objective</div>
+      <div class="bp-body">The question the report must answer, stated as a question or a decision. "Produce a diligence brief on revenue quality and earn-out risk" — not "research this company."</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">02</div>
+      <div class="bp-title">Scope &amp; sources</div>
+      <div class="bp-body">Work data, web, or both — and which sources to prefer. Name the files by folder, and name the kind of web sources that count: regulator filings, carrier results, market reports.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">03</div>
+      <div class="bp-title">Deliverable spec</div>
+      <div class="bp-body">Headings, length, and the citation requirement, stated explicitly. "Structured report with headings and citations, under six pages" turns a wandering essay into a workpaper.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">04</div>
+      <div class="bp-title">Audience</div>
+      <div class="bp-body">Who reads it and what they'll do with it. "For the finance deal team ahead of a go/no-go" sets depth, tone, and what gets flagged versus footnoted.</div>
+    </div>
+  </div>
+
+  <div class="code-wrap" style="margin-top:32px;">
+    <div class="code-topbar">
+      <span class="cb-dot" style="background:#ff5f57"></span>
+      <span class="cb-dot" style="background:#febc2e"></span>
+      <span class="cb-dot" style="background:#28c840"></span>
+      <span class="code-label">The weak version — one query spent, little back</span>
+      <button class="copy-btn" onclick="copyBlock('weak-brief', this)">Copy</button>
+    </div>
+    <div class="code-body">
+<pre id="weak-brief">Research the Lighthouse acquisition and tell me if it's a good deal.</pre>
+    </div>
+  </div>
+
+  <div class="code-wrap" style="margin-top:24px;">
+    <div class="code-topbar">
+      <span class="cb-dot" style="background:#ff5f57"></span>
+      <span class="cb-dot" style="background:#febc2e"></span>
+      <span class="cb-dot" style="background:#28c840"></span>
+      <span class="code-label">The full Lighthouse brief — the one you ran in Module 1</span>
+      <button class="copy-btn" onclick="copyBlock('full-brief', this)">Copy</button>
+    </div>
+    <div class="code-body">
+<pre id="full-brief">I'm on the finance team at a large US insurance brokerage, evaluating an acquisition target. Using the Project Lighthouse files in my OneDrive Copilot Workshop folder (the CIM extract, 3-year financials, carrier contract summary, and earn-out term sheet) AND public web sources on the Florida coastal property insurance market, produce a diligence brief that covers: (1) the quality of the target's revenue growth, separating contingent commissions from core commissions; (2) carrier concentration risk and which single relationship most threatens contingent income; (3) how current Florida coastal property market conditions could affect the proposed earn-out; (4) the five questions finance should ask before close. Structured report with headings and citations; keep it under six pages.</pre>
+    </div>
+  </div>
+
+  <p style="margin-top:24px;font-size:15px;color:var(--slate);line-height:1.65;"><strong>Spot the four elements:</strong> objective — a diligence brief answering four numbered questions; scope &amp; sources — named work files plus a defined slice of the web; deliverable — headings, citations, under six pages; audience — finance, evaluating a target. The weak version has none of them, and it costs exactly the same query from your monthly 25.</p>
+</div>
+
+<!-- THE CLARIFYING PHASE -->
+<div class="section section-dark" id="clarify">
+  <div class="sec-eyebrow on-dark">02 — The clarifying phase</div>
+  <h2 class="sec-title on-dark">The interview before the <em>run</em></h2>
+  <p class="sec-sub on-dark">Before Researcher starts, it asks clarifying questions. Engaging with them is Microsoft's own #1 stated best practice for the agent — and it's the highest-leverage minute of the whole mission. Skip it, and the agent fills the gaps with guesses you'll pay for in the report.</p>
+
+  <div class="dev-grid-2" style="margin-top:28px;">
+    <div class="dev-card">
+      <div class="dev-kicker">Why it asks</div>
+      <h3>Intake, exactly like an analyst's</h3>
+      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">The questions are the agent negotiating scope before committing 10–45 minutes of work. Every answer you give narrows the search space and sharpens the report. Treat "looks good, just run it" as leaving quality on the table.</p>
+      <div class="dev-quote">A sharp new hire who asks scoping questions isn't slow — they're good.</div>
+    </div>
+    <div class="dev-card">
+      <div class="dev-kicker">Good answers</div>
+      <h3>Scope, geography, depth, exclusions</h3>
+      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">The strongest answers settle four things: <strong>scope</strong> (work files and web, or one of them), <strong>geography</strong> ("US market focus — Florida coastal property specifically"), <strong>depth</strong> ("decision-ready brief, not a literature review"), and <strong>exclusions</strong> ("skip life &amp; health carriers; ignore pre-2023 market commentary").</p>
+      <div class="dev-quote">In the Module 1 kickoff you answered: work files and web, US focus, finance audience.</div>
+    </div>
+  </div>
+</div>
+
+<!-- WORKING WITH THE OUTPUT -->
+<div class="section" id="output">
+  <div class="sec-eyebrow">03 — Working with the output</div>
+  <h2 class="sec-title">Report in hand — now work it like a <em>reviewer</em></h2>
+  <p class="sec-sub">The report is a first draft from a fast, well-read analyst — not a finished workpaper. Three habits turn it into something your name can go on, and the third one is a compliance move, not just a convenience.</p>
+
+  <div class="bp-grid--light" style="margin-top:28px;">
+    <div class="bp-item">
+      <div class="bp-num">01</div>
+      <div class="bp-title">Verify the citations</div>
+      <div class="bp-body">Citations are claims about sources. Open a sample and confirm the source actually says what the report says it does — the same discipline you'd apply to a junior teammate's footnotes. Lesson 4 makes this a structured pass.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">02</div>
+      <div class="bp-title">Follow up in the same session</div>
+      <div class="bp-body">The session keeps the mission's context, so ask follow-ups there: "expand section 2," "what contradicts this?", "tighten the earn-out analysis to one page." Refining in-session beats commissioning a fresh run.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">03</div>
+      <div class="bp-title">Save it into governed files</div>
+      <div class="bp-body">Agent session content is not e-discoverable by default — unlike regular Copilot chat history, which Purview can search. If the report matters, get it into a Word file in OneDrive or SharePoint, where retention and eDiscovery apply. The report isn't a record until you make it one.</div>
+    </div>
+  </div>
+
+  <div class="tip-trick" style="margin-top:32px;">
+    <div class="tip-trick-icon">🚦</div>
+    <div class="tip-trick-copy">
+      <div class="tip-trick-label">When not to use Researcher — budget discipline</div>
+      <p>A quick fact ("what's our fiduciary cash balance per the Q1 release?") is a Copilot Chat question. Math inside a single workbook belongs to Excel Copilot — or Analyst, once you meet it in Module 4. Researcher is for multi-source synthesis questions that deserve minutes of work. Every run draws from the shared 25-query monthly pool, so spend it where synthesis is the job.</p>
+    </div>
+  </div>
+</div>
+
+<!-- NEXT -->
+<div class="section" id="next">
+  <div class="sec-eyebrow">Up next</div>
+  <h2 class="sec-title">Lesson 3: Researcher for Finance</h2>
+  <p class="sec-sub">The craft is set. Next: where Researcher earns its keep on this specific finance desk — the deal engine, the carrier-economics beat, and the reporting calendar.</p>
+  <a href="10-researcher-for-finance.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--blueD);color:var(--white);text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:600;font-size:15px;margin-top:8px;">Next Lesson →</a>
+</div>
+
+<div class="page-footer"></div>
+<script>
+function copyBlock(id, btn) {
+  var pre = document.getElementById(id);
+  if (!pre || !navigator.clipboard) return;
+  navigator.clipboard.writeText(pre.innerText).then(function () {
+    var prev = btn.textContent;
+    btn.textContent = 'Copied!';
+    setTimeout(function () { btn.textContent = prev; }, 2000);
+  });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The Close Room — Module 4</title>
+<link rel="stylesheet" href="../../styles/shared.css"/>
+<style>
+/* Page-specific styles go here. This scaffold relies entirely on shared.css. */
+</style>
+</head>
+<body>
+<script src="../../footer.js"></script>
+<script src="../../nav.js"></script>
+<script src="../../training-sidebar.js"></script>
+<script src="../../interactive.js"></script>
+
+<!-- MODULE PROGRESS -->
+<div class="module-strip">
+  <span class="ms-label">Module</span>
+  <a href="01-the-copilot-landscape.html" class="ms-item done"><span class="ms-num">1</span>Foundations &amp; Chat</a>
+  <span class="ms-arrow">›</span>
+  <a href="04-excel-copilot.html" class="ms-item done"><span class="ms-num">2</span>Copilot in the Apps</a>
+  <span class="ms-arrow">›</span>
+  <a href="08-meet-researcher.html" class="ms-item done"><span class="ms-num">3</span>Researcher</a>
+  <span class="ms-arrow">›</span>
+  <a href="12-meet-analyst.html" class="ms-item active"><span class="ms-num">4</span>Analyst &amp; Close Room</a>
+</div>
+
+<div class="page-header" id="intro">
+  <div class="eyebrow">Module 4 · Lesson 5 of 5 · Capstone</div>
+  <h1 class="title">The Close <em>Room</em></h1>
+  <p class="subtitle">It's month-end close, mid-integration, and four things are on fire at once: a variance nobody has explained, a contingent accrual at risk, a trust rec that won't tie, and a deal review due to the controller. Four stations, one team, forty minutes — work each with the right Copilot tool, and sign off with a code the data itself yields.</p>
+  <div class="header-phase">
+    <div class="header-phase-dot" style="background:var(--amber)"></div>
+    Capstone · ~40 min · briefed in-session, run as take-home
+  </div>
+</div>
+
+<!-- THE SCENARIO -->
+<div class="section" id="scenario">
+  <div class="sec-eyebrow">01 — The scenario</div>
+  <h2 class="sec-title">Forty minutes to a signed <em>close</em></h2>
+  <p class="sec-sub">The Close Room is a simulation, but the work is the real desk's work: ground the tools in the right files, delegate the analysis, verify the method, and sign your name to the result. Each station's sign-off code comes out of the data — if your analysis is right, the code is in your hands. Your facilitator briefs it in the session's final minutes; you run it afterward, solo or as a team.</p>
+
+  <div class="insight-grid" style="margin-top:28px;">
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">Solo or a team of 2–4</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Teams were formed in-session — one driver, everyone on the problem. Solo works too. Enter a name in the Close Room and the clock starts; forty minutes is tight but honest if you pick the right tool per station.</p>
+    </div>
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">Close Room + Copilot side by side</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Keep the game in one window and Copilot in the other. Each station panel carries the task and the sign-off format; the analysis happens in Copilot Chat, Excel, and Analyst against the lab files below.</p>
+    </div>
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">Synthetic and Copilot-safe</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Every file is synthetic — B&amp;B-shaped but entirely fictional. Safe to upload to Copilot, Researcher, and Analyst. The one rule that carries over from the real desk: nothing real goes into an exercise, ever.</p>
+    </div>
+  </div>
+
+  <div class="tip-trick" style="margin-top:28px;">
+    <div class="tip-trick-icon">📁</div>
+    <div class="tip-trick-copy">
+      <div class="tip-trick-label">The file pack — download before you enter</div>
+      <p>Six files: the briefing and rubric, plus the four datasets the stations run on. Put the CSVs in your OneDrive <code>Copilot Workshop</code> folder (you staged most of them in pre-work) so Chat, Excel, and Analyst can all reach them.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;">
+        <a href="../../control-room/lab-files/close-room-briefing.md" download style="display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);color:var(--amber-accessible);text-decoration:none;padding:7px 14px;border-radius:6px;font-weight:600;font-size:13px;">close-room-briefing.md ↓</a>
+        <a href="../../control-room/lab-files/close-room-rubric.md" download style="display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);color:var(--amber-accessible);text-decoration:none;padding:7px 14px;border-radius:6px;font-weight:600;font-size:13px;">close-room-rubric.md ↓</a>
+        <a href="../../assets/lab-data/profit-center-pnl.csv" download style="display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);color:var(--amber-accessible);text-decoration:none;padding:7px 14px;border-radius:6px;font-weight:600;font-size:13px;">profit-center-pnl.csv ↓</a>
+        <a href="../../assets/lab-data/carrier-commission-statements.csv" download style="display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);color:var(--amber-accessible);text-decoration:none;padding:7px 14px;border-radius:6px;font-weight:600;font-size:13px;">carrier-commission-statements.csv ↓</a>
+        <a href="../../assets/lab-data/premium-trust-ledger.csv" download style="display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);color:var(--amber-accessible);text-decoration:none;padding:7px 14px;border-radius:6px;font-weight:600;font-size:13px;">premium-trust-ledger.csv ↓</a>
+        <a href="../../assets/lab-data/trust-bank-statement.csv" download style="display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);color:var(--amber-accessible);text-decoration:none;padding:7px 14px;border-radius:6px;font-weight:600;font-size:13px;">trust-bank-statement.csv ↓</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+    <a href="../../control-room/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#3a2a06;text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:600;font-size:15px;">⚿ Enter the Close Room →</a>
+    <span style="font-size:13.5px;color:var(--slate);">Opens in a new tab — keep this lesson handy; the Deal Desk station also uses the Project Lighthouse data room from Module 3.</span>
+  </div>
+</div>
+
+<!-- THE FOUR STATIONS -->
+<div class="section" id="stations">
+  <div class="sec-eyebrow">02 — The four stations</div>
+  <h2 class="sec-title">Four stations, four <em>disciplines</em></h2>
+  <p class="sec-sub">Each station exercises one module of this workshop, in order. The rubric in the file pack carries the exact sign-off formats; the codes themselves live in the data, and nowhere on this page.</p>
+
+  <div class="bp-grid--light" style="margin-top:28px;">
+    <div class="bp-item">
+      <div class="bp-num">01</div>
+      <div class="bp-title">Variance Triage</div>
+      <div class="bp-body">One Specialty Distribution profit center's core commissions eroded against budget from April through June as cat-property rates softened. Find it in <code>profit-center-pnl.csv</code> and prove the trend. Sign-off: its profit-center id.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">02</div>
+      <div class="bp-title">Contingents Desk</div>
+      <div class="bp-body">One carrier's YTD loss ratio ended June above its profit-share threshold, putting the contingent accrual at risk. Work <code>carrier-commission-statements.csv</code> — Pattern B from Lesson 2 is your opening move. Sign-off: the first word of the carrier's name.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">03</div>
+      <div class="bp-title">Trust Rec</div>
+      <div class="bp-body">Reconcile the premium trust ledger to the trust bank statement per the rubric's exception rules. Count the exceptions and identify the payer behind the unidentified receipt. Sign-off: the count plus the payer.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">04</div>
+      <div class="bp-title">Deal Desk</div>
+      <div class="bp-body">From the Project Lighthouse data room: quantify the top carrier's share of the target's core commissions, and name the one-word flaw in the seller's earn-out structure. Sign-off: the number plus the word.</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT IT PROVES -->
+<div class="section section-dark" id="proves">
+  <div class="sec-eyebrow on-dark">03 — What it proves</div>
+  <h2 class="sec-title on-dark">The same judgment loop as the real <em>desk</em></h2>
+  <p class="sec-sub on-dark">The game mechanics are a wrapper. What every station actually tests is the loop this whole workshop taught: ground, delegate, verify, sign.</p>
+
+  <div class="dev-grid-2" style="margin-top:28px;">
+    <div class="dev-card">
+      <div class="dev-kicker">Stations 1–2 · Ground and delegate</div>
+      <h3>Right tool, right brief, right files</h3>
+      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">Variance Triage and the Contingents Desk only fall quickly to a well-briefed Analyst run — metric, dimension, grain — grounded in the right CSV. Brute-forcing them in a chat window is possible, and slower, and that's the lesson.</p>
+      <div class="dev-quote">The routing framework from Lesson 3 is the difference between 15 minutes and 40.</div>
+    </div>
+    <div class="dev-card">
+      <div class="dev-kicker">Stations 3–4 · Verify and sign</div>
+      <h3>Method checked, name attached</h3>
+      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">The Trust Rec pays out only if you apply the rubric's exception rules exactly — verification, not vibes. The Deal Desk asks for a number <em>and</em> a judgment. The deliverable is the completed sign-off plus a five-line close summary to the controller.</p>
+      <div class="dev-quote">Copilot drafts; you own. The summary carries your name, not the agent's.</div>
+    </div>
+  </div>
+</div>
+
+<!-- HOMEWORK POINTER -->
+<div class="section section--off" id="homework">
+  <div class="sec-eyebrow">04 — After the Close Room</div>
+  <h2 class="sec-title">Then run the <em>week</em></h2>
+  <p class="sec-sub">The capstone proves you can do it once, under a clock. The five-day practice plan in Make It Stick proves it holds on your real desk — one rep a day, then two prompts on a schedule.</p>
+
+  <div class="tip-trick" style="margin-top:24px;">
+    <div class="tip-trick-icon">🔁</div>
+    <div class="tip-trick-copy">
+      <div class="tip-trick-label">Your homework is already written</div>
+      <p>Open <a href="15-make-it-stick.html#practice" style="color:var(--amber-accessible);font-weight:600;">the one-week practice plan</a> in Lesson 4: rerun the chat sprint on real permitted data, one Excel Copilot variance table, one Researcher mission, one verified Analyst run, and two scheduled prompts by Friday. The full before-and-after list lives on the <a href="../workshops/pre-work.html#workshop-4" style="color:var(--amber-accessible);font-weight:600;">pre-work &amp; homework page</a>.</p>
+    </div>
+  </div>
+</div>
+
+<!-- KNOWLEDGE CHECK -->
+<div class="section">
+  <div class="ix-quiz" data-ix-quiz="m4" data-ix-pass="4"></div>
+</div>
+
+<!-- NEXT -->
+<div class="section" id="next">
+  <div class="sec-eyebrow">Workshop complete</div>
+  <h2 class="sec-title">That's the full program</h2>
+  <p class="sec-sub">From the surface map, through the apps and the agents, to a decision framework and a capstone signed under a clock. See your progress and certificate, or head back to revisit any module.</p>
+  <p style="margin-top:8px;display:flex;gap:16px;flex-wrap:wrap;">
+    <a href="../workshops/my-progress.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#3a2a06;text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:600;font-size:15px;">See your progress &amp; certificate →</a>
+    <a href="../../index.html" style="display:inline-flex;align-items:center;gap:8px;color:var(--amber-accessible);text-decoration:none;padding:12px 4px;font-weight:600;font-size:15px;">Workshop home →</a>
+  </p>
+</div>
+
+<div class="page-footer"></div>
+</body>
+</html>

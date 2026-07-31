@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Facilitator Guide — Axos Cowork</title>
+<title>Facilitator Guide — B&amp;B Copilot Workshop</title>
 <link rel="stylesheet" href="../../styles/shared.css"/>
 <style>
-/* Page-specific styles go here. This scaffold relies entirely on shared.css. */
+.demo-asset{margin-top:22px;display:flex;flex-direction:column;gap:14px;}
 </style>
 </head>
 <body>
@@ -14,237 +14,201 @@
 <script src="../../nav.js"></script>
 
 <div class="page-header" id="intro">
-  <div class="eyebrow">Axos · Cowork Program</div>
+  <div class="eyebrow">Facilitators only · Nimble Gravity delivery</div>
   <h1 class="title">Facilitator <em>Guide</em></h1>
-  <p class="subtitle">How to run each 2-hour session: the demo to give, the discussion to lead, the timing to hold, and the questions you'll get. Pair this with each workshop's hub page for the full run of show.</p>
+  <p class="subtitle">The minute-by-minute spine for the 2-hour Brown &amp; Brown finance session: per-module beats, demo prompts, the planted findings in the synthetic data, and the recoveries when something stalls. Attendees don't need this page; nothing breaks if they read it — except the fun of the games, whose answer keys live in the two app READMEs, not here.</p>
   <div class="header-phase">
-    <div class="header-phase-dot"></div>
-    Demo scripts · prompts · timing · troubleshooting
+    <div class="header-phase-dot" style="background:var(--teal)"></div>
+    One session · 2 hours · 4 modules
   </div>
 </div>
 
-<!-- HOW TO RUN -->
+<!-- HOW TO RUN IT -->
 <div class="section" id="how">
-  <div class="sec-eyebrow">Hold the shape</div>
-  <h2 class="sec-title">The same rhythm every <em>week</em></h2>
-  <p class="sec-sub">Each workshop follows one shape: open, teach, demo, discuss, break, lab, debrief, close. Protect the lab — it's 40 minutes and it's where the value lands. If you run long, cut the teach, not the lab.</p>
-  <div class="bp-grid--light" style="margin-top:24px;">
+  <div class="sec-eyebrow">00 — Ground rules</div>
+  <h2 class="sec-title">How the session <em>runs</em></h2>
+  <p class="sec-sub">Two hours is tight for four modules. The design absorbs that in three ways: depth lives on the lesson pages (teach the beats, not the pages), every lab runs on pre-staged synthetic data, and the one long-running thing — Researcher — is kicked off at 0:25 so it lands by 1:05.</p>
+
+  <div class="bp-grid--light" style="margin-top:28px;">
     <div class="bp-item">
       <div class="bp-num">01</div>
-      <div class="bp-title">Every session ends in a deliverable</div>
-      <div class="bp-body">Without it, people use Cowork like chat. Make the lab a real delegation that produces a document, memo, or plan.</div>
+      <div class="bp-title">Day-before checklist</div>
+      <div class="bp-body">Verify in the B&amp;B tenant: Researcher + Analyst visible in Agents; scheduled prompts on; Excel Copilot Python available; which model pickers show. <!-- SCAFFOLD: record tenant findings here before delivery --> Commission your own spare Project Lighthouse Researcher run the afternoon before — it's the fallback for anyone whose run fails. Test both games locally (<code>./serve</code>), and skim both app READMEs for the answer keys.</div>
     </div>
     <div class="bp-item">
       <div class="bp-num">02</div>
-      <div class="bp-title">Teach cost discipline early</div>
-      <div class="bp-body">Default to Sonnet; reserve Opus for genuinely hard reasoning. Say it in Workshop 1 and repeat it.</div>
+      <div class="bp-title">Timing discipline</div>
+      <div class="bp-body">The agenda times on the hubs are the contract: 0:10 M1 · 0:35 M2 · 1:00 break · 1:05 M3 · 1:30 M4 · 1:52 debrief. If a lab runs hot, cut the discussion beat, never the hands-on. The 0:25 Researcher kickoff is the one beat you protect at all costs.</div>
     </div>
     <div class="bp-item">
       <div class="bp-num">03</div>
-      <div class="bp-title">Tally the room live</div>
-      <div class="bp-body">The maturity poll is client-only — it shows each person their own answer. Ask for a show of hands per level and pitch the session to the middle.</div>
+      <div class="bp-title">The verify drumbeat</div>
+      <div class="bp-body">Every module ends on the same note: Copilot drafts, the teammate whose name is on it verifies and owns it. Say it four times, once per module — it's the culture you're actually installing.</div>
     </div>
   </div>
 </div>
 
-<!-- WORKSHOP 1 -->
-<div class="section section-dark" id="workshop-1">
-  <div class="sec-eyebrow on-dark">Workshop 1 · Setup &amp; Foundations</div>
-  <h2 class="sec-title on-dark">Demo, discussion, and <em>timing</em></h2>
-  <div class="dev-grid-2" style="margin-top:24px;">
+<!-- MODULE 1 -->
+<div class="section section-dark" id="module-1">
+  <div class="sec-eyebrow on-dark">0:10–0:35</div>
+  <h2 class="sec-title on-dark">Module 1 · Foundations &amp; Copilot <em>Chat</em></h2>
+  <p class="sec-sub on-dark">Goal: everyone prompting in four elements on Work-grounded data, and every laptop with a Researcher run in flight by 0:35.</p>
+
+  <div class="dev-grid-2" style="margin-top:28px;">
     <div class="dev-card">
-      <div class="dev-kicker">Demo (20 min)</div>
-      <h3>Summarize a loan file</h3>
-      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">Stage a sample loan-file folder. Ask Cowork for a one-page summary with a cited findings list. Narrate: this is delegation, not chat — show the plan, approve a step, and open the finished file. Contrast with pasting the same ask into chat.</p>
-      <div class="dev-quote">Keep it on Sonnet; point out the cost note.</div>
+      <div class="dev-kicker">0:10–0:25 · Teach</div>
+      <h3>Landscape, then the framework</h3>
+      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">Open the Module 1 deck. The one live demo that matters: ask the same question — "what drove our June variances?" — on Web scope (generic essay), then Work scope with /profit-center-pnl.csv (real answer). That contrast carries the whole module. Then the four elements, fast, using the before/after in Lesson 2.</p>
+      <div class="dev-quote">Say the data rules out loud: permissions are the boundary; no training on our data; agent sessions aren't e-discoverable by default — save outputs to files.</div>
     </div>
     <div class="dev-card">
-      <div class="dev-kicker">Discussion (10 min)</div>
-      <h3>"One task you'd hand off"</h3>
-      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">Go around: each person names one repetitive, document-heavy task. Good answers are concrete ("summarize my deposit-relationship notes"). Capture them — they seed Workshop 2's use-case shortlist.</p>
-      <div class="dev-quote">M1 is the thinnest module — let the demo and lab breathe.</div>
+      <div class="dev-kicker">0:25–0:35 · Lab</div>
+      <h3>Sprint, then commission</h3>
+      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">The lab page has all three prompts with copy buttons. At 0:30 sharp, everyone opens Agents → Researcher and pastes the Lighthouse mission brief; walk one clarifying-question exchange on screen ("work files and web, US market, finance audience"), then leave the runs cooking. Circulate: the usual blockers are Web scope still on, and lab files not yet indexed.</p>
+      <div class="dev-quote">If someone's OneDrive hasn't indexed the files, have them attach the CSV directly — same result, no drama.</div>
     </div>
   </div>
+</div>
 
-  <div class="demo-asset" style="margin-top:28px;">
-    <p class="sec-sub on-dark" style="margin-bottom:14px;"><strong>Run it as a before/after.</strong> Download the sample loan file, drop it in a folder, and run the prompt below <em>cold</em> — before co-setup — then run the exact same prompt <em>after</em>. For the "after," answer the co-setup interview as the <strong>Maya Chen</strong> persona (in the facilitator script), or drop in her ready-made profile to skip straight to it. Same ask; the second answer comes back in the banker's voice and framed for the role — that contrast is the demo.</p>
-    <a href="../../assets/demo/sample-loan-file.md" download style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.28);color:var(--white);text-decoration:none;padding:10px 18px;border-radius:8px;font-weight:600;font-size:14px;">Download the sample loan file ↓</a>
-    <a href="../../assets/demo/maya-profile/" style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.28);color:var(--white);text-decoration:none;padding:10px 18px;border-radius:8px;font-weight:600;font-size:14px;margin-left:10px;">Browse the Maya demo profile →</a>
+<!-- MODULE 2 -->
+<div class="section" id="module-2">
+  <div class="sec-eyebrow">0:35–1:00</div>
+  <h2 class="sec-title">Module 2 · Copilot in the <em>Apps</em></h2>
+  <p class="sec-sub">Goal: the room sees Excel Copilot plan, execute, and attribute a real analysis — then reproduces a mini close package. Everything runs on <code>profit-center-pnl.csv</code>, opened in desktop Excel from pre-work.</p>
 
-    <div class="code-wrap" style="margin-top:18px;">
+  <div class="demo-asset">
+    <div class="code-wrap">
       <div class="code-topbar">
         <span class="cb-dot" style="background:#ff5f57"></span>
         <span class="cb-dot" style="background:#febc2e"></span>
         <span class="cb-dot" style="background:#28c840"></span>
-        <span class="code-label">Demo prompt — paste into Cowork (run before, then after)</span>
-        <button class="copy-btn" onclick="copyBlock('demo-prompt-w1', this)">Copy</button>
+        <span class="code-label">Excel demo prompt — run at 0:37, narrate the plan before approving</span>
+        <button class="copy-btn" onclick="copyBlock('demo-excel', this)">Copy</button>
       </div>
       <div class="code-body">
-<pre id="demo-prompt-w1">Read the loan file in this folder and write a one-page credit summary I can take to committee. Cover: the borrower and the request, the key financials and any trends, collateral and guarantors, covenant headroom, and the top three risks to flag. Don't invent numbers — if something isn't in the file, say so.</pre>
+<pre id="demo-excel">Build a June 2026 budget-vs-actual variance table by profit center: total revenue and total expense variance, sorted by largest unfavorable. Then flag any profit center where the same account is unfavorable in at least 4 of the 6 months, and chart the top five June variances.</pre>
       </div>
     </div>
   </div>
-</div>
 
-<!-- WORKSHOP 2 -->
-<div class="section" id="workshop-2">
-  <div class="sec-eyebrow">Workshop 2 · Use Cowork</div>
-  <h2 class="sec-title">Demo, tracks, and <em>timing</em></h2>
-
-  <h3 style="margin-top:28px;font-size:19px;color:var(--navy);">Demo (20 min) — A credit memo from a loan file</h3>
-  <p class="sec-sub">Asset: <code>assets/demo/sample-loan-file.md</code> (same file as W1). Run on Maya's profile or your own so the memo comes back in a credit-analyst voice. Stage: put <code>sample-loan-file.md</code> alone in a clean folder, for example <code>loan-demo</code>. Grant Cowork only that folder and say "least privilege" out loud when you do it. Set the model to Sonnet.</p>
-
-  <div class="code-wrap" style="margin-top:18px;">
-    <div class="code-topbar">
-      <span class="cb-dot" style="background:#ff5f57"></span>
-      <span class="cb-dot" style="background:#febc2e"></span>
-      <span class="cb-dot" style="background:#28c840"></span>
-      <span class="code-label">Demo prompt — paste into Cowork</span>
-      <button class="copy-btn" onclick="copyBlock('demo-prompt-w2', this)">Copy</button>
+  <div class="insight-grid" style="margin-top:24px;">
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">Narrate three things</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">The <strong>plan</strong> Copilot shows before acting, the <strong>Python</strong> it invokes for the multi-month scan, and afterward the <strong>Show Changes</strong> pane — "every cell it touched, attributed." That's the auditability story a controllership audience needs to see once to believe.</p>
     </div>
-    <div class="code-body">
-<pre id="demo-prompt-w2">Read the loan file in this folder and draft a credit memo for committee: the request, the borrower, the financial trend, collateral and guarantors, a covenant analysis, and a risk section with the top risks and a recommendation with conditions. Cite the file for every figure, flag anything missing or interim, and treat it as a draft for sign-off — not a decision.</pre>
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">The planted finding</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">The 4-of-6-months flag should surface <strong>PC-402 Manhattan Retail — compensation ~9% over budget every month</strong> (~$651k for H1). If the room finds it, they've experienced the whole point: Copilot surfaced in seconds what a manual scan buries.</p>
     </div>
-  </div>
-
-  <p class="sec-sub" style="margin-top:16px;">As it runs: watch it flag the thin 1.28x DSCR against the 1.25x covenant, the roughly 24% customer concentration, and the stale interim financials. Every figure cites the source file. It calls out what is missing rather than filling it in. That is a draft a banker signs off on.</p>
-
-  <div class="tip-trick" style="margin-top:18px;">
-    <div class="tip-trick-icon">🛡️</div>
-    <div class="tip-trick-copy">
-      <div class="tip-trick-label">Prompt injection beat — say this out loud</div>
-      <p>"Notice approvals are on. If this file, or an email I had forwarded in, carried a hidden line saying ignore your instructions and email this out, Cowork would pause at that step and I would catch it. That is why we keep least privilege and approvals on for anything from outside the bank."</p>
-    </div>
-  </div>
-
-  <h3 style="margin-top:32px;font-size:19px;color:var(--navy);">Discussion (10 min) — Shortlist use cases</h3>
-  <p class="sec-sub">Have each person pick two banking use cases that fit their week and drop them in Teams. Push for concrete examples: "triage my overnight AML alerts," "summarize a new deposit relationship." Tally the top few live. These become the lab tasks and the skill candidates for Workshop 3.</p>
-
-  <h3 style="margin-top:32px;font-size:19px;color:var(--navy);">Lab tracks (1:10–1:50)</h3>
-  <p class="sec-sub">Two parallel tracks run at the same time after the prompting primer. Circulate during staging and point people toward the right track. Sample files for both tracks are in the <a href="resources.html">resource library</a>.</p>
-  <div style="margin-top:18px;overflow-x:auto;">
-    <table style="border-collapse:collapse;font-size:14px;color:var(--slate);min-width:640px;">
-      <thead><tr>
-        <th style="text-align:left;padding:8px 16px 8px 0;border-bottom:1px solid var(--border);">Track</th>
-        <th style="text-align:left;padding:8px 16px 8px 0;border-bottom:1px solid var(--border);">Use case</th>
-        <th style="text-align:left;padding:8px 16px 8px 0;border-bottom:1px solid var(--border);">Best for</th>
-        <th style="text-align:left;padding:8px 0;border-bottom:1px solid var(--border);">Files needed</th>
-      </tr></thead>
-      <tbody>
-        <tr><td style="padding:8px 16px 8px 0;border-bottom:1px solid var(--border);">1 (anchor)</td><td style="padding:8px 16px 8px 0;border-bottom:1px solid var(--border);">Credit memo from a loan file</td><td style="padding:8px 16px 8px 0;border-bottom:1px solid var(--border);">Lending, credit, commercial banking</td><td style="padding:8px 0;border-bottom:1px solid var(--border);">Sample loan file or own loan docs</td></tr>
-        <tr><td style="padding:8px 16px 8px 0;">2</td><td style="padding:8px 16px 8px 0;">Variance analysis commentary</td><td style="padding:8px 16px 8px 0;">Finance, FP&amp;A, accounting</td><td style="padding:8px 0;">Balance sheet, income statement, GL detail</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p class="sec-sub" style="margin-top:16px;">Both tracks: one folder, Sonnet, approvals on, acceptance test written before starting. If a participant's files do not fit either track clearly, put them in Track 1 with the sample loan file.</p>
-
-  <div class="tip-trick" style="margin-top:18px;">
-    <div class="tip-trick-icon">📊</div>
-    <div class="tip-trick-copy">
-      <div class="tip-trick-label">Track 2 facilitator notes</div>
-      <p>If they only have one file: the prompt still works — Cowork will flag what is missing, a useful demo of honest behavior. If the output is too generic: "Add one sentence — 'The material variances this period are in [category].' Rerun." If someone asks to switch to Opus: hold the line. Document reading and drafting is Sonnet territory.</p>
-    </div>
-  </div>
-
-  <div class="tip-trick" style="margin-top:18px;">
-    <div class="tip-trick-icon">🚧</div>
-    <div class="tip-trick-copy">
-      <div class="tip-trick-label">Hold the line</div>
-      <p>Least-privilege folder access and approvals on for outside content are not optional during the lab. Do not wait for a perfect first pass. Make sure everyone finishes a deliverable.</p>
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">0:47 quick hits · 0:53 circuit</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Quick hits from the Module 2 deck: Outlook triage, Teams recap, Narrative Builder — 90 seconds each, screenshots not live. Then the lab: Excel table → Word commentary paragraph. Close by pointing at the <strong>Variance Vault</strong> take-home; codes and derivations are in <code>escape-room/README.md</code>.</p>
     </div>
   </div>
 </div>
 
-<!-- WORKSHOP 3 -->
-<div class="section section-dark" id="workshop-3">
-  <div class="sec-eyebrow on-dark">Workshop 3 · Build a Skill</div>
-  <h2 class="sec-title on-dark">Open, demo, discussion, and <em>lab</em></h2>
-  <div class="dev-grid-2" style="margin-top:24px;">
+<!-- MODULE 3 -->
+<div class="section section-dark" id="module-3">
+  <div class="sec-eyebrow on-dark">1:05–1:30 · after the break</div>
+  <h2 class="sec-title on-dark">Module 3 · The Researcher <em>Agent</em></h2>
+  <p class="sec-sub on-dark">Goal: every table reviews a real Researcher report like a reviewer — citations spot-checked, gaps named — and leaves knowing what they'd commission next.</p>
+
+  <div class="dev-grid-2" style="margin-top:28px;">
     <div class="dev-card">
-      <div class="dev-kicker">Open (10 min)</div>
-      <h3>W2 quiz + skill seeds</h3>
-      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">Open with the Workshop 2 knowledge check — run it live in the poll tool (5 min), read each answer aloud, and close the loop. Then pull 2–3 use cases from the W2 survey submissions and name them: "These are today's skill seeds — by the end of the vault you'll know how to build one of these."</p>
-      <div class="dev-quote">Pre-recruit two heavy users the day before: "I'd love you to kick off the discussion — would you share your take on good vs bad skills?" No cold calls.</div>
+      <div class="dev-kicker">1:05–1:15 · Reports come home</div>
+      <h3>Expect a spread — use it</h3>
+      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">Some runs will be done, some mid-flight, a few failed. That variance IS the lesson — complex runs take 10–45 minutes, which is why advanced users commission early. Pair unfinished runs with finished neighbors; project your spare run if needed. Walk the review pass from Lesson 11: four questions answered? three citations spot-checked? work-sourced vs web-sourced separated?</p>
+      <div class="dev-quote">The Lighthouse report should flag contingent-dependence (15.5% of revenue), Gulfstream concentration (38%), and the uncapped earn-out. If a report missed one, that's your follow-up-question demo.</div>
     </div>
     <div class="dev-card">
-      <div class="dev-kicker">Demo (19 min)</div>
-      <h3>Decompose the memo workflow</h3>
-      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">Run the workflow-decomposition skill live on the memo workflow. Then open the memo skill and read it against the standards: description, length, good/bad examples. This is the discipline the Skill Vault tests.</p>
-      <div class="dev-quote">Close with: "Everything you just watched is a key to a door."</div>
-    </div>
-    <div class="dev-card">
-      <div class="dev-kicker">Discussion + teams (12 min)</div>
-      <h3>Good skill vs bad, then vault teams</h3>
-      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">Pre-recruited heavy users share first — no cold call. Critique a sample description: is it third-person and keyword-rich? Would it actually trigger? A bad one is vague, first-person, 900 lines, and has no evals. At the 8-min mark, announce breakout room assignments (2–4 per team) and who screen-shares Cowork. Give teams 30 seconds to find their room before break.</p>
-      <div class="dev-quote">Evals before docs — say it twice.</div>
-    </div>
-    <div class="dev-card">
-      <div class="dev-kicker">Lab (40 min)</div>
-      <h3>Run the Skill Vault</h3>
-      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">Ensure all five lab files are shared before breakout rooms open — files are on the <a href="../training/11-build-a-skill-lab.html" style="color:var(--mint-on-dark);">lab page</a> as downloads. One driver per team runs Cowork and shares their screen; rest advise. Keep the <a href="../../escape-room/admin.html" style="color:var(--mint-on-dark);">facilitator view</a> open: live progress per team, hints used, and a Reset for stuck teams. Hint 1 is free; hint 2 adds 2 minutes. Setup and the optional shared-leaderboard backend are in the <a href="../../escape-room/README.md" style="color:var(--mint-on-dark);">vault README</a>.</p>
-      <div class="dev-quote">Codes are case-insensitive; the format line in each room's last lab step is the nudge to give first.</div>
+      <div class="dev-kicker">1:15–1:30 · Craft + the desk</div>
+      <h3>Briefing craft, then real missions</h3>
+      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">Teach briefing craft off the room's own runs: whose clarifying answers were specific, whose report came back sharper. Then the discussion beat: each table names one real mission — deal research, carrier conditions, disclosure benchmarking — and one thing they would NOT send to Researcher (quick facts, single-workbook math). Remind: 25 queries a month shared with Analyst.</p>
+      <div class="dev-quote">Cut the discussion, never the review pass, if time runs hot.</div>
     </div>
   </div>
 </div>
 
-<!-- WORKSHOP 4 -->
-<div class="section" id="workshop-4">
-  <div class="sec-eyebrow">Workshop 4 · Govern &amp; Roll Out</div>
-  <h2 class="sec-title">Demo, discussion, and <em>timing</em></h2>
-  <div class="bp-grid--light" style="margin-top:24px;">
-    <div class="bp-item">
-      <div class="bp-num">Demo</div>
-      <div class="bp-title">Showcase the adoption dashboard — 19 min, Kevin drives</div>
-      <div class="bp-body">No console demo and no live Cowork demo this cohort. The whole slot is a walkthrough of the <strong>Nimble Gravity adoption dashboard</strong>, our own accelerator, narrated by the person who built it. Card order: users → daily prompts per user → token usage → cost by model → <strong>top expensive prompts</strong> → reliability and MCP servers. Facilitator interjects three times only: the Models-tab cap after cost-by-model, the education loop on top expensive prompts, and one plain sentence naming it as something we stand up for clients. Full detail in <code>workshop-4-script.md</code>.</div>
+<!-- MODULE 4 -->
+<div class="section" id="module-4">
+  <div class="sec-eyebrow">1:30–1:52</div>
+  <h2 class="sec-title">Module 4 · Analyst &amp; The Close <em>Room</em></h2>
+  <p class="sec-sub">Goal: one verified Analyst run per laptop, the decision framework installed, and teams briefed for the take-home capstone.</p>
+
+  <div class="demo-asset">
+    <div class="code-wrap">
+      <div class="code-topbar">
+        <span class="cb-dot" style="background:#ff5f57"></span>
+        <span class="cb-dot" style="background:#febc2e"></span>
+        <span class="cb-dot" style="background:#28c840"></span>
+        <span class="code-label">Analyst demo prompt — Agents → Analyst, attach carrier-commission-statements.csv</span>
+        <button class="copy-btn" onclick="copyBlock('demo-analyst', this)">Copy</button>
+      </div>
+      <div class="code-body">
+<pre id="demo-analyst">For each carrier, compare the YTD loss ratio trend against its contingent profit-share threshold across Jan–Jun 2026. Which carriers' contingent accruals are at risk, and how much accrual is exposed? Chart loss ratio vs threshold by carrier, and state your method.</pre>
+      </div>
     </div>
-    <div class="bp-item">
-      <div class="bp-num">Talk</div>
-      <div class="bp-title">Discussion: what leaves the Cowork interface?</div>
-      <div class="bp-body">With IT and compliance in the room — which Axos workloads need zero retention or centralized audit today, and therefore route to the API or Claude Code Enterprise? Pre-recruit your compliance partner to open it. Capture the answers: they become Lock 4 material.</div>
+  </div>
+
+  <div class="insight-grid" style="margin-top:24px;">
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">Narrate the Python pane</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Analyst's signature move is reasoning you can audit: read the code out loud — "it's grouping by carrier, comparing against the threshold column." The planted finding: <strong>Gulfstream Property &amp; Cas. ends June at 0.83 against a 0.60 threshold</strong> — the accrual collapse is visible in the June column. Old Colony (0.45) is the healthy contrast.</p>
     </div>
-    <div class="bp-item">
-      <div class="bp-num">Aim</div>
-      <div class="bp-title">A defensible control narrative</div>
-      <div class="bp-body">The capstone one-pager is now produced <em>inside</em> the lab — it is Lock 4, scored against a 9-item acceptance checklist. Teams iterate until it clears. Make sure every team leaves with theirs.</div>
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">1:42 · Choosing your Copilot</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Run the framework as rapid-fire call-outs — "MD&amp;A background research?" (Researcher) — "formula fix in the open workbook?" (Excel Copilot) — "trend across four files?" (Analyst). End on the governance overlay: shared 25-query pool, save agent outputs to governed files.</p>
+    </div>
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">1:48 · Brief the Close Room</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Form teams of 3–4, show the four station names, point at the downloads on Lesson 16, and set the deadline (end of week). Answer key and derivation formulas: <code>control-room/README.md</code>. Monitor team progress live at <a href="../../control-room/admin.html">the admin console</a> during the take-home window.</p>
     </div>
   </div>
 
   <div class="tip-trick" style="margin-top:28px;">
-    <div class="tip-trick-icon">⚿</div>
+    <div class="tip-trick-icon">🏁</div>
     <div class="tip-trick-copy">
-      <div class="tip-trick-label">The Control Room — run the lab</div>
-      <p>Full talk track, answer key, per-lock failure modes, and pacing cues are in <code>workshop-4-script.md</code> at the repo root. Open the <a href="../../control-room/admin.html">facilitator view</a> during the lab slot (local-only this cohort — it sees teams from your browser). Distribute the six lab files before the break; nothing needs installing before the clock starts.</p>
-      <p style="margin-top:10px;"><strong>Date-sensitive:</strong> the governance facts were verified 2026-07-21. Re-check them against the Sources in <code>cowork-context.md</code> before you present.</p>
+      <div class="tip-trick-label">1:52–2:00 · Debrief</div>
+      <p>Three beats: knowledge checks live at the end of each lab lesson (four quizzes → certificate on <a href="my-progress.html">My Progress</a>); take-home = Variance Vault, Close Room, and the <a href="../training/15-make-it-stick.html">one-week practice plan</a>; then the <a href="feedback.html">2-minute feedback</a> before anyone stands up.</p>
     </div>
   </div>
 </div>
 
 <!-- TROUBLESHOOTING -->
 <div class="section section--off" id="troubleshooting">
-  <div class="sec-eyebrow">When something blocks</div>
-  <h2 class="sec-title">Common <em>snags</em></h2>
-  <div class="bp-grid--light" style="margin-top:24px;">
+  <div class="sec-eyebrow">When it goes sideways</div>
+  <h2 class="sec-title">Recoveries, <em>fast</em></h2>
+
+  <div class="bp-grid--light" style="margin-top:28px;">
     <div class="bp-item">
       <div class="bp-num">01</div>
-      <div class="bp-title">Licenses &amp; SSO</div>
-      <div class="bp-body">Confirm Claude Cowork access in pre-work. SSO-only sign-in blocks the skill-creator's run_loop optimizer — tune descriptions by hand instead.</div>
+      <div class="bp-title">No Researcher/Analyst in the Agents list</div>
+      <div class="bp-body">Admin hasn't enabled agents for that account, or the license isn't assigned. Pair them with a neighbor for the session and log the name for IT follow-up — don't debug licensing live.</div>
     </div>
     <div class="bp-item">
       <div class="bp-num">02</div>
-      <div class="bp-title">Connectors not approved</div>
-      <div class="bp-body">If the M365 (or Google) connector isn't on, fall back to local files: grant a folder and run from there. Plan the labs local-first.</div>
+      <div class="bp-title">Lab files won't reference with "/"</div>
+      <div class="bp-body">OneDrive hasn't indexed them yet. Attach the file directly in the chat instead — identical outcome. Prevent it next time by insisting on the pre-work upload a day ahead.</div>
     </div>
     <div class="bp-item">
       <div class="bp-num">03</div>
-      <div class="bp-title">Scheduled tasks &amp; the audit gap</div>
-      <div class="bp-body">Claude Cowork's scheduled tasks need the machine awake and the app open. And be precise about the June-2026 audit-coverage gap — manage it, re-verify it; don't overstate it.</div>
+      <div class="bp-title">A Researcher run fails or stalls</div>
+      <div class="bp-body">Project your spare run from the day before. Failed runs still count against the 25-query pool, so don't have people blindly rerun — diagnose the brief first.</div>
     </div>
-  </div>
-  <div class="tip-trick" style="margin-top:28px;">
-    <div class="tip-trick-icon">🧭</div>
-    <div class="tip-trick-copy">
-      <div class="tip-trick-label">Hubs &amp; resources</div>
-      <p>Each session's full agenda is on its <a href="module-1-workshop.html">workshop hub</a>. All skills, templates, and decks are in the <a href="resources.html">resource library</a>.</p>
+    <div class="bp-item">
+      <div class="bp-num">04</div>
+      <div class="bp-title">Excel Copilot won't run Python analysis</div>
+      <div class="bp-body">Rollout/region dependent. Fallback: run the same ask through Analyst with the CSV attached — and frame it with the decision framework: "multi-step analysis is Analyst's home turf anyway."</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">05</div>
+      <div class="bp-title">Someone burned their query pool</div>
+      <div class="bp-body">The 25/month Researcher+Analyst pool is per user. Pair them up for the rest of the session; it's also the perfect segue to the budget-discipline beat in Module 4.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">06</div>
+      <div class="bp-title">Game unlock code rejected</div>
+      <div class="bp-body">Codes normalize to uppercase with whitespace stripped — the usual failure is a stale edit to the lab CSVs. Both READMEs carry the derivations; regenerate hashes with <code>node tools/generate-hashes.mjs</code> if data ever changes.</div>
     </div>
   </div>
 </div>

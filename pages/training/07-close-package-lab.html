@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The Close-Package Lab — Module 2</title>
+<link rel="stylesheet" href="../../styles/shared.css"/>
+<style>
+/* Page-specific styles go here. This scaffold relies entirely on shared.css. */
+</style>
+</head>
+<body>
+<script src="../../footer.js"></script>
+<script src="../../nav.js"></script>
+<script src="../../training-sidebar.js"></script>
+<script src="../../interactive.js"></script>
+
+<!-- MODULE PROGRESS -->
+<div class="module-strip">
+  <span class="ms-label">Module</span>
+  <a href="01-the-copilot-landscape.html" class="ms-item done"><span class="ms-num">1</span>Foundations &amp; Chat</a>
+  <span class="ms-arrow">›</span>
+  <a href="04-excel-copilot.html" class="ms-item active"><span class="ms-num">2</span>Copilot in the Apps</a>
+  <span class="ms-arrow">›</span>
+  <a href="08-meet-researcher.html" class="ms-item upcoming"><span class="ms-num">3</span>Researcher</a>
+  <span class="ms-arrow">›</span>
+  <a href="12-meet-analyst.html" class="ms-item upcoming"><span class="ms-num">4</span>Analyst &amp; Close Room</a>
+</div>
+
+<div class="page-header" id="intro">
+  <div class="eyebrow">Module 2 · Lesson 4 of 4 · Hands-on lab</div>
+  <h1 class="title">The Close-Package <em>Lab</em></h1>
+  <p class="subtitle">Seven minutes, laptops open: build a mini close package by chaining the apps — a variance table in Excel, the commentary paragraph in Word, and (if you're fast) a one-slide summary. Everything runs on the workshop's synthetic P&amp;L; the data is fake and safe to use with Copilot. Then take the full circuit home: the Variance Vault is waiting.</p>
+  <div class="header-phase">
+    <div class="header-phase-dot" style="background:var(--violet)"></div>
+    Copilot in the Apps · ~7 min in-room + take-home
+  </div>
+</div>
+
+<!-- THE TASK -->
+<div class="section" id="task">
+  <div class="sec-eyebrow">01 — The task</div>
+  <h2 class="sec-title">Excel → Word, one <em>chain</em></h2>
+  <p class="sec-sub">You opened <code>profit-center-pnl.csv</code> in desktop Excel during pre-work — open it again now. The circuit: ask Copilot in Excel for the June variance table, then switch to Word and draft the commentary that references it. Synthetic data, real workflow.</p>
+
+  <div class="bp-grid--light" style="margin-top:28px;">
+    <div class="bp-item">
+      <div class="bp-num">01</div>
+      <div class="bp-title">Excel — the variance table</div>
+      <div class="bp-body">With <code>profit-center-pnl.csv</code> open, save it as <code>profit-center-pnl.xlsx</code> into your OneDrive <code>Copilot Workshop</code> folder (Copilot works on saved workbooks, not raw CSVs), then run prompt 1 in the Copilot pane. If Copilot proposes a plan first, read it before approving.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">02</div>
+      <div class="bp-title">Word — the commentary</div>
+      <div class="bp-body">New Word document, run prompt 2. Reference the workbook you just built (type "/" and pick it, or attach it) so the paragraph is grounded in your actual table — not Copilot's memory of it.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">03</div>
+      <div class="bp-title">Stretch — the one-slider</div>
+      <div class="bp-body">Finished early? Open PowerPoint and use Narrative Builder: "one slide summarizing the June budget-vs-actual results by profit center," referencing the same workbook. Outline first, then let it build.</div>
+    </div>
+  </div>
+
+  <div class="code-wrap" style="margin-top:28px;">
+    <div class="code-topbar">
+      <span class="cb-dot" style="background:#ff5f57"></span>
+      <span class="cb-dot" style="background:#febc2e"></span>
+      <span class="cb-dot" style="background:#28c840"></span>
+      <span class="code-label">Prompt 1 — Copilot in Excel, with profit-center-pnl.csv open</span>
+      <button class="copy-btn" onclick="copyBlock('lab-excel', this)">Copy</button>
+    </div>
+    <div class="code-body">
+<pre id="lab-excel">Build a June 2026 budget-vs-actual variance table by profit center on a new sheet. Columns: profit center, June budget, June actual, $ variance, % variance. Sort by $ variance, most unfavorable first, and highlight any profit center where the unfavorable variance exceeds 10% of budget. Keep the original data unchanged.</pre>
+    </div>
+  </div>
+
+  <div class="code-wrap" style="margin-top:24px;">
+    <div class="code-topbar">
+      <span class="cb-dot" style="background:#ff5f57"></span>
+      <span class="cb-dot" style="background:#febc2e"></span>
+      <span class="cb-dot" style="background:#28c840"></span>
+      <span class="code-label">Prompt 2 — Copilot in Word, referencing your workbook with "/"</span>
+      <button class="copy-btn" onclick="copyBlock('lab-word', this)">Copy</button>
+    </div>
+    <div class="code-body">
+<pre id="lab-word">Using the June variance table in /profit-center-pnl.xlsx, draft the June close-commentary paragraph for the segment controller. Cover the three most unfavorable variances: one lead sentence on the month overall, then one sentence per variance naming the profit center, the dollar and percent variance, and whether the same center was unfavorable in prior months. Plain, factual close-package language — neutral tone, no speculation about causes.</pre>
+    </div>
+  </div>
+</div>
+
+<!-- THE VERIFY PASS -->
+<div class="section section-dark" id="verify">
+  <div class="sec-eyebrow on-dark">02 — The verify pass</div>
+  <h2 class="sec-title on-dark">Before it counts, <em>check it</em></h2>
+  <p class="sec-sub on-dark">The lab isn't done when Copilot finishes — it's done when you've reviewed it. Two minutes, three checks: the same pass this deliverable would get before a controller saw it.</p>
+
+  <div class="dev-grid-2" style="margin-top:28px;">
+    <div class="dev-card">
+      <div class="dev-kicker">Show Changes</div>
+      <h3>See what Copilot actually touched</h3>
+      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">In Excel, open Review → Show Changes and find the Copilot-attributed edits. Confirm it built the new sheet and left the source data alone — the attribution trail is the audit answer for agentic edits, so make reading it a reflex.</p>
+      <div class="dev-quote">If anything in the original data changed, undo, tighten the prompt ("keep the original data unchanged"), rerun.</div>
+    </div>
+    <div class="dev-card">
+      <div class="dev-kicker">Spot-check</div>
+      <h3>Trace two numbers to the CSV</h3>
+      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">Pick two variances from the table and tie them back to the raw rows in <code>profit-center-pnl.csv</code> — budget, actual, math. Then reread the Word paragraph: every figure it quotes should match your table exactly, and no "driver" should be stated that the data doesn't support.</p>
+      <div class="dev-quote">Tone check: would the segment controller forward this untouched? If not, tell Copilot what to change — and keep that instruction for next month.</div>
+    </div>
+  </div>
+</div>
+
+<!-- THE VARIANCE VAULT -->
+<div class="section section--off" id="vault">
+  <div class="sec-eyebrow">03 — Take-home extension</div>
+  <h2 class="sec-title">The Variance <em>Vault</em></h2>
+  <p class="sec-sub">The in-room circuit was the warm-up. The Variance Vault is a four-room escape-room challenge on the same synthetic data — each room hands you a finance puzzle only good prompting gets you out of. Run it solo after the session, or make it a team event with the people at your table.</p>
+
+  <div class="insight-grid" style="margin-top:28px;">
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">Four rooms, one dataset</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Each room poses a challenge on the P&amp;L and commission-statement files — find the anomaly, explain the trend, draft the answer — and each unlock code comes from getting Copilot to the right result.</p>
+    </div>
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">Solo or squad</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Solo is a solid hour of prompting practice; as a team it's a race — same rooms, shared screen, loudest table wins. Either way it's synthetic data, so experiment freely.</p>
+    </div>
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">Start with the briefing</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">The briefing file below sets the scenario and the rules. Read it first, keep the two CSVs where Copilot can reach them, then enter the vault.</p>
+    </div>
+  </div>
+
+  <div class="tip-trick" style="margin-top:28px;">
+    <div class="tip-trick-icon">📁</div>
+    <div class="tip-trick-copy">
+      <div class="tip-trick-label">Vault file pack — download before you enter</div>
+      <p>The briefing plus the two synthetic datasets the rooms run on. All fake, all safe to use with Copilot.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;">
+        <a href="../../escape-room/lab-files/variance-vault-briefing.md" download style="display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);color:var(--violet);text-decoration:none;padding:7px 14px;border-radius:6px;font-weight:600;font-size:13px;">variance-vault-briefing.md ↓</a>
+        <a href="../../assets/lab-data/profit-center-pnl.csv" download style="display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);color:var(--violet);text-decoration:none;padding:7px 14px;border-radius:6px;font-weight:600;font-size:13px;">profit-center-pnl.csv ↓</a>
+        <a href="../../assets/lab-data/carrier-commission-statements.csv" download style="display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);color:var(--violet);text-decoration:none;padding:7px 14px;border-radius:6px;font-weight:600;font-size:13px;">carrier-commission-statements.csv ↓</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+    <a href="../../escape-room/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:var(--violet);color:var(--white);text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:600;font-size:15px;">⚿ Enter the Variance Vault →</a>
+    <span style="font-size:13.5px;color:var(--slate);">Opens in a new tab — best after the session, when you can take your time.</span>
+  </div>
+</div>
+
+<!-- KNOWLEDGE CHECK (no h2.sec-title so no slide is generated) -->
+<div class="section">
+  <div class="ix-quiz" data-ix-quiz="m2" data-ix-pass="3"></div>
+</div>
+
+<!-- NEXT -->
+<div class="section" id="next">
+  <div class="sec-eyebrow">Up next</div>
+  <h2 class="sec-title">Module 3: The Researcher Agent</h2>
+  <p class="sec-sub">Your close package is drafted and verified — and somewhere in the background, the Researcher run you commissioned in Module 1 has been working the Project Lighthouse brief. Time to meet the agent and read its report.</p>
+  <a href="08-meet-researcher.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--violet);color:var(--white);text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:600;font-size:15px;margin-top:8px;">Start Module 3 →</a>
+</div>
+
+<div class="page-footer"></div>
+<script>
+function copyBlock(id, btn) {
+  var pre = document.getElementById(id);
+  if (!pre || !navigator.clipboard) return;
+  navigator.clipboard.writeText(pre.innerText).then(function () {
+    var prev = btn.textContent;
+    btn.textContent = 'Copied!';
+    setTimeout(function () { btn.textContent = prev; }, 2000);
+  });
+}
+</script>
+</body>
+</html>

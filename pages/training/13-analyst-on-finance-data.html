@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Analyst on Finance Data — Module 4</title>
+<link rel="stylesheet" href="../../styles/shared.css"/>
+<style>
+/* Page-specific styles go here. This scaffold relies entirely on shared.css. */
+</style>
+</head>
+<body>
+<script src="../../footer.js"></script>
+<script src="../../nav.js"></script>
+<script src="../../training-sidebar.js"></script>
+
+<!-- MODULE PROGRESS -->
+<div class="module-strip">
+  <span class="ms-label">Module</span>
+  <a href="01-the-copilot-landscape.html" class="ms-item done"><span class="ms-num">1</span>Foundations &amp; Chat</a>
+  <span class="ms-arrow">›</span>
+  <a href="04-excel-copilot.html" class="ms-item done"><span class="ms-num">2</span>Copilot in the Apps</a>
+  <span class="ms-arrow">›</span>
+  <a href="08-meet-researcher.html" class="ms-item done"><span class="ms-num">3</span>Researcher</a>
+  <span class="ms-arrow">›</span>
+  <a href="12-meet-analyst.html" class="ms-item active"><span class="ms-num">4</span>Analyst &amp; Close Room</a>
+</div>
+
+<div class="page-header" id="intro">
+  <div class="eyebrow">Module 4 · Lesson 2 of 5</div>
+  <h1 class="title">Analyst on Finance <em>Data</em></h1>
+  <p class="subtitle">The four-element prompt framework still applies — but analysis work adds a discipline of its own: name the metric, the dimension, and the time grain, and Analyst computes what you meant instead of what it guessed. This lesson drills that pattern, then hands you three worked runs on the workshop's synthetic finance files — variance trends, contingents at risk, and a stated-assumptions forecast.</p>
+  <div class="header-phase">
+    <div class="header-phase-dot" style="background:var(--amber)"></div>
+    The Analyst Agent &amp; Capstone · ~15 min read
+  </div>
+</div>
+
+<!-- METRIC, DIMENSION, GRAIN -->
+<div class="section" id="brief">
+  <div class="sec-eyebrow">01 — The analysis brief</div>
+  <h2 class="sec-title">Name the metric, dimension, and <em>grain</em></h2>
+  <p class="sec-sub">"Compare X by Y at Z grain, highlight trends" — that sentence shape is the whole pattern. Every reliable Analyst run names all three; every disappointing one left at least one of them for the agent to guess.</p>
+
+  <div class="bp-grid--light" style="margin-top:28px;">
+    <div class="bp-item">
+      <div class="bp-num">01</div>
+      <div class="bp-title">Metric — what to measure</div>
+      <div class="bp-body">"Compensation &amp; benefits variance vs budget in dollars and as % of budget" — not "costs." Name the column, the calculation, and the units. If a metric is derived, define it in the prompt.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">02</div>
+      <div class="bp-title">Dimension — sliced by what</div>
+      <div class="bp-body">By profit center, by carrier, by segment. The dimension decides what the answer's rows are. Finance questions usually carry two — say both, and say which one leads.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">03</div>
+      <div class="bp-title">Grain — at what time step</div>
+      <div class="bp-body">Monthly January–June, YTD through June, quarterly. Grain is the element people skip, and it's why "trend" answers come back blended. Persistent-vs-one-off questions are grain questions.</div>
+    </div>
+  </div>
+
+  <div class="tip-trick" style="margin-top:32px;">
+    <div class="tip-trick-icon">📐</div>
+    <div class="tip-trick-copy">
+      <div class="tip-trick-label">Clean tabular data in, reliable analysis out</div>
+      <p>Analyst is only as good as the table you hand it: headers in the first row, one row per observation, one table per sheet, consistent units. The workshop CSVs are already in that shape — when you move to your own extracts, thirty seconds of tidying beats three rounds of corrections.</p>
+    </div>
+  </div>
+</div>
+
+<!-- THREE WORKED PATTERNS -->
+<div class="section section-dark" id="patterns">
+  <div class="sec-eyebrow on-dark">02 — Three worked patterns</div>
+  <h2 class="sec-title on-dark">Run these on the workshop <em>data</em></h2>
+  <p class="sec-sub on-dark">Three copy-ready briefs against the synthetic lab files in your OneDrive — fake data, shaped like ours, safe to upload. Each maps to a real desk task: multi-month variance trend, contingent accruals at risk, and a simple forecast with stated assumptions. Watch the Python pane on every run.</p>
+
+  <div class="code-wrap" style="margin-top:28px;">
+    <div class="code-topbar">
+      <span class="cb-dot" style="background:#ff5f57"></span>
+      <span class="cb-dot" style="background:#febc2e"></span>
+      <span class="cb-dot" style="background:#28c840"></span>
+      <span class="code-label">Pattern A — variance trend · profit-center-pnl.csv</span>
+      <button class="copy-btn" onclick="copyBlock('pattern-a', this)">Copy</button>
+    </div>
+    <div class="code-body">
+<pre id="pattern-a">Using profit-center-pnl.csv: which profit centers show persistent unfavorable variances vs budget in Compensation &amp; benefits from January through June 2026 — unfavorable in at least four of the six months? I'm drafting integration-period expense commentary. Quantify each one monthly, in dollars and as % of budget, in a table sorted by cumulative unfavorable variance, and chart the monthly trend for the top three.</pre>
+    </div>
+  </div>
+
+  <div class="code-wrap" style="margin-top:24px;">
+    <div class="code-topbar">
+      <span class="cb-dot" style="background:#ff5f57"></span>
+      <span class="cb-dot" style="background:#febc2e"></span>
+      <span class="cb-dot" style="background:#28c840"></span>
+      <span class="code-label">Pattern B — contingents at risk · carrier-commission-statements.csv</span>
+      <button class="copy-btn" onclick="copyBlock('pattern-b', this)">Copy</button>
+    </div>
+    <div class="code-body">
+<pre id="pattern-b">Using carrier-commission-statements.csv: for each carrier, compare the June YTD loss ratio to that carrier's contingent profit-share threshold. Which carriers' contingent accruals are at risk — loss ratio above, or within five points of, the threshold? I'm supporting the contingent-commission estimate for the quarter. Give me a table with YTD contingent accrual booked, YTD loss ratio, threshold, and headroom per carrier, then chart loss ratio against threshold by carrier.</pre>
+    </div>
+  </div>
+
+  <div class="code-wrap" style="margin-top:24px;">
+    <div class="code-topbar">
+      <span class="cb-dot" style="background:#ff5f57"></span>
+      <span class="cb-dot" style="background:#febc2e"></span>
+      <span class="cb-dot" style="background:#28c840"></span>
+      <span class="code-label">Pattern C — simple forecast · profit-center-pnl.csv</span>
+      <button class="copy-btn" onclick="copyBlock('pattern-c', this)">Copy</button>
+    </div>
+    <div class="code-body">
+<pre id="pattern-c">Using profit-center-pnl.csv: build a simple forecast of Core commissions by segment (Retail and Specialty Distribution) for July through December 2026, based on the January–June 2026 actuals. Use a straightforward trend method, state every assumption explicitly before the numbers, show the fitted trend against the actuals, and give me a monthly forecast table by segment plus one chart. Note where the two segments' run rates diverge — neutral language, no narrative beyond the data.</pre>
+    </div>
+  </div>
+
+  <div class="tip-trick tip-trick--dark" style="margin-top:32px;">
+    <div class="tip-trick-icon">🎯</div>
+    <div class="tip-trick-copy">
+      <div class="tip-trick-label">Notice what each brief names</div>
+      <p>Metric ("unfavorable variance vs budget, $ and %"), dimension ("by profit center", "by carrier", "by segment"), grain ("monthly, January–June", "YTD through June"). Plus the Module 1 elements: context for the audience, expectations for the format. That's the whole craft — the rest is verification.</p>
+    </div>
+  </div>
+</div>
+
+<!-- THE VERIFY HABIT -->
+<div class="section" id="verify">
+  <div class="sec-eyebrow">03 — The verify habit</div>
+  <h2 class="sec-title">Read the Python before you trust the <em>number</em></h2>
+  <p class="sec-sub">Analyst shows you its method as it runs — that's not decoration, it's the review step. Three moves turn a plausible-looking output into a figure you'd put your name on.</p>
+
+  <div class="insight-grid" style="margin-top:28px;">
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">Check the filters and the sums</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">In the code: did it filter the months, accounts, and segments you meant? Did it sum the column you meant, with the sign convention you meant — is "unfavorable" your definition or its own? Two minutes of reading beats an hour of downstream cleanup.</p>
+    </div>
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">Re-ask with corrections</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">The first output is a draft. "Redo that, but treat unfavorable expense variance as actual above budget, and exclude the profit center acquired mid-period from the trend" — corrections in-thread are cheap, and they sharpen the method on record.</p>
+    </div>
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">Export into governed files</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Agent session content isn't e-discoverable by default — so anything that feeds a close package or a memo gets saved out of the chat and into a governed OneDrive or SharePoint file. The analysis isn't done until it lives somewhere the record-keeping reaches.</p>
+    </div>
+  </div>
+</div>
+
+<!-- NEXT -->
+<div class="section" id="next">
+  <div class="sec-eyebrow">Up next</div>
+  <h2 class="sec-title">Lesson 3: Choosing Your Copilot</h2>
+  <p class="sec-sub">You now have four tools that can all touch a spreadsheet. Next: the four-rule decision framework for picking the right one per task — plus the budget and governance overlay that makes the choice a professional habit, not a preference.</p>
+  <a href="14-choosing-your-copilot.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#3a2a06;text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:600;font-size:15px;margin-top:8px;">Next Lesson →</a>
+</div>
+
+<div class="page-footer"></div>
+<script>
+function copyBlock(id, btn) {
+  var pre = document.getElementById(id);
+  if (!pre || !navigator.clipboard) return;
+  navigator.clipboard.writeText(pre.innerText).then(function () {
+    var prev = btn.textContent;
+    btn.textContent = 'Copied!';
+    setTimeout(function () { btn.textContent = prev; }, 2000);
+  });
+}
+</script>
+</body>
+</html>

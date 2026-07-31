@@ -1,104 +1,104 @@
 {
-  "workshopTitle": "Workshop 4: The Control Room",
-  "scenario": "Internal Audit gave notice: a Claude Cowork control review starts in 40 minutes. The pilot ran hot — folders scoped to whole drives, roles copied from a template, spend spiking on one desk, and nobody has written the control narrative. Four open exceptions stand between you and an exam-ready evidence pack.",
+  "workshopTitle": "Module 4 Capstone: The Close Room",
+  "scenario": "It's close night, mid-integration. Four stations stand between the finance team and sign-off: a variance triage, the contingents desk, the trust reconciliation, and the deal desk. Work each one with the right Copilot surface, verify like a reviewer, and sign off with the code the data yields.",
   "timeLimitMinutes": 40,
   "hintPenaltySeconds": 120,
   "rooms": [
     {
       "id": "room-1",
-      "title": "The Access Map",
-      "narrative": "Audit's first request is the simplest and the most damaging: show us who can read what. The pilot's access register has never been reviewed against the standard. Delegate the review, and the findings clear the first station.",
+      "title": "Variance Triage",
+      "narrative": "The flux review flagged Specialty Distribution: one profit center's core commissions have been eroding against budget since April — softening cat-property rates, and it's getting worse every month. The controller signs off on a name, not a feeling. Find the profit center and bring its id.",
       "labSteps": [
-        "Put 'cowork-access-register.csv' and 'least-privilege-rubric.md' in a folder you grant Cowork access to. Scope the grant to that folder only — you are being reviewed on least privilege too.",
-        "Delegate the review: ask Cowork to test every row of the register against all four rules in the rubric, and to produce a findings table listing the user, the department, which rules each row breaks, and the remediation.",
-        "Read the rubric's counting instruction carefully: a row is counted once no matter how many rules it breaks.",
-        "Have Cowork report the two totals the rubric asks for at the end: how many rows are non-compliant, and which single row breaks the most rules.",
-        "The sign-off code is the number of non-compliant rows, followed by the first word of the department of the row that breaks the most rules, with no space. Example format: 5Treasury"
+        "Open 'profit-center-pnl.csv' — Excel with Copilot or the Analyst agent; Analyst handles the multi-month pivot best.",
+        "Scope the question: segment = 'Specialty Distribution', account = 'Core commissions', months April through June 2026.",
+        "Ask for percent variance to budget by profit center by month — you are looking for a worsening trend, not a single bad month.",
+        "One profit center's variance deteriorates every month across the quarter while its peers hold roughly flat. That trajectory is the finding.",
+        "Verify like a reviewer: compute the three monthly variances for your candidate by hand from the raw rows and confirm each month is worse than the last.",
+        "Sign off with that profit center's id exactly as it appears in the file, hyphen included. Example format: PC-999"
       ],
-      "codePlaintext": "7Commercial",
+      "codePlaintext": "PC-501",
       "codeHash": "GENERATE_WITH_SCRIPT",
       "hints": [
-        "Work rule by rule rather than row by row. LP-1 is about folder scope, LP-2 pairs restricted data classes with the approval mode, LP-3 is about contractors and connectors, LP-4 is about the blank reviewer column. Then count the distinct rows you flagged.",
-        "One row fails all four rules at once — it is a contractor, granted a cloud-drive root, running without approvals on restricted data, with nobody signed against it. Its department is the second half of the code."
+        "Ask for the April, May, and June core-commission variance percentages side by side per Specialty Distribution profit center. The one you want steps down every month — a rate story, not a one-time item.",
+        "It's the coastal programs book: core commissions run five percent under budget in April, nine under in May, thirteen under in June. Sign off with its profit-center id, hyphen included."
       ],
       "skillsTaught": [
-        "Folder scope as the operative data control",
-        "Reading an access register against a written standard",
-        "Least privilege and approval modes for restricted data"
+        "Trend questions vs outlier questions in a flux review",
+        "Scoping Analyst prompts to segment, account, and period",
+        "Re-deriving a Copilot finding from raw rows before sign-off"
       ]
     },
     {
       "id": "room-2",
-      "title": "The Broken Role Matrix",
-      "narrative": "The pilot team drafted a role matrix in a hurry and Identity & Access never reviewed it. Every shortcut they took is a finding waiting to happen. Repair it against the reference standard and the second station clears.",
+      "title": "Contingents Desk",
+      "narrative": "Contingent commissions are booked on accrual — and accruals rest on loss ratios. One carrier's book has been deteriorating all half, and by June its YTD loss ratio sits above the profit-share threshold in its agreement. If that holds, the accrual is at risk and the auditors will ask why it wasn't flagged. Name the carrier.",
       "labSteps": [
-        "Add 'role-matrix-DRAFT.md' and 'rbac-reference.md' to your session.",
-        "Ask Cowork to audit the draft against every rule in the reference, section by section, and to output a remediation table: the defect, the rule it breaks, and the corrected setting.",
-        "Check that the audit caught all seven defect areas: who holds Owner, the pilot group's capabilities, how the pilot group is sourced from the identity provider, the connector setting, the model policy, the spend-limit assumption, and the plugin distribution preference.",
-        "Section 1 lists six people holding Owner. Under rule RB-1, decide how many of them should be moved off Owner and onto a Custom role scoped to a single admin area.",
-        "Section 6 lists a plugin carrying a disclaimer that Legal requires on every generated client document. Under rule RB-9, decide which install preference it must carry so a member cannot remove it.",
-        "The sign-off code is the number of people to move off Owner, followed by the corrected install preference for that plugin, with no space. Example format: 2Available"
+        "Open 'carrier-commission-statements.csv' — Analyst or Excel Copilot both work here.",
+        "For each carrier, compare 'carrier_ytd_loss_ratio' to 'contingent_threshold_loss_ratio' month by month through June 2026.",
+        "Find the carrier whose YTD loss ratio ends June ABOVE its threshold — the trend matters: it started the year comfortably below and crossed during the half.",
+        "Corroborate with the accrual column: the same carrier's June contingent accrual has already been zeroed out. Two independent signals, one finding.",
+        "For contrast, note the best-performing book in the file — a reviewer states the range, not just the exception.",
+        "Sign off with the FIRST WORD of the carrier's name, all caps. Example format: RIDGELINE"
       ],
-      "codePlaintext": "4Required",
+      "codePlaintext": "GULFSTREAM",
       "codeHash": "GENERATE_WITH_SCRIPT",
       "hints": [
-        "For the first half: two of the six genuinely administer the whole organization. Read the 'what they actually need to do' column — anyone whose need maps to exactly one of the six admin permission areas belongs on a Custom role instead.",
-        "For the second half: look at the four install preferences in RB-9 and pick the one where the member cannot remove the plugin. Being merely offered to the member is not a control — a mandatory disclaimer has to be non-removable."
+        "Plot or tabulate each carrier's YTD loss ratio against its own threshold across the six months. Only one line crosses its threshold and keeps climbing; every other carrier ends June below theirs.",
+        "The carrier is a coastal property and casualty specialist: its YTD loss ratio ran 0.48 in January and ends June at 0.83 against a 0.60 threshold, and its June accrual is zero. The code is the first word of its name."
       ],
       "skillsTaught": [
-        "Static roles vs Custom roles and the six admin permission areas",
-        "Custom roles inherit nothing — capabilities must be granted explicitly",
-        "SCIM groups, nested-group limits, and permission math",
-        "Connector approval settings, model caps, and plugin install preferences"
+        "Reading loss-ratio trends against contingent thresholds",
+        "Corroborating a finding with a second, independent signal",
+        "Turning an Analyst readout into an audit-ready flag"
       ]
     },
     {
       "id": "room-3",
-      "title": "Read the Room",
-      "narrative": "Audit wants to know whether anyone is actually using this, and Finance wants to know why one desk is burning the budget. Last week's analytics export holds both answers — but you need a repeatable readout, not a one-off. Build the skill, run it, and the third station clears.",
+      "title": "Trust Rec",
+      "narrative": "Fiduciary cash is the one account nobody gets to be approximately right about. The June premium trust ledger and the trust bank statement don't tie, and the rec rubric defines exactly what counts as an exception. Work the rec, count the exceptions, and identify the money nobody can explain.",
       "labSteps": [
-        "Ask Cowork to help you author a new skill called 'cowork-adoption-review'. Its job: take a Cowork analytics export and produce the weekly adoption readout.",
-        "Prescribe the output in the skill's instructions — exactly four sections: Weekly Active Users, Adoption by Department, Model and Spend Concentration, and Recommended Actions. Write a description that would trigger on requests like 'run the weekly adoption readout'.",
-        "Install your skill, then run it against 'analytics-export.csv'.",
-        "Weekly Active Users is the count of distinct users who were active in the export. Model and Spend Concentration must identify the single department with the highest share of its dispatch turns running on Opus.",
-        "Sanity-check the readout by hand before you trust it — if the department it names is not far ahead of the others, your skill is aggregating wrong.",
-        "The sign-off code is the first word of that department's name, followed by the weekly active user count, with no space. Example format: Treasury9"
+        "Open 'premium-trust-ledger.csv' and 'trust-bank-statement.csv' side by side, and keep 'close-room-rubric.md' open — its exception definition is the whole game.",
+        "Ask Excel Copilot or Analyst to match ledger rows to bank lines on the policy id embedded in each bank description, then to list everything that fails to match cleanly in either direction.",
+        "Apply the rubric's four exception types one at a time: premiums collected but never remitted, duplicate remittances, bank receipts with no policy in the ledger, and ledger remittances that never hit the bank.",
+        "Count per the rubric: each exception ROW counts once, no matter how many things are wrong with it.",
+        "One bank receipt carries no policy reference at all — money in the trust account from a payer the ledger has never heard of. Identify that payer from the bank description.",
+        "Verify the count by listing the exception rows individually before you trust the total.",
+        "Sign off with the exception count immediately followed by the unidentified payer's first word, all caps, no space. Example format: 4PELICAN"
       ],
-      "codePlaintext": "Capital12",
+      "codePlaintext": "6TALLGRASS",
       "codeHash": "GENERATE_WITH_SCRIPT",
       "hints": [
-        "Opus share is per department, not per row: add up that department's dispatch turns on Opus, then divide by all of its dispatch turns. The leader is not subtle — it sits above 85% while every other department is under a quarter.",
-        "For the user count, count distinct people in the user column across the whole week, not the number of rows and not the number of sessions."
+        "Work the four rubric buckets separately, then add: several June premiums show as received but have no remittance and no matching bank debit; one remittance appears twice in the bank statement (its description says so); one credit has no policy reference; and one stale item from May sits in the ledger but never reached the bank.",
+        "The buckets come to three unremitted, one duplicate, one unidentified receipt, and one stale May item. The mystery payer is an energy company that paid by ACH with no policy reference — its first word, in caps, follows the count."
       ],
       "skillsTaught": [
-        "Authoring a reusable reporting skill with a prescribed output shape",
-        "Reading the Analytics API surface: DAU/WAU/MAU, dispatch turns, per-user cost by model",
-        "Spotting model-spend concentration — and fixing it with a model cap, not a memo"
+        "Two-file reconciliation with Copilot on a defined rubric",
+        "Counting exceptions by row, not by defect",
+        "Escalating unidentified fiduciary receipts"
       ]
     },
     {
       "id": "room-4",
-      "title": "The Control Narrative",
-      "narrative": "The examiner is in the room. Everything you have found so far is evidence, but evidence is not an answer. Write the one page that says how Axos governs Cowork — and survive the acceptance checklist.",
+      "title": "Deal Desk",
+      "narrative": "Corp dev needs two answers on Project Lighthouse before the partner call: how concentrated is the target's carrier book, and what's wrong with the seller's proposed earn-out. Both answers are sitting in the data room — if you brief Copilot to read it like a diligence analyst.",
       "labSteps": [
-        "Bring your Station 1 findings, your Station 2 remediation table, and your Station 3 readout into one session, along with 'exam-checklist.txt'.",
-        "Delegate the drafting: ask Cowork to write a one-page Cowork control narrative for Axos that carries your three artifacts forward — the access findings, the corrected role design, and the adoption picture.",
-        "The narrative has to stand on its own in front of an examiner. Be explicit about where Cowork's audit coverage ends today, what compensates for it, and which work is routed elsewhere because of it.",
-        "Run the acceptance check: 'Score this control narrative against every item in exam-checklist.txt. For each item, state PASS or FAIL and briefly why. Then report the total pass count and the resulting verdict.'",
-        "Any FAIL is a gap in your document, not in the checklist. Fix the narrative and score it again until it clears.",
-        "The sign-off code is the total pass count followed by the resulting verdict word, with no space. Example format: 7Remediate"
+        "Open the Project Lighthouse data room folder ('data-room/' in the lab data): the target overview, 3-year financials, carrier contract summary, and the seller's earn-out term sheet.",
+        "Use Copilot Chat over the files (or a Researcher-style brief): Goal, Context, Expectations, Source — ask for a concentration read and a term-sheet risk read as two separate answers.",
+        "From 'carrier-contract-summary.md': find the top carrier's share of the target's core commissions, as a whole-number percentage.",
+        "From 'earnout-term-sheet.md': find the structural defect in the earn-out — the one word a reviewer would circle in the mechanics.",
+        "Verify both against the source text: quote the sentence in each document that states your answer. If you can't quote it, you haven't found it.",
+        "Sign off with the percentage immediately followed by the defect word, all caps, no space or percent sign. Example format: 55CLAWBACK"
       ],
-      "codePlaintext": "9Ready",
+      "codePlaintext": "38UNCAPPED",
       "codeHash": "GENERATE_WITH_SCRIPT",
       "hints": [
-        "Score first, then write to the gaps. Most first drafts fail items 2, 6 and 7 — the three monitoring planes, the fact that Custom roles grant nothing implicitly, and naming the collector plus acknowledging that no telemetry flows until an admin configures the endpoint.",
-        "Audit only accepts a clean sweep of the checklist. If your count is short, the failing items name exactly what to add — the checklist doubles as the outline for the page."
+        "The concentration figure is stated outright in the carrier contract summary — the top carrier is the same one the contingents desk just flagged, which is exactly why the number matters. For the term sheet, read the payout mechanics: what limit would you expect to see that isn't there?",
+        "The share is a whole number in the high thirties, and the earn-out includes contingent commissions with no ceiling on the payout — the defect word is the adjective for an earn-out missing its cap."
       ],
       "skillsTaught": [
-        "Writing the governance one-pager a sponsor or examiner can act on",
-        "Stating the audit-coverage gap and its compensating controls plainly",
-        "Routing high-assurance workloads to audited surfaces",
-        "QA against an acceptance checklist"
+        "Briefing Copilot across a multi-file data room",
+        "Extracting stated figures vs inferring them",
+        "Spotting what a term sheet omits, and quoting sources for sign-off"
       ]
     }
   ]

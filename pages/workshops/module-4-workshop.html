@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Workshop 4: Govern &amp; Roll Out — Axos Cowork</title>
+<title>Module 4: The Analyst Agent &amp; Capstone — B&amp;B Copilot Workshop</title>
 <link rel="stylesheet" href="../../styles/shared.css"/>
 <style>
 /* Page-specific styles go here. This scaffold relies entirely on shared.css. */
@@ -14,162 +14,159 @@
 <script src="../../nav.js"></script>
 
 <div class="page-header" id="intro">
-  <div class="eyebrow">Axos · Workshop 4 of 4</div>
-  <h1 class="title">Govern &amp; <em>Roll Out</em></h1>
-  <p class="subtitle">A 2-hour, hands-on session — bring your IT and compliance partners. Access controls, RBAC, the audit-coverage gap, and the analytics that prove adoption — ending in a 40-minute control review under a clock. By the end, the group has a governed, Claude-Cowork-only rollout plan for Axos. This page is your home base — start with the pre-work, then work through the session content.</p>
+  <div class="eyebrow">Brown &amp; Brown Finance · Module 4 of 4</div>
+  <h1 class="title">The Analyst Agent &amp; <em>Capstone</em></h1>
+  <p class="subtitle">The session closer: hands-on with Analyst on multi-file finance data, the four-rule framework for choosing the right Copilot per task, and the briefing for The Close Room — the month-end close capstone your team takes home. This page is the module's home base — pre-work first, then the in-room content.</p>
   <div class="header-phase">
     <div class="header-phase-dot" style="background:var(--amber)"></div>
-    Workshop 4 · 2 hours, hands-on
+    Module 4 · ~22 minutes in-room
   </div>
 </div>
 
 <!-- STAGE 1 · PRE-WORK -->
 <div class="section" id="prework">
   <div class="sec-eyebrow">Stage 1 · Pre-work</div>
-  <h2 class="sec-title">Bring your skill, and your IT <em>partners</em></h2>
-  <p class="sec-sub">Ten minutes before the session — and one invitation to send.</p>
-  <div class="tip-trick" style="margin-top:24px;">
+  <h2 class="sec-title">Before the <em>session</em></h2>
+  <p class="sec-sub">Module 4 rides on the setup you did for Module 1 — the same OneDrive folder, plus two files the Analyst lab and the capstone lean on. Five minutes to confirm.</p>
+
+  <div class="module-grid" style="margin-top:28px;">
+    <div class="module-card">
+      <div class="module-card-top"><div class="module-card-meta"><div class="module-label">Skim before the session</div>
+        <div class="module-name">Meet Analyst</div>
+        <div class="module-desc">The spec sheet for the agent this module is built around — ten minutes, and the in-room lab moves twice as fast.</div>
+      </div></div>
+      <div class="module-card-footer"><a href="../training/12-meet-analyst.html" class="module-cta">Open lesson <span>→</span></a></div>
+    </div>
+    <div class="module-card">
+      <div class="module-card-top"><div class="module-card-meta"><div class="module-label">Full checklist</div>
+        <div class="module-name">Pre-work &amp; homework</div>
+        <div class="module-desc">Everything before and after the session in one place, module by module.</div>
+      </div></div>
+      <div class="module-card-footer"><a href="pre-work.html#workshop-4" class="module-cta">Open the list <span>→</span></a></div>
+    </div>
+  </div>
+
+  <div class="tip-trick" style="margin-top:28px;">
     <div class="tip-trick-icon">📋</div>
     <div class="tip-trick-copy">
-      <div class="tip-trick-label">Before the session</div>
-      <p>Bring the skill you built in Workshop 3. Invite your IT and compliance partners — the governance half of this session is for them. Full before &amp; after list on the <a href="pre-work.html#workshop-4">pre-work &amp; homework page</a>.</p>
+      <div class="tip-trick-label">Setup checklist</div>
+      <p>Confirm <code>profit-center-pnl.csv</code> and <code>carrier-commission-statements.csv</code> are in your OneDrive <code>Copilot Workshop</code> folder (from the <a href="resources.html">resource library</a>), and that <strong>Analyst</strong> appears in your Agents list in the Microsoft 365 Copilot app. Mind the budget: Researcher and Analyst share 25 queries a month — the module spends them on missions.</p>
     </div>
   </div>
 </div>
 
 <!-- STAGE 2 · WORKSHOP CONTENT -->
 <div class="section" id="content">
-  <div class="sec-eyebrow">Stage 2 · Workshop content · what you'll leave with</div>
-  <h2 class="sec-title">Three outcomes for the <em>session</em></h2>
-  <p class="sec-sub">You finish with a sponsor-ready, one-page rollout and governance plan for Axos.</p>
+  <div class="sec-eyebrow">Stage 2 · In-room content · what you'll leave with</div>
+  <h2 class="sec-title">Three outcomes for this <em>module</em></h2>
+  <p class="sec-sub">Concrete, not conceptual — you finish the module having actually done each of these.</p>
 
   <div class="insight-grid" style="margin-top:28px;">
     <div class="insight-card">
-      <div class="sec-eyebrow" style="margin-bottom:6px;">Design the access model</div>
-      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">You can build a least-privilege access design: Custom roles over blanket Owner, capabilities granted explicitly, SCIM groups that actually sync, and plugins distributed as controls rather than suggestions.</p>
+      <div class="sec-eyebrow" style="margin-bottom:6px;">You've run Analyst — and verified it</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">One live multi-file run on the workshop data, reproduced on your own laptop: metric, dimension, grain in the brief, and the Python pane read before the number is trusted.</p>
     </div>
     <div class="insight-card">
-      <div class="sec-eyebrow" style="margin-bottom:6px;">Govern it for a bank</div>
-      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">You can state the audit-coverage gap precisely, compensate for it with the three monitoring planes, and route the work that needs centralized audit or zero retention to an audited surface.</p>
+      <div class="sec-eyebrow" style="margin-bottom:6px;">You route tasks on four rules</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Chat, the app, Researcher, or Analyst — chosen from what the task needs, with the budget and governance overlay (the 25-query pool, the save-to-governed-files rule) attached.</p>
     </div>
     <div class="insight-card">
-      <div class="sec-eyebrow" style="margin-bottom:6px;">Prove it with numbers</div>
-      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">You can read the dashboard, the Analytics API, and the OTel stream — find the dormant desks and the model-spend concentration, and reach for the control that fixes it.</p>
+      <div class="sec-eyebrow" style="margin-bottom:6px;">Your team is briefed for the capstone</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Teams formed, file pack downloaded, four stations understood — The Close Room runs as the take-home, and the five-day practice plan follows it.</p>
     </div>
   </div>
 </div>
 
 <!-- AGENDA (part of Workshop content) -->
 <div class="section section--off" id="agenda">
-  <div class="sec-eyebrow">Run of show</div>
-  <h2 class="sec-title">The 2-hour <em>agenda</em></h2>
-  <p class="sec-sub">Teach the access model and the audit position, demo the controls live, decide what leaves the Cowork interface, then run the review.</p>
+  <div class="sec-eyebrow">Run of show · 1:30–1:52 in the session</div>
+  <h2 class="sec-title">The 22-minute <em>block</em></h2>
+  <p class="sec-sub">Module 4 closes the teaching arc — lab first this time, then the framework, then the capstone briefing. The session debrief (quiz, feedback, practice plan) follows at 1:52.</p>
 
   <div class="agenda">
     <div class="agenda-row">
-      <div class="agenda-time">0:00–0:10<small>10 min</small></div>
-      <div class="agenda-tag">Open</div>
-      <div class="agenda-body"><strong>Recap &amp; welcome IT</strong><p>Share the skills shipped in Workshop 3 and welcome the IT/compliance partners joining for governance.</p></div>
-    </div>
-    <div class="agenda-row">
-      <div class="agenda-time">0:10–0:33<small>23 min</small></div>
-      <div class="agenda-tag agenda-tag--teach">Teach</div>
-      <div class="agenda-body"><strong>Package, delegate, govern, measure</strong><ul><li><strong>0:10–0:15</strong> <a href="../training/12-skills-to-plugins.html">Package It as a Plugin</a> — the unit of governed distribution</li><li><strong>0:15–0:23</strong> <a href="../training/13-roles-and-access.html">Roles &amp; Access (RBAC)</a> — Custom roles, six admin areas, SCIM groups</li><li><strong>0:23–0:29</strong> <a href="../training/14-set-up-and-govern.html">Set Up &amp; Govern</a> — the setup sequence, the audit gap, three planes</li><li><strong>0:29–0:33</strong> <a href="../training/15-analytics-and-adoption.html">Analytics &amp; Adoption</a> — dashboard, Analytics API, OTel</li></ul></div>
-    </div>
-    <div class="agenda-row">
-      <div class="agenda-time">0:33–0:52<small>19 min</small></div>
-      <div class="agenda-tag agenda-tag--demo">Demo</div>
-      <div class="agenda-body"><strong>Live: the adoption dashboard, and what's available out of the box</strong><p>A walkthrough of the Nimble Gravity adoption dashboard — the analytics accelerator we stand up for clients — and what each card tells you. Ends on the education loop: expensive patterns are a teaching list, not just a cost report. See the <a href="facilitator-guide.html#workshop-4">facilitator guide</a>.</p></div>
-    </div>
-    <div class="agenda-row">
-      <div class="agenda-time">0:52–1:04<small>12 min</small></div>
-      <div class="agenda-tag agenda-tag--discuss">Discuss</div>
-      <div class="agenda-body"><strong>Which Axos workloads leave the Cowork interface?</strong><p>With IT and compliance in the room: name the work that needs zero retention or centralized audit today, and route it to an audited surface. Then announce Control Room teams.</p></div>
-    </div>
-    <div class="agenda-row">
-      <div class="agenda-time">1:04–1:10<small>6 min</small></div>
-      <div class="agenda-tag agenda-tag--break">Break</div>
-      <div class="agenda-body"><strong>Break</strong><p class="agenda-cue">Staging break — confirm the six lab files are downloaded before the clock starts.</p></div>
-    </div>
-    <div class="agenda-row">
-      <div class="agenda-time">1:10–1:50<small>40 min</small></div>
+      <div class="agenda-time">1:30–1:42<small>12 min</small></div>
       <div class="agenda-tag agenda-tag--lab">Lab</div>
-      <div class="agenda-body"><strong>The Control Room — 40-minute live control review</strong> · <a href="../training/16-the-control-room.html">open the capstone →</a><ul><li><strong>Station 1</strong> The Access Map — delegate the least-privilege access review</li><li><strong>Station 2</strong> The Broken Role Matrix — repair the RBAC design</li><li><strong>Station 3</strong> Read the Room — author an adoption-review skill, run it on the export</li><li><strong>Station 4</strong> The Control Narrative — the one-pager, scored against Internal Audit's checklist</li></ul><p class="agenda-cue">Facilitator: keep the <a href="../../control-room/admin.html">facilitator view</a> open throughout.</p></div>
+      <div class="agenda-body"><strong>Analyst hands-on</strong> · <a href="../training/12-meet-analyst.html">Lesson 1</a> + <a href="../training/13-analyst-on-finance-data.html">Lesson 2</a>, compressed<ul><li>Two-minute spec: chain-of-thought, live Python, Agents → Analyst</li><li>One live multi-file run everyone reproduces: the variance-trend pattern on <code>profit-center-pnl.csv</code>, then the contingents pattern if time allows</li><li>The verify habit: read the Python pane together before trusting the table</li></ul><p class="agenda-cue">Facilitator: run Pattern A from Lesson 2 on the projector; attendees copy the same brief. Common blocker — files attached instead of grounded, or the 25-query pool already spent on test runs.</p></div>
     </div>
     <div class="agenda-row">
-      <div class="agenda-time">1:50–1:58<small>8 min</small></div>
-      <div class="agenda-tag">Debrief</div>
-      <div class="agenda-body"><strong>Debrief &amp; knowledge check</strong><p>One share per team on their control narrative; then the <a href="../training/16-the-control-room.html">Workshop 4 knowledge check</a> and your readout.</p></div>
+      <div class="agenda-time">1:42–1:48<small>6 min</small></div>
+      <div class="agenda-tag agenda-tag--teach">Teach</div>
+      <div class="agenda-body"><strong>Choosing your Copilot</strong><p><a href="../training/14-choosing-your-copilot.html">Lesson 3</a> — the four routing rules, then the overlay: spend the 25-query pool on missions, save agent outputs to governed files, our data never trains the models.</p></div>
     </div>
     <div class="agenda-row">
-      <div class="agenda-time">1:58–2:00<small>2 min</small></div>
+      <div class="agenda-time">1:48–1:52<small>4 min</small></div>
+      <div class="agenda-tag agenda-tag--discuss">Brief</div>
+      <div class="agenda-body"><strong>The Close Room briefing</strong><p><a href="../training/16-the-close-room.html">Lesson 5</a> §01–02 — the scenario, the four stations, the file pack. Teams formed in the room; the capstone itself runs as the take-home.</p></div>
+    </div>
+    <div class="agenda-row">
+      <div class="agenda-time">1:52–2:00<small>8 min</small></div>
       <div class="agenda-tag">Close</div>
-      <div class="agenda-body"><strong>Wrap-up &amp; next steps</strong><p>See your <a href="pre-work.html#workshop-4">homework</a>. Office hours continue; champions take it from here. Please give your <a href="feedback.html">final feedback</a>.</p></div>
+      <div class="agenda-body"><strong>Session debrief</strong><p>Whole-session close, not module time: the Module 4 knowledge check, feedback, and the <a href="../training/15-make-it-stick.html#practice">one-week practice plan</a> from Make It Stick.</p></div>
     </div>
   </div>
 </div>
 
 <!-- MATERIALS (part of Workshop content) -->
 <div class="section section--off" id="materials">
-  <div class="sec-eyebrow">Everything for this session</div>
+  <div class="sec-eyebrow">Everything for this module</div>
   <h2 class="sec-title">Materials at your <em>fingertips</em></h2>
 
   <div class="module-grid" style="margin-top:28px;">
     <div class="module-card">
-      <div class="module-card-top"><div class="module-num-big">12</div>
+      <div class="module-card-top"><div class="module-num-big">01</div>
         <div class="module-card-meta"><div class="module-label">Lesson</div>
-          <div class="module-name">Package It as a Plugin</div>
-          <div class="module-desc">The unit of governed distribution: bundles, marketplaces, author once.</div>
+          <div class="module-name">Meet Analyst</div>
+          <div class="module-desc">The spec sheet: chain-of-thought, live Python, and where Analyst sits next to Excel Copilot.</div>
         </div></div>
-      <div class="module-card-footer"><a href="../training/12-skills-to-plugins.html" class="module-cta">Open lesson <span>→</span></a></div>
+      <div class="module-card-footer"><a href="../training/12-meet-analyst.html" class="module-cta">Open lesson <span>→</span></a></div>
     </div>
     <div class="module-card">
-      <div class="module-card-top"><div class="module-num-big">13</div>
+      <div class="module-card-top"><div class="module-num-big">02</div>
         <div class="module-card-meta"><div class="module-label">Lesson</div>
-          <div class="module-name">Roles &amp; Access (RBAC)</div>
-          <div class="module-desc">Custom roles, the six admin areas, SCIM groups, install preferences.</div>
+          <div class="module-name">Analyst on Finance Data</div>
+          <div class="module-desc">Metric, dimension, grain — plus three copy-ready runs on the workshop data.</div>
         </div></div>
-      <div class="module-card-footer"><a href="../training/13-roles-and-access.html" class="module-cta">Open lesson <span>→</span></a></div>
+      <div class="module-card-footer"><a href="../training/13-analyst-on-finance-data.html" class="module-cta">Open lesson <span>→</span></a></div>
     </div>
     <div class="module-card">
-      <div class="module-card-top"><div class="module-num-big">14</div>
+      <div class="module-card-top"><div class="module-num-big">03</div>
         <div class="module-card-meta"><div class="module-label">Lesson</div>
-          <div class="module-name">Set Up &amp; Govern</div>
-          <div class="module-desc">The setup sequence, the audit-coverage gap, and the three monitoring planes.</div>
+          <div class="module-name">Choosing Your Copilot</div>
+          <div class="module-desc">The four-rule decision framework, the governance overlay, and the map to the desk.</div>
         </div></div>
-      <div class="module-card-footer"><a href="../training/14-set-up-and-govern.html" class="module-cta">Open lesson <span>→</span></a></div>
+      <div class="module-card-footer"><a href="../training/14-choosing-your-copilot.html" class="module-cta">Open lesson <span>→</span></a></div>
     </div>
     <div class="module-card">
-      <div class="module-card-top"><div class="module-num-big">15</div>
+      <div class="module-card-top"><div class="module-num-big">04</div>
         <div class="module-card-meta"><div class="module-label">Lesson</div>
-          <div class="module-name">Analytics &amp; Adoption</div>
-          <div class="module-desc">Dashboard, Analytics API, OpenTelemetry, and the three weekly questions.</div>
+          <div class="module-name">Make It Stick</div>
+          <div class="module-desc">The personal system, the team system, and the one-week practice plan.</div>
         </div></div>
-      <div class="module-card-footer"><a href="../training/15-analytics-and-adoption.html" class="module-cta">Open lesson <span>→</span></a></div>
+      <div class="module-card-footer"><a href="../training/15-make-it-stick.html" class="module-cta">Open lesson <span>→</span></a></div>
     </div>
     <div class="module-card">
-      <div class="module-card-top"><div class="module-num-big">16</div>
+      <div class="module-card-top"><div class="module-num-big">05</div>
         <div class="module-card-meta"><div class="module-label">Capstone + knowledge check</div>
-          <div class="module-name">The Control Room</div>
-          <div class="module-desc">The 40-minute control review: access review, role repair, adoption readout, and the control narrative.</div>
+          <div class="module-name">The Close Room</div>
+          <div class="module-desc">The month-end close simulation: four stations, forty minutes, and the Module 4 quiz.</div>
         </div></div>
-      <div class="module-card-footer"><a href="../training/16-the-control-room.html" class="module-cta">Open capstone <span>→</span></a></div>
+      <div class="module-card-footer"><a href="../training/16-the-close-room.html" class="module-cta">Open capstone <span>→</span></a></div>
     </div>
   </div>
 
   <div class="tip-trick" style="margin-top:28px;">
-    <div class="tip-trick-icon">📁</div>
+    <div class="tip-trick-icon">⚿</div>
     <div class="tip-trick-copy">
-      <div class="tip-trick-label">Lab file pack — download before the Control Room opens</div>
-      <p>Six synthetic files: the Axos access register, the two written standards, last week's analytics export, and Internal Audit's acceptance checklist. Get them from the <a href="../training/16-the-control-room.html#scenario">capstone page</a> and put them in one folder you can grant Cowork access to.</p>
-      <p style="margin-top:10px;"><a href="../../control-room/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#3a2a06;text-decoration:none;padding:10px 20px;border-radius:8px;font-weight:600;font-size:14px;">⚿ Enter the Control Room →</a></p>
+      <div class="tip-trick-label">The Close Room app</div>
+      <p>The capstone runs in its own app: <a href="../../control-room/" target="_blank" rel="noopener" style="color:var(--amber-accessible);font-weight:600;">enter the Close Room</a> when your team is ready. Facilitators: the <a href="../../control-room/admin.html" target="_blank" rel="noopener" style="color:var(--amber-accessible);font-weight:600;">facilitator console</a> tracks team progress, sign-offs, and times during the take-home window.</p>
     </div>
   </div>
 
   <p style="margin-top:24px;display:flex;gap:16px;flex-wrap:wrap;">
     <a href="../training/module-4-slides.html" class="slides-cta">⊞ Start Presentation</a>
     <a href="resources.html" style="display:inline-flex;align-items:center;gap:8px;color:var(--amber-accessible);text-decoration:none;font-weight:600;font-size:15px;">Resource library →</a>
-    <a href="facilitator-guide.html#workshop-4" style="display:inline-flex;align-items:center;gap:8px;color:var(--amber-accessible);text-decoration:none;font-weight:600;font-size:15px;">Facilitator guide →</a>
+    <a href="facilitator-guide.html#module-4" style="display:inline-flex;align-items:center;gap:8px;color:var(--amber-accessible);text-decoration:none;font-weight:600;font-size:15px;">Facilitator guide →</a>
   </p>
 </div>
 

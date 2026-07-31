@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Meet Researcher — Module 3</title>
+<link rel="stylesheet" href="../../styles/shared.css"/>
+<style>
+/* Page-specific styles go here. This scaffold relies entirely on shared.css. */
+</style>
+</head>
+<body>
+<script src="../../footer.js"></script>
+<script src="../../nav.js"></script>
+<script src="../../training-sidebar.js"></script>
+
+<!-- MODULE PROGRESS -->
+<div class="module-strip">
+  <span class="ms-label">Module</span>
+  <a href="01-the-copilot-landscape.html" class="ms-item done"><span class="ms-num">1</span>Foundations &amp; Chat</a>
+  <span class="ms-arrow">›</span>
+  <a href="04-excel-copilot.html" class="ms-item done"><span class="ms-num">2</span>Copilot in the Apps</a>
+  <span class="ms-arrow">›</span>
+  <a href="08-meet-researcher.html" class="ms-item active"><span class="ms-num">3</span>Researcher</a>
+  <span class="ms-arrow">›</span>
+  <a href="12-meet-analyst.html" class="ms-item upcoming"><span class="ms-num">4</span>Analyst &amp; Close Room</a>
+</div>
+
+<div class="page-header" id="intro">
+  <div class="eyebrow">Module 3 · Lesson 1 of 4</div>
+  <h1 class="title">Meet <em>Researcher</em></h1>
+  <p class="subtitle">Researcher is the first tool in this workshop you don't chat with — you brief it. It's a deep-research reasoning agent that plans a multi-step investigation across your work data and the web, then comes back with a structured, source-cited report. The run you commissioned in Module 1 is exactly this. This lesson is the spec sheet: what it is, what it can reach, which models drive it, and the operating facts that shape how you use it.</p>
+  <div class="header-phase">
+    <div class="header-phase-dot" style="background:var(--blueD)"></div>
+    The Researcher Agent · ~15 min read
+  </div>
+</div>
+
+<!-- WHAT IT IS -->
+<div class="section" id="what">
+  <div class="sec-eyebrow">01 — What it is</div>
+  <h2 class="sec-title">A research analyst you <em>commission</em></h2>
+  <p class="sec-sub">Generally available since June 2025, Researcher takes a brief, plans its own multi-step investigation, and delivers a structured report where every substantive claim carries a citation. The interaction model is delegation, not conversation — and that changes how you work with it.</p>
+
+  <div class="insight-grid" style="margin-top:28px;">
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">The deliverable</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">A structured, cited report — headings, synthesis across sources, and links back to every file, email, meeting, or web page it drew from. Not a chat answer: a document you can review, challenge, and build on.</p>
+    </div>
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">How you invoke it</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Two doors, same agent: pick <strong>Researcher</strong> from the Agents list in the Microsoft 365 Copilot app, or type <code>@Researcher</code> in Copilot Chat. Either way, you're opening a mission, not a message.</p>
+    </div>
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">It interviews you first</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Before running, Researcher asks clarifying questions — scope, emphasis, exclusions. That's not friction; it's the agent doing intake like a good analyst would. Lesson 2 is about answering well.</p>
+    </div>
+  </div>
+
+  <div class="tip-trick" style="margin-top:32px;">
+    <div class="tip-trick-icon">🧭</div>
+    <div class="tip-trick-copy">
+      <div class="tip-trick-label">The mental model shift</div>
+      <p>Chat is a colleague at your desk; Researcher is a colleague you send away for an hour. You invest more up front — a real brief, real answers to its questions — and you get back something closer to a finished workpaper than a reply.</p>
+    </div>
+  </div>
+</div>
+
+<!-- REACH & MODELS -->
+<div class="section section-dark" id="reach">
+  <div class="sec-eyebrow on-dark">02 — Reach &amp; models</div>
+  <h2 class="sec-title on-dark">What it can see, and what <em>thinks</em> for it</h2>
+  <p class="sec-sub on-dark">Two dials define every run: the data it may reach, and the model configuration doing the reasoning. You set the first per mission; your admins set the ceiling on the second.</p>
+
+  <div class="dev-grid-2" style="margin-top:28px;">
+    <div class="dev-card">
+      <div class="dev-kicker">Reach</div>
+      <h3>Work + web, scoped per run</h3>
+      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">Researcher can draw on the public web and your work data — files, mail, meetings, chats — plus Graph connectors, always within your existing permissions. You scope each run to work, web, or both. The Lighthouse mission used both: data-room files plus the Florida property market.</p>
+      <div class="dev-quote">Same rule as Chat: it only sees what you can already open.</div>
+    </div>
+    <div class="dev-card">
+      <div class="dev-kicker">Models · 2026</div>
+      <h3>The four-mode model picker</h3>
+      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">As of 2026, Researcher runs in one of four modes: <strong>Critique</strong> (the default — GPT drafts, Claude runs a second pass), <strong>Model Council</strong> (GPT and Claude in parallel, plus a comparison), <strong>GPT only</strong>, or <strong>Claude only</strong>. The Claude modes require your admins to have enabled Anthropic models in the tenant.</p>
+      <div class="dev-quote">Critique is a strong default for finance work: a drafter and a reviewer, built in.</div>
+    </div>
+  </div>
+
+  <div class="tip-trick tip-trick--dark" style="margin-top:32px;">
+    <div class="tip-trick-icon">⚖️</div>
+    <div class="tip-trick-copy">
+      <div class="tip-trick-label">Compliance aside — the EU Data Boundary</div>
+      <p>As of mid-2026, Anthropic-provided models are excluded from the Microsoft EU Data Boundary. For a US finance team that's context rather than a blocker — but if a workflow carries EU data-residency commitments, that's a question for IT before choosing a Claude mode.</p>
+    </div>
+  </div>
+</div>
+
+<!-- OPERATING FACTS -->
+<div class="section" id="facts">
+  <div class="sec-eyebrow">03 — The operating facts</div>
+  <h2 class="sec-title">Four numbers and limits to <em>plan</em> around</h2>
+  <p class="sec-sub">Researcher has a real operating envelope — run times, a monthly budget, and a few current limitations. Knowing them is the difference between working with the agent and being surprised by it. All current as of Microsoft's FAQ, updated March 2026.</p>
+
+  <div class="bp-grid--light" style="margin-top:28px;">
+    <div class="bp-item">
+      <div class="bp-num">01</div>
+      <div class="bp-title">Runs take real time</div>
+      <div class="bp-body">Under 5 minutes for simple briefs; 10–45 minutes for complex ones like the Lighthouse mission. That's why the workshop's move is <strong>commission early, keep working</strong> — you started your run in Module 1 for exactly this reason.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">02</div>
+      <div class="bp-title">25 queries a month</div>
+      <div class="bp-body">Researcher and Analyst share a pool of 25 queries per user per month, resetting on the 1st. That's a budget, and it rewards the well-briefed run — one strong mission beats three vague ones.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">03</div>
+      <div class="bp-title">Text in, chat out — for now</div>
+      <div class="bp-body">Researcher can't read images inside input documents — charts pasted as pictures are invisible to it. And PowerPoint/PDF export of reports is listed as "coming"; today you copy the report out yourself, which Lesson 4 turns into a deliberate save-to-governed-files step.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">04</div>
+      <div class="bp-title">Web scope is tenant-set</div>
+      <div class="bp-body">Which websites Researcher may or may not use is controlled by admin allow/block lists at the tenant level — you can't restrict sites per run. Steer sources through the brief instead: name the sources you want preferred.</div>
+    </div>
+  </div>
+</div>
+
+<!-- THE HORIZON -->
+<div class="section section--off" id="horizon">
+  <div class="sec-eyebrow">04 — The horizon</div>
+  <h2 class="sec-title">Researcher that <em>operates</em>, not just reads</h2>
+  <p class="sec-sub">One roadmap item is worth knowing about, even though we won't use it today: Researcher with Computer Use, released to the Frontier early-access program around February 2026. It points at where agentic research is heading.</p>
+  <!-- SCAFFOLD: confirm Frontier availability in B&B tenant -->
+
+  <div class="insight-grid" style="margin-top:28px;">
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">A temporary secure VM</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Instead of only reading search results, Researcher gets a secure, temporary virtual machine where it can browse interactively and run code — then the machine is discarded when the run ends.</p>
+    </div>
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">Gated sites, with your approval</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">It can sign in to gated sites — think subscription research portals — but only with your explicit approval at the moment of sign-in. The human stays in the loop at exactly the point that matters.</p>
+    </div>
+  </div>
+
+  <div class="tip-trick" style="margin-top:32px;">
+    <div class="tip-trick-icon">🔭</div>
+    <div class="tip-trick-copy">
+      <div class="tip-trick-label">File under "watch," not "use"</div>
+      <p>This is a Frontier-program preview, not something to build a workflow on. If it reaches the tenant, the skills you're building today — briefing, scoping, citation review — transfer directly.</p>
+    </div>
+  </div>
+</div>
+
+<!-- NEXT -->
+<div class="section" id="next">
+  <div class="sec-eyebrow">Up next</div>
+  <h2 class="sec-title">Lesson 2: Briefing Researcher</h2>
+  <p class="sec-sub">You know what the agent is. Now the craft: structuring a mission like a memo to a sharp new hire, answering the clarifying questions well, and knowing what to do — and not do — with the report that comes back.</p>
+  <a href="09-briefing-researcher.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--blueD);color:var(--white);text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:600;font-size:15px;margin-top:8px;">Next Lesson →</a>
+</div>
+
+<div class="page-footer"></div>
+</body>
+</html>

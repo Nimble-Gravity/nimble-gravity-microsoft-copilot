@@ -20,7 +20,7 @@
 (function () {
   'use strict';
 
-  var LS_KEY = 'ng-cowork:v1';
+  var LS_KEY = 'ng-copilot:v1';
 
   // ── Storage layer (self-healing; survives private-mode / disabled storage) ──
   function getStore() {
@@ -47,109 +47,109 @@
   function clearAck(id)         { var s = getStore(); if (s.ack) { delete s.ack[id]; setStore(s); } }
   function resetAll()           { try { window.localStorage.removeItem(LS_KEY); } catch (e) {} }
 
-  var MODULE_LABELS = { m1: 'Workshop 1 · Setup & Foundations', m2: 'Workshop 2 · Use Cowork', m3: 'Workshop 3 · Build a Skill', m4: 'Workshop 4 · Govern & Roll Out' };
+  var MODULE_LABELS = { m1: 'Module 1 · Foundations & Copilot Chat', m2: 'Module 2 · Copilot in the Apps', m3: 'Module 3 · The Researcher Agent', m4: 'Module 4 · Analyst & The Close Room' };
   function passedCount() { var s = getStore(); var q = s.quiz || {}; var n = 0; ['m1','m2','m3','m4'].forEach(function (m) { if (q[m] && q[m].passed) n++; }); return n; }
   function fmtDate(ts) { var d = ts ? new Date(ts) : new Date(); var m = ['January','February','March','April','May','June','July','August','September','October','November','December']; return m[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear(); }
 
   // ── Content config (questions live here, not in lesson HTML) ────────────────
   var QUIZZES = {
     m1: {
-      label: 'Workshop 1 · Setup & Foundations',
+      label: 'Module 1 · Foundations & Copilot Chat',
       questions: [
-        { q: 'How is Cowork different from a chat?',
-          options: ['It writes longer answers, but you still copy them out and do the work yourself', 'You delegate a multi-step job and supervise while it works across your files', 'It is the same as chat, just renamed'],
+        { q: 'In Copilot Chat, what does switching from Web to Work grounding change?',
+          options: ['Nothing — it only changes the color of the interface', 'Copilot answers from your Microsoft Graph — the emails, meetings, chats, and files you can access — instead of the public web', 'It unlocks a larger model'],
           answer: 1 },
-        { q: 'Where does Claude Cowork run your work?',
-          options: ['Entirely in Anthropic’s cloud, like a chatbot', 'Locally on your machine, in an isolated VM, on the folders you grant it', 'On your machine with full access to every file by default'],
+        { q: 'Which of your organization’s data can Copilot see when it answers you?',
+          options: ['Everything in the tenant, including other teams’ files', 'Only content you already have at least view permission to', 'Only files you created yourself'],
           answer: 1 },
-        { q: 'What does the co-setup interview produce?',
-          options: ['A one-time summary it forgets when the session ends', 'Instruction and about-me context files that personalize every session', 'A new Claude model trained on your data'],
-          answer: 1 },
-        { q: 'On your first delegated task, which permission mode is recommended?',
-          options: ['Act without asking, so it finishes fastest', 'Ask before acting — approve each step', 'Either mode is fine; it doesn’t change what Cowork can do'],
-          answer: 1 }
-      ]
-    },
-    m2: {
-      label: 'Workshop 2 · Use Cowork',
-      questions: [
-        { q: 'What is the safe default model for everyday work?',
-          options: ['Opus for everything — it is the most capable', 'Sonnet by default, stepping up to Opus only for hard reasoning', 'Haiku for everything, to minimize cost'],
-          answer: 1 },
-        { q: 'Before running a task, what should you connect?',
-          options: ['A parent folder, so it has everything it might need', 'Only the folder the task needs', 'Every folder up front, so you never have to grant again'],
-          answer: 1 },
-        { q: 'What makes a strong first use case?',
-          options: ['A quick factual question you could just ask in chat', 'A repetitive, document-heavy job that ends in a deliverable', 'A one-off creative task with no source files'],
-          answer: 1 },
-        { q: 'What standing risk comes with untrusted external content?',
-          options: ['Prompt injection — hidden instructions in a page, email, or document', 'The model forgetting your earlier messages', 'Your files being uploaded to train the model'],
+        { q: 'Microsoft’s four elements of a strong prompt are…',
+          options: ['Goal, Context, Expectations, Source', 'Persona, Task, Format, Tone', 'Who, What, When, Where'],
+          answer: 0 },
+        { q: 'You want the same variance-commentary prompt to run itself every Monday morning. What do you use?',
+          options: ['A scheduled prompt — any prompt on a recurring schedule, up to 10 per user', 'A macro in Excel', 'You can’t — Copilot prompts are one-off'],
           answer: 0 }
       ]
     },
-    m3: {
-      label: 'Workshop 3 · Build a Skill',
+    m2: {
+      label: 'Module 2 · Copilot in the Apps',
       questions: [
-        { q: 'What comes first when authoring a skill, per Anthropic?',
-          options: ['Polished, exhaustive documentation', 'The evaluations — evals before docs', 'A long list of rules in ALL-CAPS'],
+        { q: 'When Copilot in Excel runs a forecast or a statistical analysis, what is it actually doing?',
+          options: ['Guessing from patterns in the visible cells', 'Writing and running Python against your data, right in the workbook', 'Sending the workbook to a human analyst'],
           answer: 1 },
-        { q: 'A good SKILL.md body should be…',
-          options: ['As detailed as possible, covering every case in one file', 'Under 500 lines, with detail pushed into reference files (progressive disclosure)', 'Just the frontmatter — the body is optional'],
+        { q: 'How do you verify exactly which cells Copilot changed in a workbook?',
+          options: ['You can’t — you have to diff it by hand', 'The Show Changes pane attributes every edit Copilot made', 'Copilot never edits cells directly'],
           answer: 1 },
-        { q: 'What makes a description trigger reliably?',
-          options: ['It is short and general, so it matches anything', 'It is keyword-rich and third person — what it does and when to use it', 'It is written in the first person ("I help you…")'],
+        { q: 'The fastest route from a set of findings to a structured, on-brand deck is…',
+          options: ['Copy-pasting into a blank deck', 'PowerPoint’s Narrative Builder, referencing your source file and an approved brand template', 'Asking Copilot Chat for slide text and formatting it yourself'],
           answer: 1 },
-        { q: 'The fastest way to start a skill from working text is to…',
-          options: ['Write the SKILL.md by hand from a blank file', 'Paste the working prompt and ask Claude to turn it into a skill', 'Wait for Anthropic to publish an official one'],
+        { q: 'You missed a meeting where the close calendar changed. The best Copilot move is…',
+          options: ['Ask a colleague to retype their notes', 'Open the Teams intelligent recap — AI notes, speaker attribution, and action items', 'Wait for the official minutes next week'],
+          answer: 1 }
+      ]
+    },
+    m3: {
+      label: 'Module 3 · The Researcher Agent',
+      questions: [
+        { q: 'Before it starts working, Researcher usually asks you clarifying questions. You should…',
+          options: ['Skip them — the first prompt is all that matters', 'Answer them carefully — engaging with the clarifying phase is Microsoft’s #1 stated best practice', 'Cancel and rewrite the prompt from scratch'],
+          answer: 1 },
+        { q: 'How long can a complex Researcher run take?',
+          options: ['A few seconds, like a chat reply', '10–45 minutes — so kick it off early and keep working', 'It always takes exactly five minutes'],
+          answer: 1 },
+        { q: 'What can Researcher draw on for a report?',
+          options: ['Only the public web', 'Only files you attach', 'The web AND your work data — files, mail, meetings, chats — plus connected third-party sources, scoped per run'],
+          answer: 2 },
+        { q: 'Researcher and Analyst share a usage pool. As of mid-2026 it is…',
+          options: ['Unlimited runs', '25 combined queries per user per month, resetting on the 1st', '5 runs per day'],
           answer: 1 }
       ]
     },
     m4: {
-      label: 'Workshop 4 · Govern & Roll Out',
+      label: 'Module 4 · Analyst & The Close Room',
       questions: [
-        { q: 'A colleague needs to pull usage reports for the steering committee — nothing else. What should they get?',
-          options: ['The Owner role, so they are not blocked', 'A Custom role with the Analytics admin area', 'A shared login with an existing Owner'],
+        { q: 'What is Analyst’s signature capability?',
+          options: ['It formats spreadsheets faster than Excel', 'Chain-of-thought data analysis that writes and runs Python — with the code visible so you can verify the method', 'It replaces the need for a data warehouse'],
           answer: 1 },
-        { q: 'You assign a Custom role to the pilot group, and Cowork is enabled org-wide. The group still cannot use Cowork. Why?',
-          options: ['Custom roles do not inherit org-enabled capabilities — each one must be granted explicitly', 'Cowork takes 24 hours to propagate to new roles', 'Custom roles cannot be granted Cowork at all'],
+        { q: 'When do you reach for Analyst instead of Copilot in Excel?',
+          options: ['Never — they are the same feature', 'When the question spans multiple files or needs forecasting/statistics, rather than edits inside one open workbook', 'Only when Excel is not installed'],
+          answer: 1 },
+        { q: 'You need a cited brief on a diligence target that pulls from the data room AND the public web. Which tool?',
+          options: ['Researcher — deep, multi-source research with citations', 'Analyst — it is newer', 'Excel Copilot — everything starts in Excel'],
           answer: 0 },
-        { q: 'Cowork runs on the desktop against local folders. What does that mean for the data?',
-          options: ['Everything stays on the machine — nothing leaves', 'The files are local, but the model call goes to Anthropic’s API — what Cowork reads leaves the machine', 'Data leaves only when a connector is enabled'],
+        { q: 'You need a quick formula fix and a chart in the workbook you have open. Which tool?',
+          options: ['Researcher', 'Copilot in Excel — native edits in the open workbook, with change attribution', 'A scheduled prompt'],
           answer: 1 },
-        { q: 'As of July 2026, where is Claude Cowork activity NOT captured?',
-          options: ['In the admin usage dashboard', 'In Anthropic’s Audit Logs, Compliance API, and Data Exports', 'In the OpenTelemetry event stream'],
+        { q: 'Feeding Analyst clean, tabular data with clear headers matters because…',
+          options: ['Analyst refuses files with more than one tab', 'Its Python runs against your columns as-is — clean structure in, reliable analysis out', 'It only reads the first 100 rows'],
           answer: 1 },
-        { q: 'Which three planes make up a complete Cowork monitoring story?',
-          options: ['Compliance API, OpenTelemetry, and a network proxy or LLM gateway', 'The admin dashboard, email alerts, and quarterly attestation', 'SSO, SCIM, and MDM'],
-          answer: 0 },
-        { q: 'The analytics show one desk running almost everything on Opus. The fix is…',
-          options: ['A note in the steering minutes to monitor it weekly', 'A model and effort cap on the Models tab', 'Removing that team’s Cowork access'],
+        { q: 'Which is TRUE about how Copilot handles your prompts and data?',
+          options: ['Prompts and responses are used to train the foundation models', 'Prompts, responses, and Graph data are NOT used to train the foundation models', 'Copilot can read any file in the tenant, regardless of permissions'],
           answer: 1 },
-        { q: 'Some work needs centralized audit or zero data retention today. Where should it run?',
-          options: ['On the Claude Cowork interface — its controls are enough', 'On Anthropic’s audited surfaces — the API or Claude Code Enterprise — not the Cowork interface', 'Anywhere — the audit gap does not matter for regulated work'],
-          answer: 1 }
+        { q: 'A compliance nuance your team should know about the agents:',
+          options: ['Researcher and Analyst session content is not covered by eDiscovery by default — save important outputs to files that ARE governed', 'Agent sessions are printed and mailed to Compliance automatically', 'Researcher reports are legally citable audit evidence'],
+          answer: 0 }
       ]
     }
   };
 
   var POLLS = {
     maturity: {
-      title: 'Where are you on the AI maturity scale?',
+      title: 'Where are you on the Copilot maturity scale?',
       levels: [
-        { title: 'Curious',   desc: 'Not really using AI for work yet.' },
-        { title: 'Exploring', desc: 'Trying chat tools ad hoc, no real workflow yet.' },
-        { title: 'Piloting',  desc: 'Delegating some real work — maybe a first skill.' },
-        { title: 'Scaling',   desc: 'Teams using it regularly on real deliverables.' },
-        { title: 'Governed',  desc: 'Managed, measured, and governed across the org.' }
+        { title: 'Curious',    desc: 'Not really using Copilot for work yet.' },
+        { title: 'Dabbling',   desc: 'Occasional Copilot Chat questions, no real workflow.' },
+        { title: 'In the flow', desc: 'Using Copilot in Excel, Outlook, or Word most weeks.' },
+        { title: 'Advanced',   desc: 'Grounded prompts, referenced files, scheduled prompts.' },
+        { title: 'Agentic',    desc: 'Already putting Researcher or Analyst on real work.' }
       ]
     }
   };
 
   // ── Styles ──────────────────────────────────────────────────────────────────
   function injectStyles() {
-    if (document.getElementById('cowork-ix-styles')) return;
+    if (document.getElementById('copilot-ix-styles')) return;
     var s = document.createElement('style');
-    s.id = 'cowork-ix-styles';
+    s.id = 'copilot-ix-styles';
     s.textContent = [
       '.ix-quiz,.ix-poll,.ix-readout{margin-top:28px;}',
       '.ix-card{border:1px solid var(--border);border-radius:14px;background:var(--white);padding:26px 28px;box-shadow:0 4px 18px rgba(33,15,54,.05);}',
@@ -508,7 +508,7 @@
     ['m1', 'm2', 'm3', 'm4'].forEach(function (m, i) {
       var passed = quiz[m] && quiz[m].passed;
       var pill = el('span', 'ix-pill' + (passed ? ' on' : ''));
-      pill.appendChild(el('span', null, (passed ? '✓ ' : '○ ') + 'Workshop ' + (i + 1)));
+      pill.appendChild(el('span', null, (passed ? '✓ ' : '○ ') + 'Module ' + (i + 1)));
       grid.appendChild(pill);
     });
     card.appendChild(grid);
@@ -586,7 +586,7 @@
     fill.style.width = (n / 4 * 100) + '%';
     bar.appendChild(fill);
     card.appendChild(bar);
-    card.appendChild(el('p', 'ix-prog-summary', n + ' of 4 workshops complete' + (n === 4 ? ' — certificate unlocked below.' : '.')));
+    card.appendChild(el('p', 'ix-prog-summary', n + ' of 4 modules complete' + (n === 4 ? ' — certificate unlocked below.' : '.')));
     var actions = el('div', 'ix-actions');
     var reset = el('button', 'ix-btn ix-btn--ghost', 'Clear my data');
     reset.type = 'button';
@@ -601,15 +601,15 @@
     var prof = getProfile();
     var name = (prof && prof.name) ? prof.name : '';
     var cert = el('div', 'ix-cert');
-    cert.appendChild(el('div', 'ix-cert-eyebrow', 'Nimble Gravity × Axos Bank · Cowork Enablement'));
+    cert.appendChild(el('div', 'ix-cert-eyebrow', 'Nimble Gravity × Brown & Brown · Copilot Enablement'));
     cert.appendChild(el('div', 'ix-cert-title', 'Certificate of Completion'));
     cert.appendChild(el('div', 'ix-cert-line', 'This certifies that'));
     cert.appendChild(el('div', 'ix-cert-name', name || 'Your name'));
-    cert.appendChild(el('div', 'ix-cert-line', 'completed the four-module Cowork Enablement Program.'));
+    cert.appendChild(el('div', 'ix-cert-line', 'completed the four-module M365 Copilot Advanced Workshop.'));
     var d = new Date();
     var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     cert.appendChild(el('div', 'ix-cert-meta', months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear()));
-    cert.appendChild(el('div', 'ix-cert-disclaimer', 'A personal record of completion — not an official Axos training record.'));
+    cert.appendChild(el('div', 'ix-cert-disclaimer', 'A personal record of completion — not an official Brown & Brown training record.'));
     return cert;
   }
 
@@ -620,7 +620,7 @@
       var locked = el('div', 'ix-locked');
       locked.appendChild(el('div', 'ix-locked-icon', '🔒'));
       locked.appendChild(el('div', 'ix-locked-title', 'Certificate locked'));
-      locked.appendChild(el('div', 'ix-locked-sub', 'Pass all four module quizzes to unlock your certificate — ' + n + ' of 4 done. Each one is the Knowledge check stage on its workshop hub.'));
+      locked.appendChild(el('div', 'ix-locked-sub', 'Pass all four module quizzes to unlock your certificate — ' + n + ' of 4 done. Each one lives at the end of its module’s lab lesson.'));
       mount.appendChild(locked);
       return;
     }
@@ -681,7 +681,7 @@
       return;
     }
     card.appendChild(el('div', 'ix-card-title', 'Read and acknowledge'));
-    card.appendChild(el('p', 'ix-card-sub', 'Confirm you have read the Rules of the Road before using Cowork on Axos work. This is a personal acknowledgment stored on your device — not a legal record, and pending official Axos policy.'));
+    card.appendChild(el('p', 'ix-card-sub', 'Confirm you have read the Rules of the Road before using Copilot on Brown & Brown work. This is a personal acknowledgment stored on your device — not a legal record, and pending official Brown & Brown policy.'));
     var prof = getProfile();
     var field = el('div', 'ix-field');
     var input = el('input', 'ix-input');
@@ -729,5 +729,5 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
 
-  window.CoworkIX = { reset: resetAll, store: getStore };
+  window.CopilotIX = { reset: resetAll, store: getStore };
 })();

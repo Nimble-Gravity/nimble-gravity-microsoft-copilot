@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Resource Library — Axos Cowork</title>
+<title>Resource Library — Copilot Workshop</title>
 <link rel="stylesheet" href="../../styles/shared.css"/>
 <style>
 /* Page-specific styles go here. This scaffold relies entirely on shared.css. */
@@ -14,74 +14,73 @@
 <script src="../../nav.js"></script>
 
 <div class="page-header" id="intro">
-  <div class="eyebrow">Axos · Cowork Program</div>
+  <div class="eyebrow">Brown &amp; Brown · Copilot Workshop</div>
   <h1 class="title">Resource <em>Library</em></h1>
-  <p class="subtitle">Everything worth reviewing, in one place — the skills you install, the templates you reuse, the slide decks, and the Anthropic sources the program is built on. Bookmark this page.</p>
+  <p class="subtitle">Everything worth keeping, in one place — the synthetic lab data the exercises run on, the two take-home challenges, the slide decks, and the Microsoft sources the program is built on. Bookmark this page.</p>
   <div class="header-phase">
     <div class="header-phase-dot"></div>
-    Skills · templates · decks · sources
+    Lab data · challenges · decks · sources
   </div>
 </div>
 
-<!-- SKILLS -->
-<div class="section" id="skills">
-  <div class="sec-eyebrow">Skills</div>
-  <h2 class="sec-title">The three workshop <em>skills</em></h2>
-  <p class="sec-sub">Download the <code>SKILL.md</code>, or browse the folder for the reference files. Install into your Claude Cowork skills folder.</p>
+<!-- LAB DATA -->
+<div class="section" id="labdata">
+  <div class="sec-eyebrow">Lab data</div>
+  <h2 class="sec-title">Synthetic finance <em>files</em></h2>
+  <p class="sec-sub">Every lab runs on these files — synthetic, Copilot-safe, and shaped like brokerage finance data but entirely fake. During pre-work, copy them into a folder named <code>Copilot Workshop</code> in your OneDrive so Copilot can ground in them. Never put real client, carrier, or deal data into a workshop exercise.</p>
 
   <div class="module-grid" style="margin-top:28px;">
     <div class="module-card">
-      <div class="module-card-top"><div class="module-card-meta"><div class="module-label">Setup</div>
-        <div class="module-name">cowork-cosetup</div>
-        <div class="module-desc">Interviews you and writes your personalization files (claude.md + about-me/). Used in Workshop 1.</div>
+      <div class="module-card-top"><div class="module-card-meta"><div class="module-label">Modules 1 · 2 · 4</div>
+        <div class="module-name">Profit-center P&amp;L</div>
+        <div class="module-desc">Six months of budget-vs-actuals by profit center and account. The Chat Sprint, the Excel deep-dive, and the Analyst hands-on all run against this file.</div>
       </div></div>
-      <div class="module-card-footer"><a href="../../skills/cowork-cosetup/SKILL.md" download class="module-cta">Download SKILL.md <span>↓</span></a> <a href="../../skills/cowork-cosetup/" class="slides-cta">Browse</a></div>
+      <div class="module-card-footer"><a href="../../assets/lab-data/profit-center-pnl.csv" download class="module-cta">profit-center-pnl.csv <span>↓</span></a></div>
     </div>
     <div class="module-card">
-      <div class="module-card-top"><div class="module-card-meta"><div class="module-label">Authoring</div>
-        <div class="module-name">workflow-decomposition</div>
-        <div class="module-desc">Interviews you about a workflow and offers to draft it as a skill. The Workshop 3 lab engine.</div>
+      <div class="module-card-top"><div class="module-card-meta"><div class="module-label">Modules 2 · 4</div>
+        <div class="module-name">Carrier commission statements</div>
+        <div class="module-desc">Monthly carrier statements — base, supplemental, and contingent commission lines. Fuel for concentration analysis and the close-package exercises.</div>
       </div></div>
-      <div class="module-card-footer"><a href="../../skills/workflow-decomposition/SKILL.md" download class="module-cta">Download SKILL.md <span>↓</span></a> <a href="../../skills/workflow-decomposition/" class="slides-cta">Browse</a></div>
+      <div class="module-card-footer"><a href="../../assets/lab-data/carrier-commission-statements.csv" download class="module-cta">carrier-commission-statements.csv <span>↓</span></a></div>
     </div>
     <div class="module-card">
-      <div class="module-card-top"><div class="module-card-meta"><div class="module-label">Example</div>
-        <div class="module-name">memo-generation</div>
-        <div class="module-desc">Drafts a structured memo from notes or an email. The worked good-vs-bad example in Workshop 3.</div>
+      <div class="module-card-top"><div class="module-card-meta"><div class="module-label">Module 2 · Close Room</div>
+        <div class="module-name">Fiduciary rec pair</div>
+        <div class="module-desc">A premium-trust ledger and its matching bank statement — with planted exceptions. Use them together for the fiduciary-cash reconciliation exercises.</div>
       </div></div>
-      <div class="module-card-footer"><a href="../../skills/memo-generation/SKILL.md" download class="module-cta">Download SKILL.md <span>↓</span></a> <a href="../../skills/memo-generation/" class="slides-cta">Browse</a></div>
+      <div class="module-card-footer"><a href="../../assets/lab-data/premium-trust-ledger.csv" download class="module-cta">premium-trust-ledger.csv <span>↓</span></a> <a href="../../assets/lab-data/trust-bank-statement.csv" download class="slides-cta">trust-bank-statement.csv ↓</a></div>
+    </div>
+    <div class="module-card">
+      <div class="module-card-top"><div class="module-card-meta"><div class="module-label">Modules 1 · 3</div>
+        <div class="module-name">Project Lighthouse data room</div>
+        <div class="module-desc">A mini acquisition data room for a fictional Florida brokerage target — the brief behind your Researcher mission. Four files; keep them in a <code>data-room</code> subfolder.</div>
+      </div></div>
+      <div class="module-card-footer"><a href="../../assets/lab-data/data-room/target-overview.md" download class="module-cta">target-overview.md <span>↓</span></a> <a href="../../assets/lab-data/data-room/target-financials.csv" download class="slides-cta">target-financials.csv ↓</a> <a href="../../assets/lab-data/data-room/carrier-contract-summary.md" download class="slides-cta">carrier-contract-summary.md ↓</a> <a href="../../assets/lab-data/data-room/earnout-term-sheet.md" download class="slides-cta">earnout-term-sheet.md ↓</a></div>
     </div>
   </div>
 </div>
 
-<!-- TEMPLATES -->
-<div class="section section--off" id="templates">
-  <div class="sec-eyebrow">Templates</div>
-  <h2 class="sec-title">Worksheets you'll <em>reuse</em></h2>
-  <div class="insight-grid" style="margin-top:24px;">
-    <div class="insight-card">
-      <div class="sec-eyebrow" style="margin-bottom:6px;">Memo format</div>
-      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">The default memo structure the memo skill writes to — swap in Axos letterhead and house style. <a href="../../skills/memo-generation/reference/memo-format.md" download>Download →</a></p>
+<!-- TAKE-HOME CHALLENGES -->
+<div class="section section--off" id="challenges">
+  <div class="sec-eyebrow">Take-home challenges</div>
+  <h2 class="sec-title">Two challenges to <em>keep the reps going</em></h2>
+  <p class="sec-sub">The session ends; the habit shouldn't. Both challenges are self-paced, run on the synthetic data above, and produce a real deliverable you can share with your facilitator.</p>
+
+  <div class="module-grid" style="margin-top:28px;">
+    <div class="module-card">
+      <div class="module-card-top"><div class="module-card-meta"><div class="module-label">Prompting &amp; agents</div>
+        <div class="module-name">The Variance Vault</div>
+        <div class="module-desc">An escape-room-style challenge: crack a month of variances using grounded prompts and a well-briefed agent run. Read the briefing, then open the vault.</div>
+      </div></div>
+      <div class="module-card-footer"><a href="../../escape-room/" class="module-cta">Enter the Vault <span>→</span></a> <a href="../../escape-room/lab-files/variance-vault-briefing.md" download class="slides-cta">Briefing ↓</a></div>
     </div>
-    <div class="insight-card">
-      <div class="sec-eyebrow" style="margin-bottom:6px;">Decomposition canvas</div>
-      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">The one-page canvas for mapping a workflow into a skill blueprint — use it in Workshop 3. <a href="../../skills/workflow-decomposition/reference/canvas.md" download>Download →</a></p>
-    </div>
-    <div class="insight-card">
-      <div class="sec-eyebrow" style="margin-bottom:6px;">Sample loan file (demo)</div>
-      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">The fictional commercial loan file behind the Workshop 1 demo — drop it in a folder and summarize it. <a href="../../assets/demo/sample-loan-file.md" download>Download →</a></p>
-    </div>
-    <div class="insight-card">
-      <div class="sec-eyebrow" style="margin-bottom:6px;">Maya demo profile (co-setup output)</div>
-      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">The ready-made <code>claude.md</code> + <code>about-me/</code> files for the demo persona — drop them in for the "after" without running co-setup live. <a href="../../assets/demo/maya-profile/">Browse →</a></p>
-    </div>
-    <div class="insight-card">
-      <div class="sec-eyebrow" style="margin-bottom:6px;">Sample: Variance Analysis Dataset</div>
-      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">A synthetic balance sheet and income statement with prior-period comparison and GL detail, built to match the Workshop 2 Track 2 prompt. Use it if participants don't have files staged. <a href="../../assets/demo/sample-variance-dataset.md" download>Download →</a></p>
-    </div>
-    <div class="insight-card">
-      <div class="sec-eyebrow" style="margin-bottom:6px;">Sample: Project Status Folder (reference only)</div>
-      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Three files — meeting notes, a task tracker, and a prior status update — for the status-update use case. Not used in the live session; for self-directed practice after. <a href="../../assets/demo/sample-status-folder/">Browse →</a></p>
+    <div class="module-card">
+      <div class="module-card-top"><div class="module-card-meta"><div class="module-label">Capstone · Module 4</div>
+        <div class="module-name">The Close Room</div>
+        <div class="module-desc">A month-end close fire drill: run Researcher and Analyst against the close data and produce a close-package one-pager. The rubric tells you what "done" looks like.</div>
+      </div></div>
+      <div class="module-card-footer"><a href="../../control-room/" class="module-cta">Enter the Close Room <span>→</span></a> <a href="../../control-room/lab-files/close-room-briefing.md" download class="slides-cta">Briefing ↓</a> <a href="../../control-room/lab-files/close-room-rubric.md" download class="slides-cta">Rubric ↓</a></div>
     </div>
   </div>
 </div>
@@ -89,67 +88,71 @@
 <!-- SLIDE DECKS -->
 <div class="section" id="decks">
   <div class="sec-eyebrow">Slide decks</div>
-  <h2 class="sec-title">One deck per <em>workshop</em></h2>
-  <p class="sec-sub">The presentation for each workshop, generated from the lessons.</p>
+  <h2 class="sec-title">One deck per <em>module</em></h2>
+  <p class="sec-sub">The projection deck for each module, generated from the lessons.</p>
   <p style="margin-top:20px;display:flex;gap:16px;flex-wrap:wrap;">
-    <a href="../training/module-1-slides.html" class="slides-cta">⊞ Workshop 1</a>
-    <a href="../training/module-2-slides.html" class="slides-cta">⊞ Workshop 2</a>
-    <a href="../training/module-3-slides.html" class="slides-cta">⊞ Workshop 3</a>
-    <a href="../training/module-4-slides.html" class="slides-cta">⊞ Workshop 4</a>
+    <a href="../training/module-1-slides.html" class="slides-cta">⊞ Module 1 · Foundations &amp; Copilot Chat</a>
+    <a href="../training/module-2-slides.html" class="slides-cta">⊞ Module 2 · Copilot in the Apps</a>
+    <a href="../training/module-3-slides.html" class="slides-cta">⊞ Module 3 · The Researcher Agent</a>
+    <a href="../training/module-4-slides.html" class="slides-cta">⊞ Module 4 · Analyst &amp; The Close Room</a>
   </p>
 </div>
 
-<!-- WALKTHROUGHS -->
-<div class="section section--off" id="walkthroughs">
-  <div class="sec-eyebrow">Walkthroughs</div>
-  <h2 class="sec-title">Short screen <em>recordings</em></h2>
-  <p class="sec-sub">GIF walkthroughs for the flows that are easier shown than described. Recordings are pending for this cohort.</p>
-  <figure class="gif-figure">
-    <img src="../../assets/gifs/cosetup-paste.gif" alt="Pasting the co-setup skill into Cowork" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-    <figcaption>▶ GIF walkthroughs — co-setup paste, connector consent, folder access, skill install (recording pending)</figcaption>
-  </figure>
-</div>
-
 <!-- SOURCES -->
-<div class="section" id="sources">
-  <div class="sec-eyebrow">Grounded in Anthropic</div>
+<div class="section section--off" id="sources">
+  <div class="sec-eyebrow">Grounded in Microsoft</div>
   <h2 class="sec-title">Where this comes <em>from</em></h2>
-  <p class="sec-sub">The program is built on Anthropic's Claude Cowork guidance and open-sourced packs. Use these as pre-work and seeds.</p>
+  <p class="sec-sub">The program is built on Microsoft's first-party documentation, verified 2026-07-31. These are the references worth reading in full — and re-checking before you rely on a limit or a feature date.</p>
   <div class="bp-grid--light" style="margin-top:24px;">
     <div class="bp-item">
       <div class="bp-num">01</div>
-      <div class="bp-title">Anthropic Academy</div>
-      <div class="bp-body">Free courses, including "Introduction to Claude Cowork." <a href="https://anthropic.skilljar.com" target="_blank" rel="noopener noreferrer">Open →</a></div>
+      <div class="bp-title">Copilot prompting guide</div>
+      <div class="bp-body">Microsoft's official framework — Goal, Context, Expectations, Source — taught verbatim in Module 1. <a href="https://support.microsoft.com" target="_blank" rel="noopener noreferrer">support.microsoft.com — "Get better results with Copilot prompting" →</a></div>
     </div>
     <div class="bp-item">
       <div class="bp-num">02</div>
-      <div class="bp-title">Financial-services pack</div>
-      <div class="bp-body">Reference agents for regulated finance work — drafts a person signs off on. <a href="https://github.com/anthropics/financial-services" target="_blank" rel="noopener noreferrer">Open →</a></div>
+      <div class="bp-title">Researcher agent docs + FAQ</div>
+      <div class="bp-body">The agent reference behind Module 3, including the 25-query monthly cap shared with Analyst (FAQ updated 2026-03-26). <a href="https://learn.microsoft.com/microsoft-365/copilot/researcher-agent" target="_blank" rel="noopener noreferrer">learn.microsoft.com — Researcher agent →</a> · <a href="https://learn.microsoft.com/microsoft-365/copilot/faq-researcher" target="_blank" rel="noopener noreferrer">FAQ →</a></div>
     </div>
     <div class="bp-item">
       <div class="bp-num">03</div>
-      <div class="bp-title">Legal pack</div>
-      <div class="bp-body">The draft-and-review pattern that also fits banking and compliance. <a href="https://github.com/anthropics/claude-for-legal" target="_blank" rel="noopener noreferrer">Open →</a></div>
+      <div class="bp-title">Get started with Analyst</div>
+      <div class="bp-body">Microsoft's getting-started guide for the Analyst agent — inputs, invocation, and the visible-Python workflow behind Module 4. <a href="https://support.microsoft.com" target="_blank" rel="noopener noreferrer">support.microsoft.com — "Get started with Analyst" →</a></div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">04</div>
+      <div class="bp-title">Copilot in Excel for finance</div>
+      <div class="bp-body">"Copilot in Excel: Built for the era of Frontier Finance" (2026-06-25) — Python in the grid, finance skills library, data connectors. The anchor for Module 2. <a href="https://www.microsoft.com/microsoft-365/blog" target="_blank" rel="noopener noreferrer">microsoft.com/microsoft-365/blog →</a></div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">05</div>
+      <div class="bp-title">Copilot privacy documentation</div>
+      <div class="bp-body">The commitments behind the data rules in Lesson 1 — permissions as the boundary, no training on tenant data (updated 2026-07-09). <a href="https://learn.microsoft.com/microsoft-365/copilot/microsoft-365-copilot-privacy" target="_blank" rel="noopener noreferrer">learn.microsoft.com — Copilot privacy →</a></div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">06</div>
+      <div class="bp-title">Finance scenario library</div>
+      <div class="bp-body">Microsoft's adoption library of finance-role Copilot scenarios — a good source of next use cases after the workshop. <a href="https://adoption.microsoft.com/copilot-scenario-library/finance" target="_blank" rel="noopener noreferrer">adoption.microsoft.com — finance scenarios →</a></div>
     </div>
   </div>
 </div>
 
 <!-- ENGAGEMENT TEAM -->
-<div class="section section--off" id="team">
-  <div class="sec-eyebrow">For the engagement team</div>
-  <h2 class="sec-title">Tailoring &amp; <em>discovery</em></h2>
+<div class="section" id="team">
+  <div class="sec-eyebrow">Facilitator corner</div>
+  <h2 class="sec-title">Delivery &amp; <em>tailoring</em></h2>
   <div class="insight-grid" style="margin-top:24px;">
     <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">Facilitator guide</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">The run of show for the 2-hour session — timings, in-room beats, and contingency plans. <a href="facilitator-guide.html">Open →</a></p>
+    </div>
+    <div class="insight-card">
       <div class="sec-eyebrow" style="margin-bottom:6px;">Discovery checklist</div>
-      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">The pre-engagement session that tailors the use cases and labs. <a href="../customization/discovery-checklist.html">Open →</a></p>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">The pre-engagement session that confirms tenant settings and tailors the use cases and labs. <a href="../customization/discovery-checklist.html">Open →</a></p>
     </div>
     <div class="insight-card">
       <div class="sec-eyebrow" style="margin-bottom:6px;">Customization convention</div>
-      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Which regions are client-swappable and how to fork per client. <a href="../../CLIENT-CUSTOMIZATION.md" download>Open →</a></p>
-    </div>
-    <div class="insight-card">
-      <div class="sec-eyebrow" style="margin-bottom:6px;">Change-management plan</div>
-      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">The compressed OCM plan for the engagement — sponsor roadmap, comms calendar, and measurement. <a href="../../client-notes/axos-change-plan.md" download>Open →</a></p>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Which regions of the site are client-swappable and how to fork per client. <a href="../../CLIENT-CUSTOMIZATION.md" download>Open →</a></p>
     </div>
   </div>
 </div>

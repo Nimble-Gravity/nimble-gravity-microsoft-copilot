@@ -10,7 +10,7 @@
  *     subLabel: 'Foundations',
  *     color:  '#4f9990',
  *     lessons: [
- *       { file: '01-what-is-cowork.html', title: 'What Is Cowork' },
+ *       { file: '01-the-copilot-landscape.html', title: 'The Copilot Landscape' },
  *       ...
  *     ]
  *   };
@@ -48,7 +48,7 @@
   /**
    * Parse one lesson HTML string and return an array of slide descriptor objects.
    * @param {string} html   Raw HTML text of the lesson page.
-   * @param {string} lessonFile  Filename, e.g. "01-what-is-cowork.html"
+   * @param {string} lessonFile  Filename, e.g. "01-the-copilot-landscape.html"
    * @param {string} fallbackTitle  Used if page-header title not found.
    */
   function extractSlides(html, lessonFile, fallbackTitle) {

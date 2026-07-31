@@ -1,96 +1,95 @@
 {
-  "workshopTitle": "Workshop 3: The Skill Vault",
-  "scenario": "A departing consultant locked the team's playbook inside the Skill Vault. Their custom Cowork skills are the only keys. Learn them, fix them, build your own — and get the playbook out before the client call in 40 minutes.",
+  "workshopTitle": "Module 2 Challenge: The Variance Vault",
+  "scenario": "Month-end. Four sealed findings are buried in the June data — a windfall, a lease, an overrun, and a slide. Use Copilot — Chat, Excel, or the Analyst agent — to dig each one out of the numbers and unlock the vault before the close call in 40 minutes.",
   "timeLimitMinutes": 40,
   "hintPenaltySeconds": 120,
   "rooms": [
     {
       "id": "room-1",
-      "title": "The Inherited Skill",
-      "narrative": "The consultant left one working skill behind: 'Meeting Extractor.' Nobody knows what it does. Invoke it correctly and it will surrender the first key.",
+      "title": "The Windfall",
+      "narrative": "Something big landed in March and nobody flagged it. One profit center's contingent commissions came in at several times budget — a carrier profit-share windfall buried in 500 rows of P&L. Find the number and the first lock opens.",
       "labSteps": [
-        "Install the provided 'meeting-extractor-SKILL.md' into Cowork: create a folder named 'meeting-extractor', place the SKILL.md file inside it, then add that folder via Settings → Skills (or drag it to your skills panel). Confirm 'Meeting Extractor' appears in the panel before continuing.",
-        "Read its description — note what kind of request triggers it and what output it promises.",
-        "Upload the provided file 'vault-standup-notes.txt' to your session.",
-        "Prompt Cowork with a request that matches the skill's trigger (ask it to extract action items from the notes).",
-        "The skill outputs an action-item table. The unlock code is the number of action items assigned to 'R. Vega' followed by the first word of Vega's first action item, no space. Example format: 3Draft"
+        "Open 'profit-center-pnl.csv' from your OneDrive lab-data copy — Excel with Copilot works; the Analyst agent is faster for a sweep across every profit center.",
+        "Build a four-element prompt: Goal (find the March contingent-commission outlier), Context (budget vs actual by profit center, insurance brokerage P&L), Expectations (a table of profit center, March contingent budget, actual, and variance, sorted by variance), Source (this file).",
+        "Filter to account = 'Contingent commissions' and month = 2026-03, then compare actual_usd to budget_usd for each profit center.",
+        "One profit center's actual is more than triple its budget. Verify before you trust it: open the underlying row and read the raw actual_usd value yourself.",
+        "The unlock code is that profit center's March contingent-commission ACTUAL in $ thousands — digits only, no commas, no dollar sign. Example format: 425"
       ],
-      "codeHash": "904f771692e2f43819ddc38a75f994c031bcdb47c82d35022f7c7c7870000727",
+      "codeHash": "eaa0689a095d4394a05fb51b84b0175a47f68221261377e4829444cbfcae23ca",
       "hints": [
-        "Skills trigger on intent, not magic words. Ask for the outcome the description promises: extracting action items from meeting notes.",
-        "Filter the output to owner R. Vega. Count the rows, then take the first word of Vega's first action."
+        "Don't scan row by row — ask for variance (actual minus budget) on the contingent-commissions line only, March only, ranked. The windfall is not subtle; it dwarfs every other contingent variance that month.",
+        "It's a Florida retail profit center on the Gulf side of the state. Its March contingent budget was $94,500 and the actual came in at a bit more than three and a half times that. Enter the actual, converted to thousands."
       ],
       "skillsTaught": [
-        "What a skill is",
-        "How skill descriptions control triggering",
-        "Invoking an existing skill"
+        "Filtering and ranking a P&L with Copilot instead of scanning it",
+        "The four-element prompt: Goal, Context, Expectations, Source",
+        "Verifying a Copilot answer against the underlying rows"
       ]
     },
     {
       "id": "room-2",
-      "title": "The Broken Trigger",
-      "narrative": "The second key sits behind the skill 'Client Formatter' — but it never fires. The consultant sabotaged its description on the way out. Repair it and the skill will do the rest.",
+      "title": "The Lease",
+      "narrative": "May's occupancy line hides a one-time hit: a lease buyout that landed in a single profit center and blew straight past budget. The controller wants the overage — not the total, the overage. Compute it and the second lock opens.",
       "labSteps": [
-        "Open the provided file 'client-formatter-SKILL.md' and read its three parts: name, description, instructions.",
-        "The description says 'A skill.' — too vague for Cowork to ever match it to a request. This is the sabotage.",
-        "Rewrite the description so it clearly states WHEN to use the skill (formatting raw notes into the firm's client status update template) and WHAT triggers it (mentions of status updates, client reports, weekly summaries).",
-        "Save the repaired skill into your Cowork session.",
-        "Prompt: 'Turn these notes into a client status update' using the provided 'raw-notes.txt'. If your description repair worked, the skill fires and formats the output.",
-        "The formatted output has a footer line the instructions always append. The unlock code is the name of the firm's method in that footer."
+        "Stay in 'profit-center-pnl.csv'. This time the account is 'Occupancy' and the month is 2026-05.",
+        "Prompt with the same four elements — but change the Expectations: you want actual minus budget per profit center, not the actual itself. Copilot answers the question you ask, so ask for the variance.",
+        "In Excel, a pivot of May occupancy with a variance column works too — ask Copilot to add the calculated column for you.",
+        "One profit center's May occupancy overage is a suspiciously round number — the signature of a one-time contractual payment, not rent drift.",
+        "The unlock code is that overage (actual minus budget) in $ thousands — digits only. Example format: 95"
       ],
-      "codeHash": "1c1c23d4d18aaeb328c1151071e75c3da9bbe5ac7ba3d3dda4d404f64ce30712",
+      "codeHash": "7b69759630f869f2723875f873935fed29d2d12b10ef763c1c33b8e0004cb405",
       "hints": [
-        "A good description answers two questions: what does this skill produce, and which requests should trigger it? Write 2-3 sentences covering both.",
-        "Once the skill fires, find the footer: 'Prepared with the ___ method.' The blank is your code."
+        "If your candidate overage isn't a clean round number, you've computed the actual, not the variance. Subtract the budget. Every other profit center's occupancy variance that month is small and messy; the hit stands alone.",
+        "It's the Denver retail office. May occupancy actual was $234,000 against a $54,000 budget — enter the difference, in thousands."
       ],
       "skillsTaught": [
-        "Skill anatomy (name / description / instructions)",
-        "Why descriptions drive triggering",
-        "Editing and reloading a skill"
+        "Asking for the derived number (variance), not the raw one",
+        "Adding calculated columns with Excel Copilot",
+        "Recognizing one-time items by their shape"
       ]
     },
     {
       "id": "room-3",
-      "title": "Forge Your Own Key",
-      "narrative": "The third lock has no matching skill. The vault only opens for a skill YOU build: one that turns messy interview notes into the firm's candidate evaluation format.",
+      "title": "The Overrun",
+      "narrative": "Most variances are noise. This one is a pattern: a single profit center whose compensation line runs hot against budget every single month, January through June — roughly nine percent over, every time. Patterns need an id, not an anecdote. Name it and the third lock opens.",
       "labSteps": [
-        "Ask Cowork to help you draft a new SKILL.md for a 'Candidate Evaluator' skill.",
-        "Requirements for the instructions: output must have exactly four sections — Strengths, Concerns, Evidence, Recommendation — and the Recommendation must be one of: Advance, Hold, Decline.",
-        "Write a description that would trigger on requests like 'write up my interview feedback'.",
-        "Load your new skill, then run it against the provided 'interview-notes-jmalik.txt'.",
-        "If your skill enforced the format, the Recommendation section contains a single verdict word. The unlock code is that verdict plus the number of items your skill listed under Concerns. Example format: Hold3"
+        "Still 'profit-center-pnl.csv' — account = 'Compensation', all six months this time.",
+        "This is a consistency question, not an outlier question, so tell Copilot that in the Goal: find the profit center over budget on compensation in EVERY month Jan–Jun 2026, not the one with the biggest single miss.",
+        "Set Expectations to a month-by-month grid: profit centers as rows, months as columns, percent over/under budget in the cells. The Analyst agent handles this pivot well.",
+        "Verify like a reviewer: for your candidate, check all six months individually — one month under budget disqualifies it.",
+        "The unlock code is that profit center's id, exactly as it appears in the file, hyphen included. Example format: PC-999"
       ],
-      "codeHash": "6f086256d0aa882a3794ef70dcb901184b18e1a8fe03ecb3530383ab20e0e4f6",
+      "codeHash": "db8385e3e2f3e0aab70c7aa570a51735b29bc950f92036f83069ff6cc30e2b22",
       "hints": [
-        "Be prescriptive in the instructions: name the four sections explicitly and constrain the Recommendation to the three allowed verdicts. Vague instructions produce drifting formats.",
-        "The notes flag exactly two concerns and describe a strong candidate. Verdict + count."
+        "Ask for the count of over-budget months per profit center on the compensation line — only one scores six out of six. Big single-month misses elsewhere are decoys; consistency is the tell.",
+        "It's the Manhattan retail office — compensation runs about nine percent over budget every month, roughly $650k over for the half. Enter its profit-center id with the hyphen."
       ],
       "skillsTaught": [
-        "Authoring a skill from scratch",
-        "Writing prescriptive instructions",
-        "Constraining output format"
+        "Framing consistency questions vs outlier questions",
+        "Month-by-month pivots with the Analyst agent",
+        "Disqualifying candidates with a verification pass"
       ]
     },
     {
       "id": "room-4",
-      "title": "The Playbook Door",
-      "narrative": "The final door needs two keys turned at once: chain the repaired Client Formatter with your new Candidate Evaluator to produce the one document the vault accepts — a hiring status update for the client.",
+      "title": "The Slide",
+      "narrative": "The last finding isn't one number — it's a headcount. June core commissions are softening across the book, and the CFO wants to know exactly how many profit centers finished the month below budget. Count carefully: the vault rejects sloppy denominators.",
       "labSteps": [
-        "Upload 'interview-notes-jmalik.txt' and 'raw-notes.txt' into one session.",
-        "Prompt Cowork to first evaluate the candidate (your Room 3 skill should fire), then fold that evaluation into a client status update (the Room 2 skill should fire).",
-        "Verify both skills triggered — the output should show the four evaluation sections nested inside the status update template with the firm's footer.",
-        "Run the QA checklist prompt in Cowork: 'Check this document against qa-checklist.txt. For each item, state whether it passes or fails and briefly why. Then report the total pass count.'",
-        "The unlock code is the total pass count followed by the candidate's verdict word. Example format: 7Hold"
+        "Last pass at 'profit-center-pnl.csv' — account = 'Core commissions', month = 2026-06 only.",
+        "Count the profit centers whose June ACTUAL core commissions are below their June BUDGET. Only count rows where a June budget exists — the agency acquired mid-period has actuals but no budget, and it must not be in your count.",
+        "Spell that exclusion out in the prompt's Context; Copilot won't guess your denominator rules. Blank is not zero.",
+        "Verify: ask for the list of qualifying profit centers by name, not just the count, and spot-check two of them against the raw rows.",
+        "The unlock code is the count immediately followed by the word UNDER, no space. Example format: 7UNDER"
       ],
-      "codeHash": "2ae81be19ed200930205d295b85d82cb96bc6ad0e7944e412bd7e1c3a8c6110c",
+      "codeHash": "26bab73116bc0d0c6c649c80cd73f92899b2729289f5271975319ce625b8ec76",
       "hints": [
-        "If only one skill fired, your prompt probably only expressed one intent. State both outcomes in one request: evaluate the candidate, then format the result as a client status update.",
-        "The checklist has 8 items. If your count is under 8, look at which items failed. Items 6 or 7 failing means your Candidate Evaluator skill needs fixing — go back to Room 3, update the skill to name all four required sections explicitly, and constrain the Recommendation to exactly one of: Advance, Hold, Decline."
+        "If your count is one too high, you counted a profit center with an empty June budget cell — the mid-period acquisition. A missing budget means the row is excluded, not that it's a zero budget beaten by any actual.",
+        "With the acquisition excluded, the count is an odd number between ten and twelve. Append the word from the code format, all caps, no space."
       ],
       "skillsTaught": [
-        "Chaining multiple skills in one workflow",
-        "Prompting for multi-intent tasks",
-        "QA against a checklist"
+        "Making denominator rules explicit in the prompt",
+        "Handling missing data — blank is not zero",
+        "Asking for the list behind a count before trusting it"
       ]
     }
   ]

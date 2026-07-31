@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Choosing Your Copilot — Module 4</title>
+<link rel="stylesheet" href="../../styles/shared.css"/>
+<style>
+/* Page-specific styles go here. This scaffold relies entirely on shared.css. */
+</style>
+</head>
+<body>
+<script src="../../footer.js"></script>
+<script src="../../nav.js"></script>
+<script src="../../training-sidebar.js"></script>
+
+<!-- MODULE PROGRESS -->
+<div class="module-strip">
+  <span class="ms-label">Module</span>
+  <a href="01-the-copilot-landscape.html" class="ms-item done"><span class="ms-num">1</span>Foundations &amp; Chat</a>
+  <span class="ms-arrow">›</span>
+  <a href="04-excel-copilot.html" class="ms-item done"><span class="ms-num">2</span>Copilot in the Apps</a>
+  <span class="ms-arrow">›</span>
+  <a href="08-meet-researcher.html" class="ms-item done"><span class="ms-num">3</span>Researcher</a>
+  <span class="ms-arrow">›</span>
+  <a href="12-meet-analyst.html" class="ms-item active"><span class="ms-num">4</span>Analyst &amp; Close Room</a>
+</div>
+
+<div class="page-header" id="intro">
+  <div class="eyebrow">Module 4 · Lesson 3 of 5</div>
+  <h1 class="title">Choosing Your <em>Copilot</em></h1>
+  <p class="subtitle">Four modules in, you have four capable tools — and the failure mode flips from "can't get a good answer" to "asked the wrong tool." This lesson is the decision framework: four rules that route any finance task to the right surface, the budget and governance overlay that disciplines the choice, and the map back to the work on your own desk.</p>
+  <div class="header-phase">
+    <div class="header-phase-dot" style="background:var(--amber)"></div>
+    The Analyst Agent &amp; Capstone · ~12 min read
+  </div>
+</div>
+
+<!-- THE DECISION FRAMEWORK -->
+<div class="section" id="framework">
+  <div class="sec-eyebrow">01 — The framework</div>
+  <h2 class="sec-title">Four rules, one <em>routing</em></h2>
+  <p class="sec-sub">Read the task, not the tool. Each rule keys on what the task actually needs — where the truth lives, where the output lands, and how much computation stands between the two.</p>
+
+  <div class="bp-grid--light" style="margin-top:28px;">
+    <div class="bp-item">
+      <div class="bp-num">01</div>
+      <div class="bp-title">Quick fact or draft → Copilot Chat</div>
+      <div class="bp-body">You know which sources hold the answer and you need it found, summarized, or drafted — Work scope, "/" references, four-element prompt. "What did we agree on the close calendar?" "Draft the variance paragraph from this thread."</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">02</div>
+      <div class="bp-title">Edits in the open file → Copilot in the app</div>
+      <div class="bp-body">The deliverable is the workbook, document, or deck you have open. Excel, Word, and PowerPoint Copilot act natively — with Excel's change attribution when auditability matters. The answer belongs <em>inside</em> the file.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">03</div>
+      <div class="bp-title">Cited multi-source research → Researcher</div>
+      <div class="bp-body">The question spans work data and the web, and the deliverable is a structured, source-cited report — diligence briefs, market context, carrier research. Brief it, answer its clarifying questions, let it run.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">04</div>
+      <div class="bp-title">Multi-file computation → Analyst</div>
+      <div class="bp-body">The answer requires calculating across several files — statistics, trend analysis, forecasting — and you want the method visible. Name the metric, dimension, and grain; read the Python; carry the findings back into your governed files.</div>
+    </div>
+  </div>
+</div>
+
+<!-- BUDGET & GOVERNANCE OVERLAY -->
+<div class="section section-dark" id="overlay">
+  <div class="sec-eyebrow on-dark">02 — The overlay</div>
+  <h2 class="sec-title on-dark">Budget and governance shape the <em>choice</em></h2>
+  <p class="sec-sub on-dark">The routing rules say what a task needs; three operating facts say what the choice costs and what it obliges you to do afterward. Advanced users carry both.</p>
+
+  <div class="bp-grid" style="margin-top:28px;">
+    <div class="bp-item">
+      <div class="bp-num">01</div>
+      <div class="bp-title">Spend the pool on missions</div>
+      <div class="bp-body">Researcher and Analyst share <strong>25 queries per user per month</strong>. That's roughly one agent mission per working day — spend it on work with a named deliverable, not curiosities. If Chat can answer it, Chat should.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">02</div>
+      <div class="bp-title">Save agent outputs to governed files</div>
+      <div class="bp-body">Copilot chat history is eDiscovery-searchable via Purview — but agent session content <strong>is not e-discoverable by default</strong>. Anything that informs a filing, a memo, or a close package gets saved into a governed OneDrive or SharePoint location, every time.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">03</div>
+      <div class="bp-title">Our data doesn't train the models</div>
+      <div class="bp-body">Prompts, responses, and Graph data are not used to train the foundation models — including the OpenAI and Anthropic models under the hood. Tool choice never changes that; it's the floor under all four rules.</div>
+    </div>
+  </div>
+
+  <div class="tip-trick tip-trick--dark" style="margin-top:32px;">
+    <div class="tip-trick-icon">💳</div>
+    <div class="tip-trick-copy">
+      <div class="tip-trick-label">If a colleague isn't licensed</div>
+      <p>Unlicensed teammates can still reach agents pay-as-you-go via <strong>Copilot Credits</strong> ($0.01/credit, admin-budgeted) — worth knowing when you hand a workflow to a partner team.</p>
+      <!-- SCAFFOLD: confirm B&B billing policy for agents/credits -->
+    </div>
+  </div>
+</div>
+
+<!-- MAP IT TO THE DESK -->
+<div class="section section--off" id="desk">
+  <div class="sec-eyebrow">03 — Map it to the desk</div>
+  <h2 class="sec-title">The framework on real B&amp;B finance <em>work</em></h2>
+  <p class="sec-sub">Run the rules over the three workloads this finance org actually carries and the routing writes itself — most jobs are a relay between tools, not a single pick.</p>
+
+  <div class="insight-grid" style="margin-top:28px;">
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">Close &amp; consolidation</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Variance commentary and budget-vs-actuals packs at profit-center grain → <strong>Analyst</strong> finds and quantifies the trend, <strong>Excel Copilot</strong> works the schedules in the workbook, <strong>Chat</strong> drafts the narrative. Trust recs and PBC support → Excel Copilot, with the Finance agent's reconciliation as the specialist option.</p>
+    </div>
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">The deal engine</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Data-room review, target research, MD&amp;A first drafts, board-deck prep → <strong>Researcher</strong> carries the cited diligence brief, <strong>Word and PowerPoint Copilot</strong> turn it into documents. Earn-out remeasurement and purchase-accounting math → <strong>Analyst</strong>.</p>
+    </div>
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">Carrier economics</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Contingent-commission estimates against carrier loss ratios, cash-flow and interest forecasting, float-income sensitivity → <strong>Analyst</strong> is the center of gravity, with recurring digests handed to <strong>scheduled prompts</strong> once the prompt has earned its keep.</p>
+    </div>
+  </div>
+</div>
+
+<!-- NEXT -->
+<div class="section" id="next">
+  <div class="sec-eyebrow">Up next</div>
+  <h2 class="sec-title">Lesson 4: Make It Stick</h2>
+  <p class="sec-sub">The framework routes the task; habits make the routing automatic. Next: the personal system — prompt library, scheduled prompts, Memory — the team system, and the one-week practice plan that turns today's session into a working routine.</p>
+  <a href="15-make-it-stick.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#3a2a06;text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:600;font-size:15px;margin-top:8px;">Next Lesson →</a>
+</div>
+
+<div class="page-footer"></div>
+</body>
+</html>

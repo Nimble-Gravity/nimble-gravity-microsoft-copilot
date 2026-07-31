@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Prompt Like an Analyst — Module 1</title>
+<link rel="stylesheet" href="../../styles/shared.css"/>
+<style>
+/* Page-specific styles go here. This scaffold relies entirely on shared.css. */
+</style>
+</head>
+<body>
+<script src="../../footer.js"></script>
+<script src="../../nav.js"></script>
+<script src="../../training-sidebar.js"></script>
+
+<!-- MODULE PROGRESS -->
+<div class="module-strip">
+  <span class="ms-label">Module</span>
+  <a href="01-the-copilot-landscape.html" class="ms-item active"><span class="ms-num">1</span>Foundations &amp; Chat</a>
+  <span class="ms-arrow">›</span>
+  <a href="04-excel-copilot.html" class="ms-item upcoming"><span class="ms-num">2</span>Copilot in the Apps</a>
+  <span class="ms-arrow">›</span>
+  <a href="08-meet-researcher.html" class="ms-item upcoming"><span class="ms-num">3</span>Researcher</a>
+  <span class="ms-arrow">›</span>
+  <a href="12-meet-analyst.html" class="ms-item upcoming"><span class="ms-num">4</span>Analyst &amp; Close Room</a>
+</div>
+
+<div class="page-header" id="intro">
+  <div class="eyebrow">Module 1 · Lesson 2 of 3</div>
+  <h1 class="title">Prompt Like an <em>Analyst</em></h1>
+  <p class="subtitle">The gap between a mediocre Copilot answer and a great one is almost always the prompt. Microsoft's own framework has four elements — Goal, Context, Expectations, Source — and finance work rewards every one of them. This lesson drills the framework, the grounding moves, and the automation that runs your best prompts on a schedule.</p>
+  <div class="header-phase">
+    <div class="header-phase-dot" style="background:var(--teal)"></div>
+    Foundations &amp; Copilot Chat · ~15 min read
+  </div>
+</div>
+
+<!-- THE FOUR ELEMENTS -->
+<div class="section" id="four">
+  <div class="sec-eyebrow">01 — The framework</div>
+  <h2 class="sec-title">Four elements, every <em>time</em></h2>
+  <p class="sec-sub">This is Microsoft's published prompt guidance, and it maps perfectly onto how finance already writes a good request to a junior teammate: what you need, why, what format, and from which source.</p>
+
+  <div class="bp-grid--light" style="margin-top:28px;">
+    <div class="bp-item">
+      <div class="bp-num">01</div>
+      <div class="bp-title">Goal — what you want</div>
+      <div class="bp-body">"Summarize the June variances over 10% by profit center." Specific, singular, verb-first. One goal per prompt — chain follow-ups rather than stacking asks.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">02</div>
+      <div class="bp-title">Context — why, and for whom</div>
+      <div class="bp-body">"I'm preparing close commentary for the segment controller ahead of Thursday's review." Context changes what gets emphasized — audiences hear different variances.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">03</div>
+      <div class="bp-title">Expectations — format and tone</div>
+      <div class="bp-body">"A table of the five largest variances with a one-sentence driver each, then a three-bullet summary in plain, neutral language." Say what good looks like; you'll get it.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">04</div>
+      <div class="bp-title">Source — which files or data</div>
+      <div class="bp-body">"Use /profit-center-pnl.csv" — reference the file, meeting, or person directly. Source is the element people skip, and it's the one that stops Copilot guessing.</div>
+    </div>
+  </div>
+</div>
+
+<!-- GROUNDING MOVES -->
+<div class="section section-dark" id="ground">
+  <div class="sec-eyebrow on-dark">02 — Grounding moves</div>
+  <h2 class="sec-title on-dark">Point it at the right <em>sources</em></h2>
+  <p class="sec-sub on-dark">Grounding is how you turn "write about variances" into "write about our variances." Two moves cover most of it — and Copilot Search and Memory quietly upgrade both.</p>
+
+  <div class="dev-grid-2" style="margin-top:28px;">
+    <div class="dev-card">
+      <div class="dev-kicker">Reference</div>
+      <h3>Slash in files, people, and meetings</h3>
+      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">Type "/" in Copilot Chat to reference a specific file, email, meeting, or person — or attach files outright. "Summarize the open items from /Close calendar sync with what /Priya Sharma still owes" beats any paragraph of description.</p>
+      <div class="dev-quote">If the answer must come from a specific document, name the document.</div>
+    </div>
+    <div class="dev-card">
+      <div class="dev-kicker">Scope</div>
+      <h3>Pick Work or Web deliberately</h3>
+      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">Before you type, decide where the truth lives. Our numbers, our meetings → Work. Carrier news, market rates → Web. When you need both, that's a hint the job belongs to Researcher (Module 3), which can scope each run to work, web, or both.</p>
+      <div class="dev-quote">Copilot Search finds the file first; Memory carries your preferences between chats.</div>
+    </div>
+  </div>
+</div>
+
+<!-- BEFORE / AFTER -->
+<div class="section" id="upgrade">
+  <div class="sec-eyebrow">03 — The upgrade in practice</div>
+  <h2 class="sec-title">Same ask, rebuilt with all <em>four</em></h2>
+  <p class="sec-sub">Here's the difference on a real close task. The first prompt gets a generic essay. The second gets something you'd actually paste into the close package — try it yourself in the lab.</p>
+
+  <div class="insight-grid" style="margin-top:28px;">
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">Before</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">"Explain the variances in our P&amp;L." — No goal boundary, no audience, no format, no source. Copilot has to guess all four, and it will guess generic.</p>
+    </div>
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">After</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">"Using /profit-center-pnl.csv, identify the five largest unfavorable June variances vs budget. I'm drafting close commentary for the segment controller. Give me a table — profit center, line, $ variance, likely driver — then three neutral summary bullets."</p>
+    </div>
+  </div>
+
+  <div class="tip-trick" style="margin-top:32px;">
+    <div class="tip-trick-icon">✍️</div>
+    <div class="tip-trick-copy">
+      <div class="tip-trick-label">Say do, not don't</div>
+      <p>Positive instructions outperform prohibitions: "keep the tone neutral and factual" works better than "don't editorialize." And iterate — the second prompt in a thread, refining the first answer, is where the quality jumps. The Prompt Gallery in the Copilot app is a solid source of starting points.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SCHEDULED PROMPTS -->
+<div class="section section--off" id="schedule">
+  <div class="sec-eyebrow">04 — Automation</div>
+  <h2 class="sec-title">Your best prompts, on a <em>schedule</em></h2>
+  <p class="sec-sub">Once a prompt earns its keep, stop retyping it. Scheduled prompts run any prompt on a recurrence — up to 10 per user — and drop the output into your Copilot chat history. For a finance calendar that repeats every month, this is free leverage.</p>
+
+  <div class="bp-grid--light" style="margin-top:28px;">
+    <div class="bp-item">
+      <div class="bp-num">01</div>
+      <div class="bp-title">Monday morning digest</div>
+      <div class="bp-body">"Summarize emails and meetings from last week tagged to the close calendar; list open items by owner." Runs before you're at your desk.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">02</div>
+      <div class="bp-title">Close-week status pull</div>
+      <div class="bp-body">Daily during close week: "From my mail and chats since yesterday, list new issues raised on the consolidation, each with who raised it and status."</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">03</div>
+      <div class="bp-title">Recurring commentary refresh</div>
+      <div class="bp-body">Monthly, after the flash: your full four-element variance-commentary prompt, pointed at the updated file. Review and polish instead of starting cold.</div>
+    </div>
+  </div>
+</div>
+
+<!-- NEXT -->
+<div class="section" id="next">
+  <div class="sec-eyebrow">Up next</div>
+  <h2 class="sec-title">Lesson 3: The Chat Sprint Lab</h2>
+  <p class="sec-sub">Framework in hand, it's time to run it. The lab is a hands-on sprint: three grounded prompts on the workshop's synthetic finance files — and you'll commission your first Researcher run so it's ready when Module 3 arrives.</p>
+  <a href="03-grounded-chat-lab.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--teal);color:var(--white);text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:600;font-size:15px;margin-top:8px;">Open the Lab →</a>
+</div>
+
+<div class="page-footer"></div>
+</body>
+</html>

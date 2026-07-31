@@ -1,22 +1,28 @@
-# The Control Room — Workshop 4 capstone
+# The Close Room — Module 4 capstone
 
-A browser-based governance simulation. Teams run a live Cowork control review against a 40-minute
-clock: an access review, an RBAC repair, an adoption readout, and the one-page control narrative.
-Each artifact they produce in Cowork yields the sign-off code that clears the next station.
+A browser-based month-end close simulation for the M365 Copilot Advanced Workshop
+(Brown & Brown finance). Teams run a close-night fire drill against a 40-minute clock: a
+variance triage, the contingents desk, a fiduciary trust reconciliation, and a deal-desk
+diligence read. Each station's answer — dug out of the synthetic finance data with the
+right Copilot surface — is the sign-off code that clears the next station.
 
-Four review stations, one master status board, a leaderboard, and a facilitator view.
+Four stations, one master status board, a leaderboard, and a facilitator view.
 Vanilla ES modules + Three.js from a CDN, no build step.
 
 ## The premise
 
-Internal Audit has given notice. The pilot ran hot — folders scoped to whole drives, roles copied
-from a template, spend spiking on one desk, and no control narrative on file. The floor opens with
-**four open exceptions** on the board. Teams work them down to zero.
+It's close night, mid-integration. The flux review has an open item in Specialty
+Distribution, a carrier's loss ratio is threatening the contingent accrual, the June
+trust rec doesn't tie, and corp dev needs two answers on Project Lighthouse before the
+partner call. The floor opens with **four open exceptions** on the board. Teams work
+them down to zero using Copilot Chat, Copilot in Excel, the Analyst agent, and
+Researcher-style briefing — verifying like reviewers before every sign-off.
 
-The 3D scene is an operations floor: four review consoles facing a master status board that counts
-open exceptions. A station's monitors read `NO SIGNAL` and its desk rail glows amber while its
-exception is open; on sign-off the beacon above it dissolves, the feeds come online, the rail turns
-teal, and the board decrements. Clear all four and the floor stands down from alert.
+The 3D scene is an operations floor: four review consoles facing a master status board
+that counts open exceptions. A station's monitors read `NO SIGNAL` and its desk rail
+glows amber while its exception is open; on sign-off the beacon above it dissolves, the
+feeds come online, the rail turns teal, and the board decrements. Clear all four and the
+floor stands down from alert.
 
 ## Quick start
 
@@ -33,28 +39,54 @@ ES modules and `fetch` don't work over `file://`, and code hashing needs `https:
 
 ## ⚠️ Two deployment notes
 
-1. **Storage keys are namespaced.** This app shares an origin with the Workshop 3 lab, so it uses
-   `controlRoom.state.v1`, `controlRoom.teams.v1`, and `controlRoom.resetFlags.v1`
-   (`js/state.js`, `js/leaderboard.js`), and its own `CONTROL_ROOM_CONFIG` global. **Never point both
-   apps at the same keys** — a Workshop 3 run in progress would bleed into this one.
+1. **Storage keys are namespaced.** This app shares an origin with the Module 2 lab
+   (the Variance Vault), so it uses `controlRoom.state.v1`, `controlRoom.teams.v1`, and
+   `controlRoom.resetFlags.v1` (`js/state.js`, `js/leaderboard.js`), and its own
+   `CONTROL_ROOM_CONFIG` global. (The key names are historical — they are wired into the
+   JS and must not change.) **Never point both apps at the same keys** — a Variance
+   Vault run in progress would bleed into this one.
 2. **Running local-only this cohort.** `supabaseUrl` / `supabaseAnonKey` are deliberately blank in
    `config/app-config.js`. Codes still validate and the game is fully playable, but the leaderboard is
    final-submission-only and per-device, and `admin.html` sees only teams that played in the same
    browser. The UI states this. To switch on a shared board, see *Leaderboard backend* below.
 
-## The four stations
+## The four stations — answer key (facilitators only)
 
-| # | Station | Discipline | Lab files |
-|---|---|---|---|
-| 1 | The Access Map | Least privilege, folder scope, approval modes | `cowork-access-register.csv`, `least-privilege-rubric.md` |
-| 2 | The Broken Role Matrix | RBAC: Custom roles, admin areas, SCIM, install prefs | `role-matrix-DRAFT.md`, `rbac-reference.md` |
-| 3 | Read the Room | Authoring a reporting skill; reading the Analytics surface | `analytics-export.csv` |
-| 4 | The Control Narrative | The governance one-pager + QA against an acceptance checklist | `exam-checklist.txt` |
+| # | Station | Discipline | Files | Code |
+|---|---|---|---|---|
+| 1 | Variance Triage | Trend analysis with Analyst / Excel Copilot | `profit-center-pnl.csv` | `PC-501` |
+| 2 | Contingents Desk | Threshold analysis, corroboration | `carrier-commission-statements.csv` | `GULFSTREAM` |
+| 3 | Trust Rec | Two-file reconciliation on a rubric | `premium-trust-ledger.csv` + `trust-bank-statement.csv` + `close-room-rubric.md` | `6TALLGRASS` |
+| 4 | Deal Desk | Data-room extraction, term-sheet review | `../assets/lab-data/data-room/` | `38UNCAPPED` |
 
-Answer key lives in `../workshop-4-script.md` (facilitator appendix) and in `config/rooms.source.json`.
+### How each code is derived (re-derive if the data changes)
 
-All six lab files are in `lab-files/` and are linked for download from
-`../pages/training/16-the-control-room.html`. They are **synthetic** — no real Axos data.
+Every code comes from the seeded synthetic data in `../assets/lab-data/`. **If those
+CSVs or data-room files are regenerated or edited, re-derive the codes below before a
+session**, update `config/rooms.source.json`, and re-run the hash generator.
+
+- **Station 1 — `PC-501`:** in `profit-center-pnl.csv`, PC-501 "Coastal Programs"
+  (Specialty Distribution) is the only profit center whose core-commission variance to
+  budget deteriorates every month April→June: −5% (Apr) → −9% (May) → −13% (Jun).
+- **Station 2 — `GULFSTREAM`:** in `carrier-commission-statements.csv`, "Gulfstream
+  Property & Cas." is the only carrier whose YTD loss ratio ends June above its
+  contingent threshold (0.48 → 0.83 vs 0.60), and its June contingent accrual is $0.
+  (Contrast book: Old Colony Specialty at 0.45.) Code = first word of the name.
+- **Station 3 — `6TALLGRASS`:** per `lab-files/close-room-rubric.md`, the June trust rec
+  yields 3 premiums collected but never remitted (POL-2026-1009/1010/1011) + 1 duplicate
+  wire (Sable River Re, POL-2026-1003, "(DUP)" in the bank description) + 1 unidentified
+  receipt ("ACH IN TALLGRASS ENERGY NO POLICY REF", $46,750) + 1 stale May item in the
+  ledger only (Driftwood Marina, POL-2026-0871) = **6 exceptions**; unidentified payer =
+  **TALLGRASS**. Each row counts once.
+- **Station 4 — `38UNCAPPED`:** `data-room/carrier-contract-summary.md` states the top
+  carrier (Gulfstream) at **38%** of the target's core commissions;
+  `data-room/earnout-term-sheet.md`'s structural flaw is that the earn-out (including
+  contingents) is **UNCAPPED**.
+
+The player-facing handouts are `lab-files/close-room-briefing.md` (scenario, downloads,
+surfaces, code formats) and `lab-files/close-room-rubric.md` (the Trust Rec exception
+definition + verification standards; it contains no codes). Everything is **synthetic**
+— no real Brown & Brown data.
 
 ## Editing stations
 
@@ -62,29 +94,19 @@ Station content lives in `config/rooms.source.json`. (The config key is `rooms[]
 generic term for a stage; the UI presents each one as a station.) Edit it, then regenerate:
 
 ```bash
-node tools/generate-hashes.mjs                   # rooms.source.json -> rooms.json
-node tools/generate-hashes.mjs --code "9Ready"   # hash a single code
+node tools/generate-hashes.mjs                     # rooms.source.json -> rooms.json
+node tools/generate-hashes.mjs --code "PC-501"     # hash a single code
 ```
 
 Each station's `title` also becomes its on-screen console nameplate, so keep titles short — anything
 past ~22 characters is truncated on the 3D sign.
 
 Codes are case- and whitespace-insensitive (normalized to `UPPERCASE`, whitespace stripped) on both
-sides of the comparison.
+sides of the comparison. Hyphens survive normalization, so `pc-501` works but `PC501` does not.
 
 **Never put a code's literal text in a hint or lab step** — `rooms.json` is fetched by the browser, so
 players can read it in devtools. The generator warns loudly if a hint/step contains its code. Hints
 should point at *where* the answer is, not *what* it is.
-
-### Keeping codes deterministic
-
-Every code is derived from data in the lab files, so it can be recomputed rather than trusted. If you
-edit `cowork-access-register.csv` or `analytics-export.csv`, **re-derive the affected code before the
-session** — the aggregates are what the station checks:
-
-- Station 1 = count of rows breaking ≥1 rubric rule, + first word of the worst offender's department.
-- Station 3 = first word of the department with the highest Opus share of dispatch turns, + distinct
-  users in the export.
 
 ## Security model (know the tradeoff)
 
@@ -134,8 +156,8 @@ create policy "workshop anon access" on public.control_room_teams
   for all to anon using (true) with check (true);
 ```
 
-Then set `supabaseUrl` and `supabaseAnonKey` in `config/app-config.js`. The table name is distinct
-from the Workshop 3 lab's, so the two cohorts' boards stay separate.
+Then set `supabaseUrl` and `supabaseAnonKey` in `config/app-config.js`. The table name (historical,
+wired into `js/leaderboard.js`) is distinct from the Module 2 lab's, so the two boards stay separate.
 
 Between cohorts: `delete from control_room_teams;`
 
@@ -148,8 +170,10 @@ browser's teams — the badge at the top tells you which mode you're in.
 
 ## Facilitation checklist
 
-1. Re-verify the governance facts in `../cowork-context.md` §Module 4 (last verified 2026-07-21).
-2. Distribute the six `lab-files/` to participants before the break — they are not part of this app.
+1. Confirm the four codes still match the data in `../assets/lab-data/` (see the answer key above);
+   if anything changed, update `config/rooms.source.json` and run `node tools/generate-hashes.mjs`.
+2. Distribute `lab-files/close-room-briefing.md`, `lab-files/close-room-rubric.md`, the four CSVs,
+   and the `data-room/` folder before the session — attendees copy them into their own OneDrive.
 3. Confirm local-only vs Supabase in `config/app-config.js`; set `adminKey` if you want one.
 4. Open `admin.html` on the facilitator machine; teams open the root URL and enter a team name to start.
-5. Keep the answer key (`../workshop-4-script.md`, facilitator appendix) open but not screen-shared.
+5. Keep this README's answer key open but not screen-shared.

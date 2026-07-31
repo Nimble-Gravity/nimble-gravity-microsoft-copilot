@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Excel + Copilot — Module 2</title>
+<link rel="stylesheet" href="../../styles/shared.css"/>
+<style>
+/* Page-specific styles go here. This scaffold relies entirely on shared.css. */
+</style>
+</head>
+<body>
+<script src="../../footer.js"></script>
+<script src="../../nav.js"></script>
+<script src="../../training-sidebar.js"></script>
+
+<!-- MODULE PROGRESS -->
+<div class="module-strip">
+  <span class="ms-label">Module</span>
+  <a href="01-the-copilot-landscape.html" class="ms-item done"><span class="ms-num">1</span>Foundations &amp; Chat</a>
+  <span class="ms-arrow">›</span>
+  <a href="04-excel-copilot.html" class="ms-item active"><span class="ms-num">2</span>Copilot in the Apps</a>
+  <span class="ms-arrow">›</span>
+  <a href="08-meet-researcher.html" class="ms-item upcoming"><span class="ms-num">3</span>Researcher</a>
+  <span class="ms-arrow">›</span>
+  <a href="12-meet-analyst.html" class="ms-item upcoming"><span class="ms-num">4</span>Analyst &amp; Close Room</a>
+</div>
+
+<div class="page-header" id="intro">
+  <div class="eyebrow">Module 2 · Lesson 1 of 4</div>
+  <h1 class="title">Excel + <em>Copilot</em></h1>
+  <p class="subtitle">Excel is where the finance month actually happens — so this is the deep lesson of Module 2. Since the April 2026 GA, Copilot in Excel doesn't just suggest formulas: it plans multi-step edits, executes them, runs Python against your data, and attributes every cell it touched. This lesson covers the agentic workflow, the audit trail, and the finance skills library.</p>
+  <div class="header-phase">
+    <div class="header-phase-dot" style="background:var(--violet)"></div>
+    Copilot in the Apps · ~15 min read
+  </div>
+</div>
+
+<!-- WHAT CHANGED -->
+<div class="section" id="agentic">
+  <div class="sec-eyebrow">01 — What changed</div>
+  <h2 class="sec-title">From suggestions to <em>actions</em></h2>
+  <p class="sec-sub">Copilot's agentic capabilities in Excel hit GA on April 22, 2026. The practical difference: it now takes multi-step actions in your workbook — restructuring, calculating, formatting — instead of handing you a formula to paste. Two modes, one habit to build.</p>
+
+  <div class="insight-grid" style="margin-top:28px;">
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">Chat — ask about the data</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Question-and-answer against the open workbook: "which profit centers drove the June expense variance?" Nothing changes in the grid — it reads, reasons, and answers. Your starting mode when you're exploring a file you didn't build.</p>
+    </div>
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">Edit — hand it the work</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Copilot builds and modifies the workbook itself: variance columns, pivot-style summaries, conditional formats, whole schedule tabs. This is where the multi-step agentic behavior lives — and where the safeguards below matter.</p>
+    </div>
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">Plan with Copilot</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">For bigger edits, Copilot outlines its intended changes <em>before</em> executing — a plan you approve or redirect. As it works, it shows its step-by-step reasoning, so you watch the approach, not just the result.</p>
+    </div>
+  </div>
+
+  <div class="tip-trick" style="margin-top:32px;">
+    <div class="tip-trick-icon">🗺️</div>
+    <div class="tip-trick-copy">
+      <div class="tip-trick-label">Read the plan like a review note</div>
+      <p>The plan is your intervention point. If Copilot intends to overwrite a column you need, or summarize at the wrong grain, say so before it runs — "keep the original actuals column, add the variance next to it" — exactly as you'd redirect a junior teammate's approach before they build the wrong thing.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PYTHON IN THE GRID -->
+<div class="section section-dark" id="python">
+  <div class="sec-eyebrow on-dark">02 — The power move</div>
+  <h2 class="sec-title on-dark">Python in the <em>grid</em></h2>
+  <p class="sec-sub on-dark">As of April–May 2026, Copilot writes and runs Python inside the Excel edit workflow. You never leave the workbook, and you never write the code — you describe the analysis, and Copilot handles the rest.</p>
+
+  <div class="dev-grid-2" style="margin-top:28px;">
+    <div class="dev-card">
+      <div class="dev-kicker">What it does</div>
+      <h3>Forecasting, statistics, cleaning — on request</h3>
+      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">Ask for a forecast, a correlation, an outlier scan, or a messy-data cleanup, and Copilot writes the Python, runs it against your sheet, and lands the results in the grid. Analysis that used to mean exporting to a specialist now happens in the file you already have open.</p>
+      <div class="dev-quote">Try: "Forecast Q3 commission income by profit center from the monthly actuals, and flag centers trending below budget."</div>
+    </div>
+    <div class="dev-card">
+      <div class="dev-kicker">Why finance cares</div>
+      <h3>The judgment-heavy asks become one prompt</h3>
+      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">Seasonality in contingent-commission accruals, rate sensitivity on fiduciary-cash income, outlier detection across hundreds of profit-center P&amp;Ls — statistical work that supports an estimate or a reviewer's question, without leaving the workbook or waiting on another team.</p>
+      <div class="dev-quote">Microsoft's own framing: "Copilot in Excel: Built for the era of Frontier Finance" (June 25, 2026).</div>
+    </div>
+  </div>
+</div>
+
+<!-- AUDITABILITY -->
+<div class="section" id="audit">
+  <div class="sec-eyebrow">03 — Auditability</div>
+  <h2 class="sec-title">Every cell it touched, on the <em>record</em></h2>
+  <p class="sec-sub">For a controllership audience, this is the feature that makes agentic Excel usable at all: Copilot's edits are attributed in the Show Changes pane, cell by cell. The habit that goes with it — verify before you trust — is non-negotiable.</p>
+
+  <div class="bp-grid--light" style="margin-top:28px;">
+    <div class="bp-item">
+      <div class="bp-num">01</div>
+      <div class="bp-title">Show Changes attributes Copilot</div>
+      <div class="bp-body">Open Review → Show Changes after any Copilot edit. Every cell Copilot modified is attributed to it, alongside the human edit history — so a reviewer can always separate what the tool did from what you did.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">02</div>
+      <div class="bp-title">Spot-check like a reviewer</div>
+      <div class="bp-body">Trace two or three of Copilot's numbers back to source cells before you rely on any of them. If a variance doesn't foot, tighten the prompt and rerun — the cost of a recheck is seconds; the cost of a wrong number in the close package is not.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">03</div>
+      <div class="bp-title">Your name is still on the workbook</div>
+      <div class="bp-body">Attribution tells you what Copilot changed; it doesn't sign off for you. Treat Copilot's output exactly like a preparer's draft: reviewed, tied out, then owned. That review discipline is the whole reason this workflow survives an audit.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILLS LIBRARY + CONNECTORS -->
+<!-- SCAFFOLD: confirm which Excel skills/connectors are enabled in the B&B tenant before delivery -->
+<div class="section section--off" id="skills">
+  <div class="sec-eyebrow">04 — Reusable leverage</div>
+  <h2 class="sec-title">The finance skills library and <em>connectors</em></h2>
+  <p class="sec-sub">The newest layer, GA around July 2026: custom skills — reusable finance workflows saved as markdown files in OneDrive and invoked by @-mention — plus live financial data connectors. Microsoft ships a finance skills library out of the box; your best prompts can join it.</p>
+
+  <div class="insight-grid" style="margin-top:28px;">
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">The out-of-the-box library</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;"><code>@variance-analysis</code>, <code>@model-update</code>, <code>@comps-analysis</code>, <code>@deal-screening</code>, <code>@portfolio-monitoring</code>, <code>@catalyst-calendar</code> — Microsoft's own finance workflows, invoked by @-mention in the Copilot pane. <code>@variance-analysis</code> alone maps straight onto the monthly close.</p>
+    </div>
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">Market data, connected</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Financial data connectors bring FactSet, PitchBook, Morningstar, S&amp;P Global, Daloopa, and CB Insights into the grid — carrier financials for contingent estimates, comps for deal screening — without the copy-paste from a terminal window.</p>
+    </div>
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">Skills you write yourself</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">A custom skill is just a markdown file in OneDrive describing a workflow — the organic-revenue exclusion schedule, the earn-out remeasurement check. Write the steps once, and the whole team invokes them by @-mention instead of re-explaining the process every month.</p>
+    </div>
+  </div>
+</div>
+
+<!-- NEXT -->
+<div class="section" id="next">
+  <div class="sec-eyebrow">Up next</div>
+  <h2 class="sec-title">Lesson 2: Outlook &amp; Teams</h2>
+  <p class="sec-sub">Excel is the deep dive; the communication apps are the daily grind. Next: what Copilot does to a close-week inbox, and how Teams recap means nobody takes minutes again.</p>
+  <a href="05-outlook-teams-copilot.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--violet);color:var(--white);text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:600;font-size:15px;margin-top:8px;">Next Lesson →</a>
+</div>
+
+<div class="page-footer"></div>
+</body>
+</html>

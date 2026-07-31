@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Feedback — Axos Cowork</title>
+<title>Feedback — Copilot Workshop</title>
 <link rel="stylesheet" href="../../styles/shared.css"/>
 <style>
 .fb-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:8px;font-weight:600;font-size:15px;text-decoration:none;margin-top:18px;}
@@ -17,9 +17,9 @@
 <script src="../../nav.js"></script>
 
 <div class="page-header" id="intro">
-  <div class="eyebrow">Axos · Cowork Program</div>
+  <div class="eyebrow">Brown &amp; Brown · Copilot Workshop</div>
   <h1 class="title">Two minutes that make this <em>better</em></h1>
-  <p class="subtitle">Your feedback shapes the next session and the next cohort. Two quick pulses — one right after each workshop, one a month later. Anonymous unless you choose to add your name.</p>
+  <p class="subtitle">Your feedback shapes the take-home follow-up and the next cohort. Two quick pulses — one right after the session, one thirty days later. Anonymous unless you choose to add your name.</p>
   <div class="header-phase">
     <div class="header-phase-dot" style="background:var(--teal)"></div>
     ~2 minutes each
@@ -28,9 +28,9 @@
 
 <!-- POST-SESSION -->
 <div class="section" id="post-session">
-  <div class="sec-eyebrow">After each workshop</div>
-  <h2 class="sec-title">How did that session <em>land</em>?</h2>
-  <p class="sec-sub">Three questions right after each of the four workshops: was it useful, was the pace right, and what would make it better. This is how the facilitator adjusts before the next session.</p>
+  <div class="sec-eyebrow">Right after the session</div>
+  <h2 class="sec-title">How did today <em>land</em>?</h2>
+  <p class="sec-sub">The last two minutes of the session — the debrief ends at 1:58 and this is what fills them. How confident are you on each of the four modules, what will you actually use this week, and what got in the way. This is how the facilitator tunes the next delivery.</p>
   <div data-client-slot="feedback-form-post">
     <a class="fb-btn fb-btn--pending" href="#" onclick="return false;">▢ Microsoft Form link — add your post-session Form URL here</a>
   </div>
@@ -38,9 +38,9 @@
 
 <!-- 30-DAY -->
 <div class="section section--off" id="thirty-day">
-  <div class="sec-eyebrow">About a month later</div>
-  <h2 class="sec-title">Are you still <em>using</em> it?</h2>
-  <p class="sec-sub">A short 30-day pulse: are you using Cowork on real work, what's it saving you, and what's getting in the way. This is the number that tells us whether the program actually stuck.</p>
+  <div class="sec-eyebrow">Thirty days later</div>
+  <h2 class="sec-title">Are the habits <em>sticking</em>?</h2>
+  <p class="sec-sub">A short follow-up on whether the workshop turned into practice: do you have scheduled prompts running, have you commissioned a real Researcher mission, did you finish The Close Room — and what's blocking the rest. This is the number that tells us whether the session actually changed how you work.</p>
   <div data-client-slot="feedback-form-30day">
     <a class="fb-btn fb-btn--pending" href="#" onclick="return false;">▢ Microsoft Form link — add your 30-day pulse Form URL here</a>
   </div>
@@ -50,23 +50,28 @@
 <div class="section" id="team">
   <div class="sec-eyebrow">For the engagement team</div>
   <h2 class="sec-title">Wiring these <em>up</em></h2>
-  <p class="sec-sub">Both buttons are placeholders. Build the two forms in Axos's Microsoft 365 tenant (bank-appropriate and already governed), then paste each form's link in place of the placeholder above.</p>
+  <p class="sec-sub">Both buttons are placeholders. Build the two forms in Brown &amp; Brown's Microsoft 365 tenant (already governed, no new tooling), then paste each form's link in place of the placeholder above.</p>
 
   <div class="bp-grid--light" style="margin-top:24px;">
     <div class="bp-item">
       <div class="bp-num">01</div>
-      <div class="bp-title">Post-session form (3 questions)</div>
-      <div class="bp-body">Usefulness (1–5), pace (too slow / right / too fast), and one open "what would make it better." Add an optional NPS question.</div>
+      <div class="bp-title">Confidence per module (1–5)</div>
+      <div class="bp-body">Four quick ratings — Foundations &amp; Chat, Copilot in the Apps, Researcher, Analyst — so the facilitator sees exactly which 25-minute block needs rework.</div>
     </div>
     <div class="bp-item">
       <div class="bp-num">02</div>
-      <div class="bp-title">30-day pulse (4 questions)</div>
-      <div class="bp-body">Still using it (yes/no/some), rough time saved, top use case, top blocker. This feeds the lagging indicators in the change plan.</div>
+      <div class="bp-title">One thing you'll use this week</div>
+      <div class="bp-body">A single open text field. Specific answers ("the variance-commentary prompt") signal transfer; vague ones ("prompting better") signal the labs need sharpening.</div>
     </div>
     <div class="bp-item">
       <div class="bp-num">03</div>
-      <div class="bp-title">Feed the readout</div>
-      <div class="bp-body">Results roll into the one-page engagement readout to the sponsor and IT — see the <a href="../../client-notes/axos-change-plan.md" download>change-management plan</a>.</div>
+      <div class="bp-title">Blockers</div>
+      <div class="bp-body">What got in the way — licensing, tenant settings, a file that wouldn't ground, time. Blockers route to IT or the facilitator, not into a spreadsheet nobody reads.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">04</div>
+      <div class="bp-title">NPS</div>
+      <div class="bp-body">"How likely are you to recommend this session to another finance teammate?" (0–10). One comparable number across cohorts. Results roll into the readout in the <a href="facilitator-guide.html">facilitator guide</a>.</div>
     </div>
   </div>
 </div>

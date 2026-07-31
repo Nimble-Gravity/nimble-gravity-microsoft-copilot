@@ -1,9 +1,11 @@
-# The Skill Vault — Virtual Escape Room (Workshop 3)
+# The Variance Vault — Virtual Escape Room (Module 2 Challenge)
 
-A web-based escape room that gates the hands-on lab exercises for the Claude
-Cowork training workshop. Teams complete lab steps in Cowork; the lab artifacts
-contain unlock codes they enter here to open the next room. Four rooms, one
-40-minute timer, a live leaderboard, and a facilitator view.
+A web-based escape room that gates the Module 2 take-home challenge for the
+M365 Copilot Advanced Workshop (Brown & Brown finance). Teams dig four planted
+findings out of the synthetic June finance data using Copilot — Chat, Excel, or
+the Analyst agent; each finding, formatted per the briefing's rules, is the
+unlock code for the next room. Four rooms, one 40-minute timer, a live
+leaderboard, and a facilitator view.
 
 No build step, no framework: vanilla ES modules + Three.js from a CDN.
 
@@ -42,8 +44,26 @@ js/
   leaderboard.js      backend adapters: Supabase (shared) / localStorage (fallback)
   admin.js            facilitator view logic
   scene/              Three.js vault: textures.js (procedural), scene.js (geometry+loop)
+lab-files/            variance-vault-briefing.md — the player briefing handout
 tools/generate-hashes.mjs   turns rooms.source.json into rooms.json
 ```
+
+## The four rooms — answer key (facilitators only)
+
+All codes are **derived from `../assets/lab-data/profit-center-pnl.csv`** (the
+seeded synthetic dataset). If that file is regenerated or edited, re-derive
+every code below before a session, then re-run the hash generator.
+
+| # | Room | Code | Derivation |
+|---|---|---|---|
+| 1 | The Windfall | `336` | PC-103 "Tampa Bay Retail", March 2026 contingent commissions: actual $336,000 vs $94,500 budget. Code = actual in $ thousands. |
+| 2 | The Lease | `180` | PC-204 "Denver Retail", May 2026 occupancy: actual $234,000 vs $54,000 budget = exactly $180,000 over. Code = the overage in $ thousands. |
+| 3 | The Overrun | `PC-402` | PC-402 "Manhattan Retail" compensation runs ~9% over budget in **every** month Jan–Jun (~$651k over for H1). Code = the profit-center id. |
+| 4 | The Slide | `11UNDER` | Exactly 11 profit centers have June actual core commissions below June budget, counting **only rows where a June budget exists** (the mid-period acquisition has no budget and is excluded). Code = count + `UNDER`. |
+
+Codes are case- and whitespace-insensitive (normalized to `UPPERCASE`,
+whitespace stripped) on both sides of the comparison — hyphens are preserved,
+so `pc-402` works but `PC402` does not.
 
 ## How rooms work / adding or editing rooms
 
@@ -52,10 +72,10 @@ All room content lives in `config/rooms.source.json`. Each room:
 ```jsonc
 {
   "id": "room-1",                 // stable id
-  "title": "The Inherited Skill",
+  "title": "The Windfall",
   "narrative": "2–3 sentence scenario",
   "labSteps": ["step 1", "step 2"],   // numbered, collapsible in the UI
-  "codePlaintext": "4Migrate",        // the answer — stripped at generate time
+  "codePlaintext": "336",             // the answer — stripped at generate time
   "codeHash": "GENERATE_WITH_SCRIPT", // filled in by the tool
   "hints": ["free hint", "penalty hint"],  // max 2; #2 costs hintPenaltySeconds
   "skillsTaught": ["shown on the escape recap"]
@@ -70,9 +90,6 @@ in the 3D corridor. Then regenerate:
 node tools/generate-hashes.mjs        # rooms.source.json -> rooms.json
 ```
 
-Codes are case- and whitespace-insensitive (normalized to `UPPERCASE`,
-whitespace stripped) on both sides of the comparison.
-
 **Never put the code's literal text in a hint or lab step** — `rooms.json` is
 fetched by the browser, so players can read it in devtools. The generator
 warns loudly if a hint/step contains the code. Hints should point at *where*
@@ -81,7 +98,7 @@ the answer is, not *what* it is.
 ### Generating a hash for a single code
 
 ```bash
-node tools/generate-hashes.mjs --code "4Migrate"
+node tools/generate-hashes.mjs --code "PC-402"
 ```
 
 ## Security model (know the tradeoff)
@@ -117,7 +134,9 @@ With Supabase (free tier) you get a live shared leaderboard, a cross-device
 facilitator view, and remote team reset. Chosen over Firebase because it needs
 no SDK — plain REST `fetch` keeps the app dependency-free.
 
-1. Create a project at supabase.com, then run in the SQL editor:
+1. Create a project at supabase.com, then run in the SQL editor
+   (the table name is historical — it is wired into `js/leaderboard.js`, so
+   keep it as-is):
 
 ```sql
 create table if not exists public.skill_vault_teams (
@@ -173,12 +192,14 @@ public repos.
 
 ## Facilitation setup checklist
 
-1. Edit `config/rooms.source.json`; run `node tools/generate-hashes.mjs`.
-2. Prepare the lab input files the rooms reference (e.g.
-   `vault-standup-notes.docx`, `client-formatter-SKILL.md`, `raw-notes.txt`,
-   `interview-notes-jmalik.txt`, `qa-checklist.txt`) so that the labs actually
-   produce the codes — distribute them to participants via your usual channel;
-   they are not part of this app.
+1. Confirm the codes in `config/rooms.source.json` still match the data in
+   `../assets/lab-data/` (see the answer key above); run
+   `node tools/generate-hashes.mjs`.
+2. Distribute `lab-files/variance-vault-briefing.md` plus the two datasets it
+   names (`profit-center-pnl.csv`, `carrier-commission-statements.csv` from
+   `../assets/lab-data/`) via your usual channel — attendees copy them into
+   their own OneDrive so Copilot can reach them. All data is synthetic; no
+   real Brown & Brown clients, carriers, or figures.
 3. Configure (or skip) Supabase in `config/app-config.js`; set `adminKey`.
 4. Deploy; open `admin.html` on the facilitator machine; teams open the root
    URL, enter a team name, and the clock starts.

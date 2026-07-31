@@ -277,7 +277,7 @@ export function boardTex(openCount, total) {
     g.textAlign = 'center';
     g.fillStyle = 'rgba(150,175,210,0.75)';
     g.font = '500 30px "IBM Plex Mono", monospace';
-    g.fillText('COWORK CONTROL REVIEW', w / 2, 84);
+    g.fillText('MONTH-END CLOSE STATUS', w / 2, 84);
 
     g.fillStyle = clear ? '#58C7B4' : '#E0A93E';
     g.font = '700 150px "Saira Semi Condensed", sans-serif';

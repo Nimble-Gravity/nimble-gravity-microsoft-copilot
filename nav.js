@@ -8,88 +8,88 @@
       id: 'm1',
       folder: 'training',
       hub: 'pages/workshops/module-1-workshop.html',
-      label: 'Workshop 1',
-      subLabel: 'Setup & Foundations',
+      label: 'Module 1',
+      subLabel: 'Foundations & Copilot Chat',
       color: '#2f6b66',
       navColor: '#4f9990',
       filePrefix: ['01-', '02-', '03-'],
       pages: [
-        '01-what-is-cowork',
-        '02-getting-set-up',
-        '03-first-cowork-session'
+        '01-the-copilot-landscape',
+        '02-prompt-like-an-analyst',
+        '03-grounded-chat-lab'
       ],
       labels: [
-        'What Is Cowork',
-        'Get Set Up',
-        'First Session'
+        'The Copilot Landscape',
+        'Prompt Like an Analyst',
+        'Chat Sprint Lab'
       ]
     },
     {
       id: 'm2',
       folder: 'training',
       hub: 'pages/workshops/module-2-workshop.html',
-      label: 'Workshop 2',
-      subLabel: 'Use Cowork',
+      label: 'Module 2',
+      subLabel: 'Copilot in the Apps',
       color: '#8c47e4',
       navColor: '#c4b5fd',
       filePrefix: ['04-', '05-', '06-', '07-'],
       pages: [
-        '04-use-cases-by-industry',
-        '05-working-effectively',
-        '06-folder-access-walkthrough',
-        '07-use-cowork-lab'
+        '04-excel-copilot',
+        '05-outlook-teams-copilot',
+        '06-word-powerpoint-copilot',
+        '07-close-package-lab'
       ],
       labels: [
-        'By Industry',
-        'Work Effectively',
-        'Folder Access',
-        'Use Cowork Lab'
+        'Excel + Copilot',
+        'Outlook & Teams',
+        'Word & PowerPoint',
+        'Close-Package Lab'
       ]
     },
     {
       id: 'm3',
       folder: 'training',
       hub: 'pages/workshops/module-3-workshop.html',
-      label: 'Workshop 3',
-      subLabel: 'Build a Skill',
+      label: 'Module 3',
+      subLabel: 'The Researcher Agent',
       color: '#2b6880',
       navColor: '#7dd3e8',
       filePrefix: ['08-', '09-', '10-', '11-'],
       pages: [
-        '08-decompose-your-workflow',
-        '09-anatomy-of-a-skill',
-        '10-make-it-a-skill',
-        '11-build-a-skill-lab'
+        '08-meet-researcher',
+        '09-briefing-researcher',
+        '10-researcher-for-finance',
+        '11-researcher-mission-lab'
       ],
       labels: [
-        'Decompose',
-        'Skill Anatomy',
-        'Make It a Skill',
-        'Build a Skill Lab'
+        'Meet Researcher',
+        'Briefing Researcher',
+        'Researcher for Finance',
+        'Researcher Mission'
       ]
     },
     {
       id: 'm4',
       folder: 'training',
       hub: 'pages/workshops/module-4-workshop.html',
-      label: 'Workshop 4',
-      subLabel: 'Govern & Roll Out',
+      label: 'Module 4',
+      subLabel: 'Analyst & The Close Room',
       color: '#e8a317',
       navColor: '#f2c56b',
       filePrefix: ['12-', '13-', '14-', '15-', '16-'],
       pages: [
-        '12-skills-to-plugins',
-        '13-roles-and-access',
-        '14-set-up-and-govern',
-        '15-analytics-and-adoption',
-        '16-the-control-room'
+        '12-meet-analyst',
+        '13-analyst-on-finance-data',
+        '14-choosing-your-copilot',
+        '15-make-it-stick',
+        '16-the-close-room'
       ],
       labels: [
-        'Package as a Plugin',
-        'Roles & Access',
-        'Set Up & Govern',
-        'Analytics & Adoption',
-        'The Control Room'
+        'Meet Analyst',
+        'Analyst on Finance Data',
+        'Choosing Your Copilot',
+        'Make It Stick',
+        'The Close Room'
       ]
     }
   ];
@@ -327,7 +327,7 @@
     : '<i class="nav-home-icon iconoir-academic-cap" aria-hidden="true"></i>';
   homeEl.innerHTML =
     brandMark +
-    '<span class="nav-home-label">Cowork Workshop</span>';
+    '<span class="nav-home-label">Copilot Workshop</span>';
   topRow.appendChild(homeEl);
 
   // Craft labels — each links to its workshop hub (the module's home base)
@@ -479,7 +479,7 @@
   overlayHome.className = 'nav-overlay-home' + (isHome ? ' active' : '');
   overlayHome.innerHTML =
     '<i class="iconoir-academic-cap" aria-hidden="true" style="font-size:16px;flex-shrink:0;"></i>' +
-    '<span>Cowork Workshop</span>';
+    '<span>Copilot Workshop</span>';
   overlayBody.appendChild(overlayHome);
 
   // Craft groups with page links
