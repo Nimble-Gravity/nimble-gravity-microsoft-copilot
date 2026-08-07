@@ -30,7 +30,7 @@
 <div class="page-header" id="intro">
   <div class="eyebrow">Module 1 · Lesson 3 of 3 · Hands-on lab</div>
   <h1 class="title">The Chat Sprint <em>Lab</em></h1>
-  <p class="subtitle">Ten minutes, laptops open. You'll run three grounded prompts against the workshop's synthetic finance files, judge the output like a reviewer — and commission your first Researcher run so its report is waiting for you in Module 3. Everything here uses fake data shaped like ours; nothing real goes into a prompt today.</p>
+  <p class="subtitle">Ten minutes, laptops open. You'll run three grounded prompts against the session's synthetic finance files, judge the output like a reviewer — and commission your first Researcher run so its report is waiting for you in Module 3. Everything here uses fake data shaped like ours; nothing real goes into a prompt today.</p>
   <div class="header-phase">
     <div class="header-phase-dot" style="background:var(--teal)"></div>
     Foundations &amp; Copilot Chat · ~10 min in-room
@@ -40,8 +40,8 @@
 <!-- SETUP -->
 <div class="section" id="setup">
   <div class="sec-eyebrow">01 — Setup check</div>
-  <h2 class="sec-title">Files in place, Work scope <em>on</em></h2>
-  <p class="sec-sub">You did this in pre-work — take thirty seconds to confirm it stuck. Copilot can only ground in files it can reach, so the lab files need to be in your OneDrive before anything else works.</p>
+  <h2 class="sec-title">Files in place, source <em>named</em></h2>
+  <p class="sec-sub">You did this in pre-work — take thirty seconds to confirm it stuck. Copilot can only ground in files it can reach, and in the source you actually name in the prompt.</p>
 
   <div class="bp-grid--light" style="margin-top:28px;">
     <div class="bp-item">
@@ -51,13 +51,13 @@
     </div>
     <div class="bp-item">
       <div class="bp-num">02</div>
-      <div class="bp-title">Open Copilot Chat, Work scope</div>
-      <div class="bp-body">Open the Microsoft 365 Copilot app, start a new chat, and make sure you're on <strong>Work</strong> grounding — not Web. That's the toggle from Lesson 1.</div>
+      <div class="bp-title">Open Copilot, name the source</div>
+      <div class="bp-body">Open Microsoft 365 Copilot and start a new chat. If Work IQ is available, keep it enabled for this lab — you're working from Microsoft 365 files. Then reference the lab file directly using <code>/profit-center-pnl.csv</code> so Copilot grounds the answer in the source you intend, not whatever it finds on its own.</div>
     </div>
     <div class="bp-item">
       <div class="bp-num">03</div>
       <div class="bp-title">Test the reference</div>
-      <div class="bp-body">Type "/" and start typing <code>profit-center-pnl</code>. If the file appears, you're grounded and ready. (New files can take a few minutes to index — flag a facilitator if it's not there.)</div>
+      <div class="bp-body">Type "/" and start typing <code>profit-center-pnl</code>. If the file appears, you're grounded and ready. If it doesn't, pause and troubleshoot access: confirm the file is in OneDrive, you have permission, the file has finished indexing, and the prompt names it clearly — flag a facilitator if it's still missing.</div>
     </div>
   </div>
 </div>
@@ -77,7 +77,7 @@
       <button class="copy-btn" onclick="copyBlock('sprint-1', this)">Copy</button>
     </div>
     <div class="code-body">
-<pre id="sprint-1">Using /profit-center-pnl.csv, identify the five largest unfavorable variances vs budget in June 2026, across all profit centers and accounts. I'm triaging the month for close commentary. Give me a table: profit center, account, budget, actual, $ variance — largest first. Flag any profit center that appears more than once.</pre>
+<pre id="sprint-1">Using /profit-center-pnl.csv as the source, identify the five largest unfavorable variances vs budget in June 2026 across all profit centers and accounts. Ground your analysis exclusively in this file. Give me a table showing profit center, account, budget, actual, and variance dollars, sorted largest first. Flag any profit center appearing more than once.</pre>
     </div>
   </div>
 
@@ -90,7 +90,7 @@
       <button class="copy-btn" onclick="copyBlock('sprint-2', this)">Copy</button>
     </div>
     <div class="code-body">
-<pre id="sprint-2">Take the largest variance from that table and look at the same profit center and account across January–June. Is this a one-month event or a running trend? Answer in three sentences, neutral tone, and say explicitly which months support your conclusion.</pre>
+<pre id="sprint-2">Using the findings from this chat and the data contained in /profit-center-pnl.csv, evaluate the largest variance from January through June. Determine whether it appears to be a one-time event or an ongoing trend. Answer in three sentences and identify the months supporting your conclusion.</pre>
     </div>
   </div>
 
@@ -103,7 +103,15 @@
       <button class="copy-btn" onclick="copyBlock('sprint-3', this)">Copy</button>
     </div>
     <div class="code-body">
-<pre id="sprint-3">Draft the June variance-commentary paragraph for the segment controller covering the top three unfavorable variances from this thread. Format: one short lead sentence on the month overall, then one sentence per variance naming the profit center, the driver, and whether it recurs. Plain, factual close-package language — no adjectives, no speculation.</pre>
+<pre id="sprint-3">Using the analysis from this conversation and /profit-center-pnl.csv, draft the June variance commentary paragraph for the segment controller. Use only information supported by the data already reviewed. Format as: one short lead sentence summarizing the month overall, then one sentence per top variance naming the profit center, the driver, and whether it recurs. Use plain, factual close-package language. Do not speculate.</pre>
+    </div>
+  </div>
+
+  <div class="tip-trick" style="margin-top:24px;">
+    <div class="tip-trick-icon">🔎</div>
+    <div class="tip-trick-copy">
+      <div class="tip-trick-label">Before you read the answer — where did it come from?</div>
+      <p>After each prompt, check Copilot's citation before you trust the text: does it say <code>profit-center-pnl.csv</code>, and only that file? If a source card cites something else — or nothing — that's your cue to tighten the prompt and rerun, not to keep going. Once you've run Prompt 3, compare your paragraph's shape against <code>flash-comments.csv</code> in the lab-data folder — a real flash-commentary export, one lead sentence plus a driver per line, is what "close-package language" looks like in practice.</p>
     </div>
   </div>
 </div>

@@ -52,8 +52,12 @@ that produces a close-package one-pager).
   new **E7 "Frontier Suite"** $99 bundles it) adds: work-grounded Chat (Graph), Copilot in
   Word/Excel/PowerPoint/Outlook/Teams, **Copilot Search**, **Researcher & Analyst**, scheduled
   prompts, memory, Notebooks. B&B finance attendees are licensed — teach the licensed surface.
-- **Work vs Web grounding:** licensed Chat has a Work/Web toggle. Work = Microsoft Graph (mail,
-  meetings, chats, files *you already have permission to see*) + connectors; Web = Bing.
+- **Grounding is signals, not a toggle:** the current Copilot Chat design may not surface a simple
+  Work/Web switch — teach it as controls: **Work IQ** (Microsoft Graph — mail, meetings, chats,
+  files *you already have permission to see*, plus connectors), the prompt, files
+  attached/referenced, the sources Copilot cites, and the agent selected. Web/public-source answers
+  come from asking for them explicitly, not from a mode switch. Source inspection (checking
+  citations before trusting the answer) is the habit that carries across every surface.
 - **Model choice (2026):** GPT-5.5-class default; **Anthropic Claude Opus selectable for reasoning**
   (GA 2026-06-16). Note for a regulated audience: **Anthropic-provided models are currently excluded
   from the EU Data Boundary** — a sharp, quotable caveat.
@@ -98,7 +102,8 @@ that produces a close-package one-pager).
 ### Researcher (OOTB deep-research agent)
 - Multi-step research producing a **structured, source-cited report**. GA 2025-06-02.
 - **Reach:** web (Bing) + work data (files, mail, meetings, chats) + Graph connectors; user scopes
-  work/web/both per run.
+  the brief per run — name the work sources and/or web scope explicitly rather than relying on a
+  mode toggle.
 - **Model picker (2026):** **Critique** (default — GPT drafts, Claude second-pass), **Model Council**
   (parallel GPT + Claude + comparison), GPT only, Claude only. Claude modes need admin-enabled
   Anthropic models.

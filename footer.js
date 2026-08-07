@@ -46,8 +46,8 @@
     footer.innerHTML =
       '<div class="nav-footer-copy">' +
         '<div class="nav-footer-kicker">Nimble Gravity · Copilot Enablement</div>' +
-        '<div class="nav-footer-title">M365 Copilot Advanced Workshop · Brown &amp; Brown Finance</div>' +
-        '<div class="nav-footer-text">A four-module, hands-on workshop that takes the Brown &amp; Brown finance team deep into Microsoft 365 Copilot — mastering Copilot Chat, Copilot in Excel, Outlook, Word, and PowerPoint, then the Researcher and Analyst reasoning agents on real finance workflows.</div>' +
+        '<div class="nav-footer-title">M365 Copilot Advanced Session · Brown &amp; Brown Finance</div>' +
+        '<div class="nav-footer-text">A four-module, hands-on session that takes the Brown &amp; Brown finance team deep into Microsoft 365 Copilot — mastering Copilot Chat, Copilot in Excel, Outlook, Word, and PowerPoint, then the Researcher and Analyst reasoning agents on real finance workflows.</div>' +
         '<div class="nav-footer-stages" aria-label="Modules">' +
           '<span class="nav-footer-stage">Module 1 · Foundations &amp; Copilot Chat</span>' +
           '<span class="nav-footer-stage">Module 2 · Copilot in the Apps</span>' +

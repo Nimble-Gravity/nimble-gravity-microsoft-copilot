@@ -40,12 +40,12 @@
 <div class="section" id="surfaces">
   <div class="sec-eyebrow">01 — One assistant, three surfaces</div>
   <h2 class="sec-title">Chat, the apps, and the <em>agents</em></h2>
-  <p class="sec-sub">Everything in this workshop lives on one of three surfaces. They share the same brain and the same data rules — what changes is where the work happens and how much of it you hand over.</p>
+  <p class="sec-sub">Everything in this session lives on one of three surfaces: Copilot Chat, Copilot in the Microsoft 365 apps, and specialized agents such as Researcher and Analyst. They share the same brain and the same data rules — what changes is where the work happens and how much of it you hand over.</p>
 
   <div class="insight-grid" style="margin-top:28px;">
     <div class="insight-card">
       <div class="sec-eyebrow" style="margin-bottom:6px;">Copilot Chat</div>
-      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">The conversation surface — in the Microsoft 365 Copilot app, Teams, and Edge. Ask questions, draft, summarize, and reference specific files, people, and meetings. With your license it's grounded in your work data, and it's where the agents live. Module 1 makes you sharp here.</p>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">The conversation surface — in the Microsoft 365 Copilot app, Teams, and Edge. Ask questions, draft, summarize, and reference specific files, people, and meetings. With your license it's grounded in your work data, and it's where you launch the specialized agents. Module 1 makes you sharp here.</p>
     </div>
     <div class="insight-card">
       <div class="sec-eyebrow" style="margin-bottom:6px;">Copilot in the apps</div>
@@ -60,30 +60,41 @@
   <div class="tip-trick" style="margin-top:32px;">
     <div class="tip-trick-icon">💡</div>
     <div class="tip-trick-copy">
-      <div class="tip-trick-label">The shift this workshop is about</div>
+      <div class="tip-trick-label">The shift this session is about</div>
       <p>Most people use Copilot like a search box: one question, one answer, copy, paste. Advanced use means grounding it in the right sources, letting it act inside your documents, and delegating whole jobs to agents — then reviewing like the professional whose name goes on the output.</p>
     </div>
   </div>
 </div>
 
-<!-- WORK VS WEB -->
+<!-- GROUNDING SIGNALS -->
 <div class="section section-dark" id="grounding">
   <div class="sec-eyebrow on-dark">02 — Where answers come from</div>
-  <h2 class="sec-title on-dark">Work vs Web <em>grounding</em></h2>
-  <p class="sec-sub on-dark">Copilot Chat has a toggle that changes everything about an answer: whether it draws on your organization's data or the public web. Advanced users pick deliberately, per question — and scope agents the same way.</p>
+  <h2 class="sec-title on-dark">Grounding is a set of <em>signals</em>, not a switch</h2>
+  <p class="sec-sub on-dark">In the current Copilot Chat experience, don't think of grounding as a single Work-vs-Web toggle. Think of it as a set of controls and signals: Work IQ, your prompt, the files you attach or reference, the sources Copilot cites, and the agent you choose. Your job is to control the context and verify the sources — every time.</p>
 
   <div class="dev-grid-2" style="margin-top:28px;">
     <div class="dev-card">
-      <div class="dev-kicker">Work</div>
-      <h3>Grounded in your Microsoft Graph</h3>
-      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">Answers draw on your emails, meetings, chats, and files — plus connected sources — through the Semantic Index. "What did we agree on the close calendar?" only works here. It can only see content you already have permission to open.</p>
-      <div class="dev-quote">Use for: anything about our numbers, our files, our meetings, our people.</div>
+      <div class="dev-kicker">Set the context</div>
+      <h3>Work IQ, prompt scope, and files</h3>
+      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">Work IQ helps Copilot draw on your Microsoft 365 context — emails, meetings, chats, files you already have permission to open — when it's relevant. Reference a specific file or thread with "/" or an attachment, and say explicitly in the prompt when you want public web information. Ask for the source you want; don't assume Copilot will guess it.</p>
+      <div class="dev-quote">Use for: anything about our numbers, our files, our meetings, our people — named explicitly.</div>
     </div>
     <div class="dev-card">
-      <div class="dev-kicker">Web</div>
-      <h3>Grounded in the public web</h3>
-      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">Answers draw on live web results. Market conditions, carrier news, rate environment, a competitor's earnings release — this is the scope for questions about the world outside the tenant.</p>
-      <div class="dev-quote">Use for: markets, industry news, anything you'd otherwise search for.</div>
+      <div class="dev-kicker">Verify the source</div>
+      <h3>Sources cited, agent selected</h3>
+      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">Before you read the answer, check where it came from: inspect the citations, files, and source cards Copilot shows you. The agent you pick matters too — Copilot Chat, an app, or Researcher/Analyst each ground differently. Market conditions, carrier news, a competitor's earnings release — ask for public web sources explicitly when the question is about the world outside the tenant.</p>
+      <div class="dev-quote">Use for: anything you'd otherwise search for — asked for, and cited, explicitly.</div>
+    </div>
+  </div>
+</div>
+
+<!-- NEW DESIGN NOTE: WORK IQ -->
+<div class="section" id="workiq">
+  <div class="tip-trick" style="margin-top:0;">
+    <div class="tip-trick-icon">💡</div>
+    <div class="tip-trick-copy">
+      <div class="tip-trick-label">New design note: Work IQ</div>
+      <p>You may see Work IQ in the new design. Work IQ helps Copilot use Microsoft 365 context and organizational signals when appropriate. Work IQ Off should not be presented as a simple replacement for Web mode. The safer teaching point: ask for the source you want, provide the source when possible, and verify the sources Copilot used. (Facilitator note: Work IQ influences use of Microsoft 365 context, but source verification and prompt clarity still matter — that habit is what this whole session is teaching.)</p>
     </div>
   </div>
 </div>
@@ -107,8 +118,8 @@
     </div>
     <div class="bp-item">
       <div class="bp-num">03</div>
-      <div class="bp-title">Know the agent-records nuance</div>
-      <div class="bp-body">Copilot chat history is retained and eDiscovery-searchable via Purview. But Researcher and Analyst session content is not e-discoverable by default — so save important agent outputs into files that are governed.</div>
+      <div class="bp-title">Checkpoint: save agent results as governed artifacts</div>
+      <div class="bp-body">Copilot chat history is retained and eDiscovery-searchable via Purview. But Researcher and Analyst session content is <strong>not</strong> e-discoverable by default. The rule, not a suggestion: the moment a Researcher or Analyst output becomes real work product, save it into a governed file — a document in the right SharePoint library, not left sitting in the agent's session. You'll hit this checkpoint again in Module 3 and Module 4.</div>
     </div>
   </div>
 </div>

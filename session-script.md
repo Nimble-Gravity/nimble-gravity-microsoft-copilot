@@ -21,15 +21,18 @@ buttons live in `pages/workshops/facilitator-guide.html`; game answer keys live 
   Module 4 Analyst and the capstone. "One thing to know now: at 0:25 you'll each start a research run
   that takes half an hour. We start it early on purpose — that habit is half of what 'advanced' means."
 - **[THEY]** Maturity poll on the Before-We-Start page (`pages/training/index.html#maturity`).
-- **[DO]** Access check by show of hands: Work tab visible? Agents list shows Researcher + Analyst?
+- **[DO]** Access check by show of hands: Work IQ available (if shown)? Agents list shows Researcher + Analyst?
   Anyone missing either pairs with a neighbor — log names for IT, don't debug live.
 
 ## 0:10–0:35 · Module 1 — Foundations & Copilot Chat
 
 - **[DO]** 0:10 Start the Module 1 deck (`pages/training/module-1-slides.html`).
-- **[SAY]** 0:10–0:18 The landscape (Lesson 1 beats): three surfaces; Work vs Web; the three data rules.
-  **[DO]** THE demo: same question ("what drove our June variances?") on Web scope → generic essay;
-  then Work scope with `/profit-center-pnl.csv` → real answer. Let the contrast land.
+- **[SAY]** 0:10–0:18 The landscape (Lesson 1 beats): three surfaces; grounding as signals, not a
+  toggle; the three data rules.
+  **[DO]** THE demo: same question ("what drove our June variances?") asked with no source named →
+  generic, ungrounded essay; then asked again with Work IQ on and `/profit-center-pnl.csv` named
+  explicitly → real answer, citation visible. Open the citation and show the class — "before we
+  read the answer, where did it come from?" — that's the habit, not the toggle.
   **[SAY]** the data rules, verbatim beats: "It sees only what you already have permission to see.
   It doesn't train on our data. And one nuance for a finance team: agent sessions aren't e-discoverable
   by default — so important agent outputs get saved into files that are governed."
@@ -41,7 +44,7 @@ buttons live in `pages/workshops/facilitator-guide.html`; game answer keys live 
 - **[DO]** 0:30 sharp — freeze the room for two minutes: everyone opens **Agents → Researcher**, pastes
   the Project Lighthouse mission brief (copy button on the lab page), answers the clarifying questions
   ("work files and web · US market · finance audience"), and leaves it running.
-  **[NOTE]** Protect this beat at all costs; it feeds Module 3. Common blockers: still on Web scope;
+  **[NOTE]** Protect this beat at all costs; it feeds Module 3. Common blockers: Work IQ left off;
   OneDrive not indexed → attach the CSV directly.
 
 ## 0:35–1:00 · Module 2 — Copilot in the Apps

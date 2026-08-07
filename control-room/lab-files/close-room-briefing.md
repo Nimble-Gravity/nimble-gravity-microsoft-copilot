@@ -28,6 +28,7 @@ From the workshop lab-data folder (`../assets/lab-data/` on the microsite, or wh
 your facilitator shared them):
 
 - `profit-center-pnl.csv` — Station 1
+- `flash-comments.csv` — Station 1 corroboration
 - `carrier-commission-statements.csv` — Station 2
 - `premium-trust-ledger.csv` — Station 3
 - `trust-bank-statement.csv` — Station 3
@@ -62,8 +63,10 @@ Codes are case- and space-insensitive, but format matters:
 
 ## Ground rules
 
-- All data is **synthetic** — built for this workshop, shaped like a national insurance
+- All data is **synthetic** — built for this session, shaped like a national insurance
   brokerage's finance data, but entirely fictional. No real Brown & Brown clients,
   carriers, teammates, or deals. Safe to upload to Copilot.
 - Verification is part of the exercise: every station expects you to re-derive or quote
   the answer from the source before entering it. Wrong codes cost attempts.
+- Your final close summary must include a source trail and validation notes for every
+  number in it — see `close-room-rubric.md`'s final requirement.

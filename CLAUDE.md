@@ -100,8 +100,9 @@ performance.
 
 The 4-module arc (one 2-hour session; ~25 min in-room per module; depth on the lesson pages):
 
-1. **Foundations & Copilot Chat** — the surface map (Chat/apps/agents, Work vs Web grounding, the
-   data rules incl. the agent eDiscovery nuance); the four-element prompt framework (Goal, Context,
+1. **Foundations & Copilot Chat** — the surface map (Chat/apps/agents, grounding as signals —
+   Work IQ, prompt, files, sources cited, agent — not a Work/Web toggle, plus the data rules incl.
+   the agent eDiscovery nuance); the four-element prompt framework (Goal, Context,
    Expectations, Source); the Chat Sprint lab, which also **commissions the Researcher run early**
    (runs take 10–45 min — timing is the skill).
 2. **Copilot in the Apps** — Excel first (Python analysis, Plan with Copilot, Show Changes

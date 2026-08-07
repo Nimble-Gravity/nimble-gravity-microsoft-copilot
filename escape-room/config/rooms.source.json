@@ -82,6 +82,7 @@
         "Count the profit centers whose June ACTUAL core commissions are below their June BUDGET. Only count rows where a June budget exists — the agency acquired mid-period has actuals but no budget, and it must not be in your count.",
         "Spell that exclusion out in the prompt's Context; Copilot won't guess your denominator rules. Blank is not zero.",
         "Verify: ask for the list of qualifying profit centers by name, not just the count, and spot-check two of them against the raw rows.",
+        "Corroborate with 'flash-comments.csv' — the June revenue_comments for each profit center on your list should read as under budget. A row on your list whose commentary reads over budget means you miscounted.",
         "The unlock code is the count immediately followed by the word UNDER, no space. Example format: 7UNDER"
       ],
       "codePlaintext": "11UNDER",

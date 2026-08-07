@@ -99,7 +99,7 @@
   // sections on the module's workshop hub, so each stage is `hub + hash`.
   var MODULE_STAGES = [
     { label: 'Pre-work',         hash: '#prework' },
-    { label: 'Workshop content', hash: '#content' }
+    { label: 'Session content', hash: '#content' }
   ];
 
   // ── Path detection ────────────────────────────────────────────────────────
@@ -327,7 +327,7 @@
     : '<i class="nav-home-icon iconoir-academic-cap" aria-hidden="true"></i>';
   homeEl.innerHTML =
     brandMark +
-    '<span class="nav-home-label">Copilot Workshop</span>';
+    '<span class="nav-home-label">Copilot Session</span>';
   topRow.appendChild(homeEl);
 
   // Craft labels — each links to its workshop hub (the module's home base)
@@ -479,7 +479,7 @@
   overlayHome.className = 'nav-overlay-home' + (isHome ? ' active' : '');
   overlayHome.innerHTML =
     '<i class="iconoir-academic-cap" aria-hidden="true" style="font-size:16px;flex-shrink:0;"></i>' +
-    '<span>Copilot Workshop</span>';
+    '<span>Copilot Session</span>';
   overlayBody.appendChild(overlayHome);
 
   // Craft groups with page links

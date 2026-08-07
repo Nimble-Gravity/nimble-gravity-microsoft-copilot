@@ -15,14 +15,16 @@ Expectations · Source**.
 
 ## Get the data
 
-Download these two files from the workshop lab-data folder (`../assets/lab-data/` on the
+Download these three files from the lab-data folder (`../assets/lab-data/` on the
 microsite, or wherever your facilitator shared them):
 
 1. `profit-center-pnl.csv` — budget vs actuals by profit center × month × account, Jan–Jun 2026
 2. `carrier-commission-statements.csv` — monthly carrier production and contingent accruals
+3. `flash-comments.csv` — June revenue/expense commentary by profit center, useful to
+   corroborate a finding once you have one
 
-(The vault's four rooms all run on the P&L file; the carrier statements are your warm-up
-and cross-reference data.)
+(The vault's four rooms all run on the P&L file; the carrier statements and flash comments
+are your warm-up and cross-reference data.)
 
 ## Setup
 

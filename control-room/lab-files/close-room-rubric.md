@@ -40,6 +40,9 @@ no space.
   in the raw rows. If your hand math doesn't match Copilot's table, the table loses.
 - Confirm the peer group: the finding is only a finding if the other Specialty
   Distribution profit centers are *not* doing the same thing.
+- Corroborate with `flash-comments.csv`: your candidate's June revenue_comments should
+  independently describe the same erosion. Two files agreeing is a source trail, not a
+  coincidence.
 
 ### Station 2 — Contingents Desk
 
@@ -60,3 +63,11 @@ no space.
   **missing**, and the code word is the standard deal-desk adjective for it.
 - Quote your source sentence for both answers before signing off. If you can't quote
   it, you haven't found it.
+
+## Final requirement — every station
+
+Whatever you hand the controller at the end — the five-line close summary — must carry a
+**source trail and validation notes**: which file(s) each number came from, and how you
+verified it (re-derived by hand, corroborated in a second file, or quoted from source
+text). A correct code with no trail behind it doesn't meet the bar; neither would it on
+the real desk.

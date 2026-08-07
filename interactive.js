@@ -56,8 +56,8 @@
     m1: {
       label: 'Module 1 · Foundations & Copilot Chat',
       questions: [
-        { q: 'In Copilot Chat, what does switching from Web to Work grounding change?',
-          options: ['Nothing — it only changes the color of the interface', 'Copilot answers from your Microsoft Graph — the emails, meetings, chats, and files you can access — instead of the public web', 'It unlocks a larger model'],
+        { q: 'Before trusting a Copilot Chat answer, what should you check first?',
+          options: ['Nothing — a confident answer is a correct answer', 'Where it came from: the sources and citations Copilot used, and whether Work IQ, your prompt, and any attached files actually scoped it to the right place', 'Whether the model is the largest one available'],
           answer: 1 },
         { q: 'Which of your organization’s data can Copilot see when it answers you?',
           options: ['Everything in the tenant, including other teams’ files', 'Only content you already have at least view permission to', 'Only files you created yourself'],

@@ -1,0 +1,10 @@
+code,translation,business_type
+C,New policy cancellation,Cancellation
+D,New policy reinstatement,Reinstatement
+M,New policy endorsement,Endorsement
+N,New policy transaction,New Bind
+O,Other; does not fit another category,Other
+R,Renewal policy transaction,Renewal Bind
+S,Renewal policy endorsement,Endorsement
+X,Renewal policy cancellation,Cancellation
+Y,Renewal policy reinstatement,Reinstatement
