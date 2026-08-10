@@ -66,8 +66,8 @@ What the engine extracts from each lesson:
 - **One content slide per `.section`** — needs an `h2.sec-title`. The section's *direct-child*
   `.sec-eyebrow` becomes the slide eyebrow and its *direct-child* `p.sec-sub` (or first `<p>`) the
   subtitle. (Direct-child only — eyebrows inside cards are ignored.)
-- **Up to 4 bullets per slide**, pulled from these card classes inside the section (extra cards are
-  dropped, so keep ≤4 slide-worthy cards per section):
+- **One bullet per card**, pulled from these card classes inside the section (all cards are kept —
+  a slide whose content overflows the 1280×720 box auto-shrinks via CSS zoom to fit):
 
   | Card class | Bullet heading ← | Bullet body ← |
   |---|---|---|
@@ -87,7 +87,7 @@ Notes for authors:
   and `.tip-trick` — prefer these so the lesson page and the slide both look right. The others
   (`.comp-card`, `.hy-card`, `.sg-card`, `.comparison-card`, …) extract to slides but were page-scoped
   in the originals; add page CSS if you use them.
-- `<em>` inside titles is preserved on slides; bodies are truncated (~110 chars).
+- `<em>` inside titles is preserved on slides; bullet bodies keep their full text (no truncation).
 - Add `class="section-dark"` to render a slide on the dark background.
 
 ## Authoring Rule

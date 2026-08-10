@@ -38,9 +38,17 @@
     return clone.innerHTML;
   }
 
-  function truncate(str, max) {
-    str = str.trim();
-    return str.length > max ? str.substring(0, max).replace(/\s+\S*$/, '') + '…' : str;
+  /** textOf(bodyEl), minus labelEl's text when the label sits inside the body
+      (e.g. a <strong> label inside the same <p>) — avoids heading duplication. */
+  function textWithout(bodyEl, labelEl) {
+    if (!bodyEl) return '';
+    if (!labelEl || !bodyEl.contains(labelEl)) return textOf(bodyEl);
+    labelEl.setAttribute('data-sl-omit', '');
+    var clone = bodyEl.cloneNode(true);
+    labelEl.removeAttribute('data-sl-omit');
+    var n = clone.querySelector('[data-sl-omit]');
+    if (n) n.remove();
+    return clone.textContent.trim().replace(/^[\s—–:·-]+/, '');
   }
 
   /* ─── Extraction ────────────────────────────────────────── */
@@ -89,7 +97,7 @@
         if (head) {
           bullets.push({
             heading: textOf(head),
-            body:    body ? truncate(textOf(body), 110) : ''
+            body:    body ? textOf(body) : ''
           });
         }
       });
@@ -103,7 +111,7 @@
         if (heading) {
           bullets.push({
             heading: heading,
-            body:    body ? truncate(textOf(body), 110) : ''
+            body:    body ? textOf(body) : ''
           });
         }
       });
@@ -117,7 +125,7 @@
         if (heading.trim()) {
           bullets.push({
             heading: heading.trim(),
-            body:    body ? truncate(textOf(body), 110) : ''
+            body:    body ? textOf(body) : ''
           });
         }
       });
@@ -129,7 +137,7 @@
         if (label) {
           bullets.push({
             heading: textOf(label),
-            body:    body ? truncate(textOf(body), 110) : '',
+            body:    textWithout(body, label),
             isTip:   true
           });
         }
@@ -142,7 +150,7 @@
         if (head) {
           bullets.push({
             heading: textOf(head),
-            body:    body ? truncate(textOf(body), 110) : ''
+            body:    body ? textOf(body) : ''
           });
         }
       });
@@ -156,7 +164,7 @@
         if (heading.trim()) {
           bullets.push({
             heading: heading.trim(),
-            body:    body ? truncate(textOf(body), 110) : ''
+            body:    body ? textOf(body) : ''
           });
         }
       });
@@ -171,7 +179,7 @@
         if (heading) {
           bullets.push({
             heading: heading,
-            body:    (title && header ? textOf(title) + (body ? ' — ' + truncate(textOf(body), 80) : '') : (body ? truncate(textOf(body), 110) : ''))
+            body:    (title && header ? textOf(title) + (body ? ' — ' + textOf(body) : '') : (body ? textOf(body) : ''))
           });
         }
       });
@@ -183,7 +191,7 @@
         if (q) {
           bullets.push({
             heading: textOf(q).replace(/^"|"$/g, ''),
-            body:    hint ? truncate(textOf(hint), 110) : ''
+            body:    hint ? textOf(hint) : ''
           });
         }
       });
@@ -195,7 +203,7 @@
         if (head) {
           bullets.push({
             heading: textOf(head),
-            body:    body ? truncate(textOf(body), 110) : ''
+            body:    textWithout(body, head)
           });
         }
       });
@@ -206,7 +214,7 @@
         eyebrow:  textOf(eyeEl),
         title:    innerOf(h2),
         subtitle: textOf(subEl),
-        bullets:  bullets.slice(0, 4)   /* cap at 4 bullets per slide */
+        bullets:  bullets
       });
     });
 
@@ -321,6 +329,22 @@
 
     deck.appendChild(buildEnd());
 
+    /* Shrink any slide whose content overflows the fixed 1280×720 box so
+       nothing is ever clipped. ponytail: CSS zoom autofit — no-op in browsers
+       without zoom support; swap for em-based scaling if that ever matters. */
+    function fitSlides() {
+      deck.querySelectorAll('section').forEach(function (sec) {
+        var prevDisplay = sec.style.display;
+        sec.style.display = 'flex';   /* Reveal hides non-active slides; show to measure */
+        var zoom = 1;
+        while (sec.scrollHeight > sec.clientHeight && zoom > 0.4) {
+          zoom -= 0.05;
+          sec.style.zoom = zoom;
+        }
+        sec.style.display = prevDisplay;
+      });
+    }
+
     /* Init Reveal */
     Reveal.initialize({
       hash:            true,
@@ -333,7 +357,7 @@
       width:           1280,
       height:          720,
       margin:          0.04
-    });
+    }).then(fitSlides);
   });
 
 })();

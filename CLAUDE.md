@@ -68,8 +68,8 @@ key `ng-copilot:v1`). See DESIGN-SYSTEM.md "The module hub spine".
 
 **Slides build themselves from lesson HTML.** A deck file (`module-N-slides.html`) is just a
 `window.SLIDES_CFG`; `slides-engine.js` fetches each listed lesson and extracts slides from known card
-classes (≤4 slide-worthy cards per section; a section without `h2.sec-title` generates no slide —
-that's how quiz sections stay off decks). See DESIGN-SYSTEM.md "How slides are generated".
+classes (all cards, full text — overflowing slides auto-shrink to fit; a section without
+`h2.sec-title` generates no slide — that's how quiz sections stay off decks). See DESIGN-SYSTEM.md "How slides are generated".
 
 **The two game labs share one engine** (vanilla JS + Three.js). Content lives in each app's
 `config/rooms.source.json`; unlock codes are **derived from `assets/lab-data/` contents** — if the
